@@ -1,0 +1,89 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO B}\\El ejercicio se realizará en eclipse. Usa un workspace distinto al que usas de forma habitual. Crea un proyecto de java nuevo denominado \emph{Examen} y en el dos \emph{packages} \emph{clases} y \emph{test} }}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+\begin{questions}
+\question Queremos hacer un programa para registrar los datos de libros de una biblioteca, para esto debes implementar las siguientes clases:
+\begin{description}
+\item[clase Libro] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Título del ejemplar.
+\item ISBN de 13 digitos.
+\item Número de ejemplares
+\item Un constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters}
+\item Sobreescribe el método \emph{toString()} para que cuando tratemos la referencia de estos objetos como \emph{String}, nos muestre el producto con el siguiente formato:\\
+LIBRO: nombre\_ejemplar ; ISBN: isbn ; Nº EJEMPLARES: numero\_ejemplares
+\end{itemize}
+\item[clase Biblioteca] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Localidad de la biblioteca
+\item Sitio web. Formato permitido es: www.biblioteca.dominio, donde biblioteca puede ser cualquier secuencia de caracteres alfabéticos y dominio solo se permiten \emph{es, com, org, eu}
+\item Colección de objetos \emph{Libro}
+\item Un constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters}
+%\item Un método que añada objetos a la colección anterior.
+\item Sobreescribe el método \emph{toString()} para que cuando tratemos la referencia de estos objetos como \emph{String}, nos muestre  el siguiente formato:\\
+\emph{Bibilioteca: localidad ; sitio web: sitio\_web  ; Número ejemplares: numero\_ejemplares ; Número total de libros: numero\_libros}, hay que indicar el número de ejemplares de libros, en este último campo, teniendo en cuenta que un ejemplar tiene varios libros, según el atributo de la clase \emph{Libro}
+\end{itemize}
+\item[ISBNExcepcion] Con la siguiente implementación:
+\begin{itemize}
+\item Debe sobreescribir el método de la clase \emph{Exception} para que cuando se lance la excepción muestre el mensaje \emph{ISBN erróneo}. El tratamiento algorítmico de verificación de un ISBN se detalla abajo.
+\end{itemize}
+\item[Clase TestBiblioteca] que realice las siguientes tareas:
+\begin{itemize}
+%\item Crea una instancia de la clase \emph{Supermercado}
+\item Usando la clase Scanner solicita los siguientes datos:
+\begin{enumerate}
+\item La localidad de la biblioteca, usando expresiones regulares controlamos el formato como una secuencia de caracteres alfanuméricos, ejemplo \emph{Jaén, La Carolina, Pozo Alcón, \dots} \\ Debemos solicitarlo hasta que tenga el formato correcto.
+\item Sitio web, igual que antes usando expresiones regulares controlamos el formato antes indicado.
+\item Solicita mediante el \emph{Scanner} los datos de tres libros, primero solicitando título del libro, usando expresiones regulares el formato del mismo es una secuencia de caracteres alfanuméricos, ejemplo El Quijote, 2001 una odisea del espacio, \dots\\ El ISBN que en este caso es una secuencia de 13 dígitos, también se comprueba por expresión regular. Y el número de ejemplares que debe ser un número superior a 0  e inferior a 10. Hay que solicitar hasta que se tengan datos suficientes para poder crear tres instancias de la clase \emph{Libro}. En el caso que no sea así, se siguirá solicitando datos hasta que complete el número de tres libros.
+\item Habrá que contemplar la excepción de \emph{ISBNExcepcion} de manera que no se admite ISBN no válidos. Está vendrá propagada del constructor de la clase \emph{Libro}
+\item Los tres libros se añadirán a una lista de objetos \emph{Libros} para que con el nombre de la biblioteca y el sitio web se pueda crear una instancia de la clase \emph{Biblioteca}, y deben ser tres objetos \emph{Libro}, ni uno mas ni uno menos.
+\end{enumerate}
+\end{itemize}
+\end{description}
+Consideraciones a tener en cuenta a la hora de hacer el ejercicio:
+\begin{itemize}
+\item Las clases \emph{Libro} y \emph{Biblioteca} irán en el \emph{package} \emph{clases} y en el \emph{package test} irá la clase \emph{TestBiblioteca}
+\item Para que el código sea mas limpio, usa métodos estáticos en la clase \emph{TestBiblioteca} para verificar cada uno de los formatos indicados anteriormente.
+\item Crea en la clase \emph{TestBiblioteca} un método estático que se le pasa como argumento la referencia del objeto \emph{Biblioteca} y muestre por pantalla la referencia de la misma y posteriormente recorriendo el atributo lista de objetos \emph{Libro} encapsulados, imprima cada una de las referencias de dichos objetos, mostrando los datos acorde a los métodos \emph{toString()} de ambas clases.
+%\end{enumerate}
+\end{itemize}
+En relación al algoritmo de verificación del ISBN hay que tener en cuenta lo detallado en le documento \emph{pdf} adjuntado.\\
+Para la verificación se hará de formar similar a la que se ha hecho en clase con la verificación del DNI o el número de una tarjeta de cŕedito, es decir:
+\begin{itemize}
+\item Se creará un método estático en la clase \emph{Libro} que usará como argumento el ISBN a veririfcar.
+\item El método verificará si es correcto o no dicho número.
+\item Usaremos una clase interna local, en cuyo constructor pasaremos el ISBN sin el último número que es la cifra de control.
+\item Habrá un método en dicha clase interna que calcule dicho cifra de control.
+\item Y en el método comprobaremos si son iguales el ISBN pasado como arguemento al método estático, al ISBN correcto, calculado con la cifra de control que devuelve el método de la clase interna.
+\item Usaremos este método en el constructor de la clase \emph{Libro}, de manera que cuando pasemos un ISBN en el constructor, verificamos éste y si no es válido salte la excepción y no se permita crear el objeto correspondiente.
+\end{itemize}
+
+Criterios de evaluación:
+\begin{description}
+\item[0.5 ptos.] Por estructura de proyecto en eclipse correcta.
+\item[0.5 ptos.] Por el programa corriendo correctamente.
+\item[1 pto.] Por el la clase \emph{Libro} enfocada correctamente de acuerdo al paradigma \emph{POO}
+\item[1 pto.] Por el la clase \emph{Biblioteca} enfocada correctamente de acuerdo al paradigma \emph{POO}
+\item[1.5 ptos] Por los métodos estáticos de verificación de la entradas del \emph{Scanner}.
+\item[0.5 ptos] Implementación de la clase \emph{ISBNExcepcion}
+\item[0.5 ptos] Por el manejo de la excepción en el constructor de la clase \emph{Libro}
+\item[2 ptos] Por el método de verificación del número de ISBN. En el caso que no uses una clase interna la puntuación de este método sera de \emph{1 pto}.
+\item[0.5 ptos] Para el método que muestra los datos del objeto de la clase \emph{Biblioteca}
+\item[0.5 ptos] Por la lógica de la solicitud de datos hasta que encaje con los patrones correspondientes de las expresiones regulares.
+\item[0.5 ptos] Si creas un \emph{jar ejecutable}. Lo dejaremos en una carpeta del proyecto llamada \emph{jar}
+\item[0.5 ptos] Por la documentación de la clase \emph{Libro}. 
+\item[0.5 ptos] Por los diagramas UML de las clase \emph{Libro} y la clase \emph{Biblioteca}, guardando éstos en una carpeta del proyecto \emph{UML}
+\end{description}
+\textbf{Formato del fichero de subida:} se subirá un archivo comprimido de la siguiente forma \emph{nombreApellidos.tar.gz} o \emph{nombre.Apellidos.zip}. incluyendo la carpeta completa del proyecto de eclipse.
+\end{questions}
+\end{document}

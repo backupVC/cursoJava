@@ -1,0 +1,108 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\POO}
+\date{\today}
+
+\begin{document}
+\maketitle \tableofcontents %\setlongtables
+
+
+\section{Diagramas UML}
+\subsection{Ejercicio 0}
+Crea el diagrama UML de las siguientes clases:
+\begin{itemize}
+\item Cilindro.
+\item Cuenta bancaria.
+\end{itemize}
+Utiliza la aplicacion \emph{dia} para realizar estos diagramas.\\
+Por otra parte utiza los atributos y metodos que creas necesarios.
+
+\section{Creación de objetos}
+\subsection{Ejercicio 1}
+Crea un programa que describa la clase \emph{Coche} con los siguientes atributos:
+\begin{enumerate}
+\item Cantidad de combustible en el depósito.
+\item Consumo del coche a los 100 km.
+\end{enumerate}
+Y los siguientes métodos:
+\begin{enumerate}
+\item Un método para añadir combustible al depósito.
+\item Conocer la cantidad de combustible que tiene el depósito.
+\item Número de kilométro que puede recorrer con el combustible que tiene en ese momento.
+\end{enumerate}
+Cuando se crea un coche por defecto debe venir con 5 litros de gasolina y un cosumo de 7 litros a los 100 km (no están trucados). Crea dos objetos diferentes de la clase Coche. Añade 5 litros de gasolina a cada coche. Comprueba el funcionamiento de la clase creando una clase denominada \emph{TestCoche}\\
+NO uses constructores en este ejercicio.
+
+
+\section{Clases}
+\subsection{Ejercicio 2}
+Crea una clase denominada Libro, que recoja los atributos y metodos que creas conveniente.\par 
+Comprueba su funcionamiento con una clase denominada \emph{TestLibro}
+
+
+
+\subsection{Ejercicio 3}
+Crea una clase denominada Palabra que tenga como unica variable de instancia el contenido de la palabra y un constructor que asigne dicho contenido al atributo anterior. Comprueba su funcionamiento y posteriormente crea los siguientes metodos:
+\begin{itemize}
+\item Un metodo que devuelva la palabra en mayúscula.
+\item Un metodo que devuelva la palabra en minúscula.
+\item Un metodo que devuelva el numero de letras que tiene dicha palabra.
+\item Un metodo que reemplace las letras de la palabra. \emph{Ejemplo palabra cocodrilo, parametros \emph{o u}, valor devuelto cucudrilu}
+\item Un metodo que devuelva la primera letra de la palabra.
+\item Un metodo que devuelva la ultima letra de la palabra en mayuscula.
+\end{itemize} 
+Comprueba el funcionamiento de dichos metodos en una clase denominada \emph{TestPalabra}
+
+\subsection{Ejercicio 4. API Math}
+La clase Math de Java se utiliza para el manejo de funciones matemáticas. Busca información en la página oficial de Oracle y completa la siguiente información:\par
+\vspace{0,5cm}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\bf{nombre método} & \bf{valor retorno} & \bf{parámetros} & \bf{Breve descripción} & \bf{Ejemplo} \\
+\hline
+abs & &  &  &  \\
+\hline
+max &  &  & &  \\
+\hline
+min &  &  & &  \\
+\hline
+random &  &  & &  \\
+\hline
+round &  &  & &  \\
+\hline
+sqrt &  &  & &  \\
+\hline
+cbrt &  &  & &  \\
+\hline
+\end{tabular}
+\subsection{Ejercicio 5}
+Crea una clase denominada Matematicas que tenga como unica variable de instancia un numero de tipo \emph{double}. Utiliza \emph{getter} y \emph{setter} que accedan y asignen valor al numero respectivamente. Comprueba su funcionamiento y posteriormente crea los siguientes metodos:
+\begin{itemize}
+\item Un metodo que devuelva la raiz cuadrada de dicho número.
+\item Un metodo que devuelva la raiz cúbica de dicho número en valor absoluto. 
+\item Un metodo que redondee el número de tipo double a entero. En el caso que sea un número negativo debe devolver su valor positivo redondeado.
+\item Un metodo que devuelva número aleatorios en el intervalo de 0 al numero de la clase redondeado. Ejemplo si el valor del numero es 2.3, su redondeo es 2, por tanto debe devolver aleatoriamente los números 0, 1 y 2.
+\end{itemize} 
+Comprueba el funcionamiento tanto con números positivos como negativos.
+
+\section{Miscelanea}
+\subsection{Ejercicio 6}
+Busca informacion sobre NaN, isInfinite( ) y isNaN( ) en Java. Propon ejemplos de su uso.
+\subsection{Ejercicio 7}
+Queremos programar con el paradigma de POO una clase que resuelva ecuaciones de segundo grado. Usa los atributos y métodos que creas oportuno. Usa un constructor para crear objetos de esta clase.\par 
+Crea una clase denominada \emph{TestEcuacionSegundoGrado} para comprobar su correcto funcionamiento. 
+\subsection{Ejercicio 8} 
+Igual que antes, queremos un programa que implementa la clase \emph{TrianguloRectangulo} usando los atributos que consideres oportuno y métodos para devolver el valor de la hipotenusa, el áera del mismo, así como el perímetro de dicho triangulo.\par 
+Comprueba el funcionamiento con una clase denominada \emph{TestTrianguloRectangulo}.\par 
+Utiliza la \emph{API javax.swing.JOptionPane} para solicitar los valores de los catetos de dicho triangulo y también para mostrar los datos de los métodos creados.
+
+\end{document}

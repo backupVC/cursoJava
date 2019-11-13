@@ -1,0 +1,89 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[utf-8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+%\usepackage{longtable}
+%\usepackage{array}
+%\usepackage{multirow}
+%\usepackage[latin1]{inputenc}
+%\inputencoding{latin1}
+%\usepackage{eurosym}
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\S}{Java}
+\author{Examen recuperación}
+%\author{Tipo C}
+\title{\textbf{\S}}
+\date{\today}
+
+\begin{document}
+\maketitle 
+%\tableofcontents
+%\newpage
+\section*{Descripción del ejercicio}
+El ejercicio consiste en la creación una aplicación para gestionar el registro de personas. Una persona queda identificada con los siguientes campos
+\begin{description}
+\item[dni] correspondeinte al dni con letra
+\item[nombre] nombre completo de una persona
+\item[telefono] número fijo del teléfono
+\item[direccion] dirección de dicha persona
+\end{description}
+Los datos se incorporar en tres ficheros con formato difrente \emph{personas.csv, personas.json y personas.xml}. Los datos son idénticos en los tres ficheros.
+
+\section*{Creacion de la aplicación}
+Tenemos que crear una clase que se encargue de leer los datos del fichero, que tenga un método estatico que devuelva una colección de objetos \emph{PersonaDTO}, esta colección puede ser \emph{array, arraylist, vector, \dots}. Puedes usar una libreria externa o parsear los datos de alguno de los ficheros directamente\\
+Tenemos que crear una conexión a la base de datos usando el patron de instancia única o \emph{singlenton} \\
+Debemos crear una clase en \emph{Java} que nos permita hacer operaciones sobre la base de datos, entre ellas de tipo \emph{CRUD}. Los métodos que debes especificar en la interfaz DAO son:
+\begin{itemize}
+\item Crear la tabla sobre la base de datos.
+\item Insertar los datos de una lista o array sobre la BD.
+\item Listar todos los datos de la BD.
+\item Listar una persona dada el DNI.
+\item Actualizar los datos de una persona, excepto el dni.
+\end{itemize}
+Crea una interfaz gráfica que usando bien un item de menú o un simple botón, cargue los datos del fichero, lo vuelque a la base de datos y lo muestre bien en un formulario o mejor en una JTable usando un modelo de tabla. Una vez cargados los datos, el componente que uses debe quedar inhabilitado. En el caso que uses un formulario, implementa dos botones de avance y retroceso\\
+Para actualizar los datos de un registro se debe hacer tanto en la base de datos como en la interfaz gráfica.\\
+Por último debe haber un JButton o un menu item que se encargue de realizar busquedas de personas por dni, puedes despleguer un dialogo con JOptionPane o usar un formulario con InputText y mostrar el resultado de la busqueda en una JLabel o en otro JOptionPane. Se deberá comprobar que el formato del dni introducido es correcto (8 dígitos y una letra, no hace falta comprobar que la letra es la correcta, solo lo dicho anteriormente) usando una excepción denominada \emph{dniException} y que cuando se lance se comunique en JOptionPane que no es correcto el formato.
+
+
+\section*{Aspectos a tener en cuenta}
+Se usaran los paradigma de \emph{POO} y el tratamiento de excepciones se hara de acuerdo a las especificaciones de \emph{java 1.7}. Todos los flujos que se abran deben cerrarse en la aplicacion, desde la apertura de la conexion a la base de datos, operaciones sobre ella, lectura y escrituras \emph{I/O}.\\
+No olvides cerrar la conexión a la base de datos correctamente.\\
+La introducción de parámetros en las acciones sobre la base de datos deben evitar inyecctión SQL.
+
+
+\section*{Criterios de evaluacion}
+Los criterios de evaluación son los indicados a continuación:\par 
+\vspace*{0.5cm}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{CRITERIO EVALUACION} & \textbf{PUNTUACION} \\
+
+\hline
+Lectura de los datos  & 1.5 ptos.\\
+\hline
+Clase \emph{DAO} & 2 ptos.\\
+\hline
+Clase \emph{DTO} & 0.5 ptos.\\
+\hline
+Uso JTable o formulario  & 1 ptos.\\
+\hline
+Uso de modelo tabla & 1 pto.\\
+\hline
+Actualizacion registro & 1 pto \\
+\hline
+Busqueda de registro & 1 pto\\
+\hline
+Uso de estructura MVC & 1 pto<\\
+\hline
+Excepcion dni & 1 pto\\
+\hline
+\end{tabular}
+\par 
+\section*{Subida de ficheros}
+Debes subir el \emph{workspace} del proyecto del examen.
+\end{document}

@@ -1,0 +1,92 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO B}\\Sigue las intrucciones que marca el ejercicio, no solo para la realización del mismo sino también para la entrega.\\\emph{No se permite ningun documento de ayuda, excepto los aportados por el profesor}\\Se permite la realización del ejercicio en Eclipse o Netbeans}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+\begin{questions}
+\question Queremos hacer un programa para registrar los datos de alumnos que cursan enseñanza de grado medio, para esto debemos implementar las siguientes clases:
+\begin{description}
+\item[clase Alumno] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre
+\item Apellidos
+\item Edad
+\item Un constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters y setters}
+\item Y el metodo \emph{toString()} que imprima el objeto en el siguiente formato: Nombre Apellidos, ejemplo \emph{Federico Garcíez Jiménez}
+\end{itemize}
+\item[clase Profesor] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre
+\item Primer apellido
+\item Edad
+\item Un constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters y setters}
+\item Y el metodo \emph{toString()} que imprima el objeto en el siguiente formato: Nombre Apellidos, ejemplo \emph{Federico Jiménez}
+\end{itemize}
+\item[clase Módulo] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre.
+\item Horas de duración. 
+\item Profesor que imparte dicho módulo. (Sólo un profesor).
+\item Un arrayList de alumnos (objetos)
+\item Un constructor que inicialice los atributos anteriores y el arrayList vacio.
+\item Los correspondientes \emph{getters y setters}
+\item Un metodo que añada alumnos al atributo arrayList de objetos Alumno.
+\item Un metodo que indique si un alumno esta matriculado o no en un modulo.
+\item Y el metodo \emph{toString()} que imprima el objeto en el siguiente formato: Nombre del módulo y profesor que imparte, y alumnos. Ejemplo \emph{MODULO: Programacion, PROFESOR: Manuel Molino, ALUMNOS: [Juan Garcia Espeluy, Pedro Medina Montano, Juan Manuel Sanchez, Yasmina Haro Jazzel, Elena Peinado Contreras]}
+\end{itemize}
+\item[Curso] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre.
+\item Array de modulos.
+\item Un constructor que inicialice los atributos de nombre y la array inicializado con un tamaño de tres.
+\item Un método que añada modulos al curso.
+\item Un método que nos devuelva el nombre del curso.
+\item Y un método \emph{toString()} que imprima el objeto de la siguiente forma: Modulo, profesor del modulo y numero de alumnos en dicho modulo. Ejemplo MODULO: Programacion, PROFESOR: Manuel Molino, número de alumnos: 10. MODULO: Base de Datos: Joaquin Mendez, numero de alumnos: 7. MODULO: Entornos de programacion, PROFESOR: Fernando Cagancho, numero de alumnos 12. 
+\end{itemize}
+\item[TestCurso] Qué tenga en cuenta lo siguiente:
+\begin{itemize}
+\item El método main para iniciar el programa.
+\item Crea seis alumnos.
+\item Crea tres profesores.
+\item Crea tres módulos.
+\item Crea un curso.
+\item De acuerdo al curso creado indica, de acuerdo a POO:
+\begin{itemize}
+\item Los datos del curso de acuerdo a su método toString().
+\item Los alumnos de acuerdo a su método toStrig() que estén matriculado en los tres módulos a la vez.
+\item El número de alumnos que estén matriculados en un solo módulo.
+\end{itemize}
+\end{itemize}
+\end{description}
+Consideraciones a tener en cuenta a la hora de hacer el ejercicio:
+\begin{itemize}
+\item Todas las clases deben pertenecer a un paquete denominado \emph{formacion}
+\item Crea las clases de forma secuencial, primero la clase Alumno, luego la clase Profesor, luego la clase Modulo, luego la clase Curso y finalmente la clase TestCurso.
+\item Cuando creas una clase, bien Alumno, Profesor, Modulo o Curso, incluye un método main para comprobar el correcto funcionamiento de la clase. Genera para esta clase un fichero \emph{jar ejecutable} (que posteriormente debes incluir en el examen) y mas tarde comenta dicho método main para que no interfiera en las posteriores clases. Guarda los ficheros jar que luego se te van a solicitar.
+\end{itemize}
+Criterios de evaluación:
+\begin{description}
+\item[2 ptos] Por los ficheros jar, son cinco correpondiente a las cinco clases. Cada uno de ellos correctamente funcionando son 0.4 ptos. Recuerda una vez que hagas, por ejemplo el de la clase Alumno o Profesor, comenta el método main para que no interfiera en el siguiente jar, el de la clase Modulo, y así sucesivamente.
+\item[1 pto.] Por un fichero build.xml para la clase TestCurso.
+\item[1 pto.] Si generas la documentación.
+\item[1 pto.] Por la clase Alumno y Profesor, desarrollada correctamente.
+\item[1 pto.] Por la clase Modulo, desarrollada correctamente.
+\item[2 ptos] Por la clase Curso, desarrollada correctamente.
+\item[2 ptos] Por la clase TestCurso, desarrollada correctamente.
+\end{description}
+Formato del fichero de subida: se subirá un archivo comprimido de la siguiente forma nombreApellidos.tar.gz o nombre.Apellidos.zip que incluya en la ráiz:
+\begin{itemize}
+\item build.xml
+\item La carpeta src con los correspondientes fichero fuentes incluidos en el directorio del paquete (formacion).
+\item La carpeta doc que incluye la correspondiente documentación de javadoc
+\end{itemize}
+\end{questions}
+\end{document}

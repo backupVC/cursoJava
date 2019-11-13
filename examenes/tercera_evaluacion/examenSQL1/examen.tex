@@ -1,0 +1,77 @@
+\documentclass[a4paper,spanish]{article}
+\usepackage[spanish]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\S}{Base de datos y Java}
+\author{Examen tercera evaluación}
+\title{\textbf{\S}}
+\date{\today}
+
+\begin{document}
+\maketitle 
+%\tableofcontents
+%\newpage
+\section*{Creacion de la BD}
+El ejercicio consiste en la creación de una base de datos llamada Mundo. La debes crear en \emph{sqlite} y sin integridad referencial, es decir sin claves foraneas. Las tablas a contemplar son las siguientes:
+\begin{description}
+\item[paises] cuya estructura esta presente en el fichero \emph{paises.sql} que tambien incluye los datos.
+\item[continentes] que contiene un \emph{id} de tipo \emph{INTEGER} que es la clave primaria mas un campo de tipo \emph{TEXT} que corresponde al nombre del continente. El valor de los datos debes rellenarlo como tu quieras con el nombre de los continentes.
+\item[contiene] que corresponde a la relacion de las entidades de ambas tablas, incluyendo únicamente las llaves primarias de las tablas anteriores. Rellena diez datos que contemplen paises en todos los continentes, debes incluir a \emph{Spain}
+\end{description}
+Crea un trigger que nos registre los paises borrados en una nueva tabla, solo tienes que registrar el nombre del país.\par 
+Una vez creada la tabla con los datos, crea una copia de seguridad denominada \emph{Mundo.back} que deberás entregar a la hora de acabar el examen. 
+
+\section*{Creacion de clases}
+Crea las clases siguientes usando \emph{jdbc}. En cada clase se conecta y se desconecta de la BD.
+\begin{itemize}
+\item Una clase por cada tabla con sus datos correspondientes exceptuando la relación.
+\item Una clase que facilite la consulta del numero total de paises.
+\item Una clase que imprima el nombre de todos los paises que empiezan por \emph{C}
+\item Una clase que solicite por la entrada estándar el nombre del \emph{id} del país y nos devuelva el nombre del país.
+\item Una clase que borre los paises \emph{Spain} y \emph{Portugal} y cree un nuevo país denominado \emph{Iberia} con \emph{id} denominado \emph{IB}. Ten encuenta que las ejecuciones de las sentencia abarcan una transacción. Además al no haber integridad referencial debes borrar los datos de la tabla \emph{contiene}
+\item Crea una clase denominada TestMundo que contenga el metodo \emph{main} que pruebe todos los metodos anteriormente expuestos.
+\end{itemize}
+
+\section*{Criterios de evaluacion}
+Los criterios de evaluación son los indicados a continuación:\par 
+\vspace*{0.5cm}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{CRITERIO EVALUACION} & \textbf{PUNTUACION} \\
+\hline
+Creacion de tablas e inserccion de datos & 2 ptos.\\
+\hline
+Trigguer & 1 pto. \\
+\hline
+TestMundo.java y resto de java no asociados a la BD & 1 pto.\\
+\hline
+Clase para conocer el numero de paises  & 1 pto.\\
+\hline 
+Clase para conocer los paises que empiezan por C & 1 pto.\\
+\hline
+Clase para conocer el nombre del pais dado el id del mismo & 2 ptos.\\
+\hline
+Clase conteniendo la transaccion & 2 ptos.\\
+\hline
+\end{tabular}
+\section*{Subida de ficheros}
+Debes subir el proyecto de eclipse conteniendo la BD original
+\section*{Ayuda}
+Para la conexion de la BD en \emph{java} mediante \emph{jdbc} ten encuenta las siguientes sentencias:
+\begin{quote}
+Class.forName(''org.sqlite.JDBC'');\\
+Connection c = DriverManager.getConnection(''jdbc:sqlite:BD'');\\
+\end{quote}
+También puedes consultar las siguientes direcciones web:
+\begin{quote}
+http://www.sqlite.org/\\
+http://docs.oracle.com/javase/tutorial/jdbc/basics/index.html
+\end{quote}
+\end{document}

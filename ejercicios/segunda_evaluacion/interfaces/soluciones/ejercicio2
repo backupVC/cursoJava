@@ -1,0 +1,15 @@
+public interface SomethingIsWrong
+{
+  void aMethod (int aValue)
+  {
+    System.out.println ("Hi Mom");
+  }
+}
+
+El método no puede estar implementado.
+
+public interface SomethingIsWrong
+{
+  void aMethod (int aValue);
+}
+

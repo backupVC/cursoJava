@@ -1,0 +1,84 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO A}\\Sigue las intrucciones que marca el ejercicio, no solo para la realización del mismo sino también para la entrega.\\\emph{No se permite ningun documento de ayuda, excepto los aportados por el profesor}\\La realización del ejercicio será en el \emph{IDE} Eclipse, utilizando un workspace vacío creando un proyecto llamado \emph{Examen} y un \emph{package} denominado \emph{\textit{segundaevaluacion}}}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+
+\begin{questions}
+
+
+\question Los usuarios de un sisteme GNU/Linux quedan registrados en un archivo denominado /etc/passwd, con el formato:
+\begin{quote}
+surendra:x:1000:1000:Surendra home:/home/surendra:/bin/bash
+\end{quote}
+Donde los campos son:
+\begin{description}
+\item[Username] que es el login del usuario
+\item[Password] donde una x indica que hay una clave cifrada almecenada en el fichero \emph{/etc/shadow} 
+\item[UID] es un número que identifica al usuario
+\item[GID] es un número que identifica el grupo al que pertence dicho usuario.
+\item[User ID Info]: que es un comentario acerca del usuario, que puede ser el nombre completo, su número de teléfono, \dots
+\item[Directorio personal] Qué es la ruta absoluta de su directorio personal.
+\item[shell] que es la shell que tiene el usuario por defecto.
+\end{description}
+Crea una clase denominada \emph{Usuario} que tenga los atributos anteriores (username, pasword, uid, \dots).
+\vspace{0.3cm}\\
+Crea -si lo ves necesario- los correspondeintes getters, setter, constructor o constructores y sobreescribir el  método \emph{toString}
+\vspace{0.3cm}\\
+Crea una excepción denominada \emph{UsuarioException} que se lanzará en algunos de los casos siguientes:
+\begin{itemize}
+\item El nombre del usuario no comience por una letra.
+\item Cuando el valor del campo de la password no sea x
+\item Cuando UID o GID no sean números.
+\item Cuando el directorio personal no sea una ruta absoluta, es decir que no empiece por \emph{/}
+\item Cuando la shell no empiece por \emph{/bin/}
+\end{itemize}
+Posteriormente crea una clase denominada \emph{FicheroUsuario} que tenga los siguientes atributos:
+\begin{itemize}
+\item Una colección de usuarios.
+\end{itemize}
+Incorpora en esta clase métodos para añadir y eliminar usuarios. Genera los getters y setters correspondientes, si son necesarios, constructor o constructores y sobreescribes si lo consideras útil el método \emph{toString} 
+\vspace{0.3cm}
+\\
+Crea una clase denomninada \emph{TestFicheroUsuario} que cree un objeto \emph{FicheroUsuario} y lea los datos de un fichero denominado \emph{password.txt} (inclúyelo en una carpeta denominada \emph{datos} en la raíz de tu workspace).
+\vspace{0.3cm}
+\\
+Una vez leido los datos debes mostrar por consola dicho objeto \emph{FicheroUsuario}.
+\vspace{0.3cm}
+\\
+Añade un método a la clase \emph{FicheroUsuario}, que dado el login de dicho usuario nos muestre toda la información de dicho usuario y otro método que nos de el número de usuarios que usan una shell determinada. Deja una prueba en el \emph{main} de la clase \emph{TestFicheroUsuario} el correcto funcionamiento de estos dos métodos.
+\vspace{0.3cm}\\
+%\newpage
+
+\textbf{Criterios de evaluación}
+\begin{description}
+\item[1 pto.] Estructura correcta de la clase \emph{Usuario}.
+\item[2 pto.] Funcionamiento correcto de la excepción esto incluye la validación de los usuarios en la clase \emph{Usuario}.
+\item[1.5 pto.] Estructura correcta del clase \emph{FicheroUsuario}.
+\item[2 pto.] Lectura del fichero con el Scanner. En el caso que no seas capaz de hacerlo, realiza la lógica en el método \emph{main} de la clase \emph{TestFicheroUsuario}, lee los datos desde la entrada estándar, en este caso se valorará este apartado con un punto como máximo.
+\item[2 pto.] por la correcta implementación de los métodos adicionales en la clase \emph{FicheroUsuario}
+\item[0.5 ptos.] Diagrama UML de las clases \emph{Usuario} y \emph{FicheroUsuario} 
+\item[0.5 ptos.] Creación del jar ejecutable de \emph{TestFicheroUsuario}.
+\item[0.5 ptos.] Creación de la documentación de la clase \emph{Usuario} 
+\end{description}
+\end{questions}
+%\newpage
+\textbf{Formato del fichero de subida:}\\
+Se subirá un archivo comprimido de la siguiente forma nombreApellidos.tar.gz o nombre.Apellidos.zip. En el debes incluir:
+\begin{itemize}
+\item El \emph{workspace} donde has realizado el examen que debe incluir ademas cuatro carpetas, una \emph{doc} para la documentación, otra \emph{jar} para el fichero ejecutable, otra \emph{datos} donde se localice el fichero \emph{txt} para la lectura de datos. y otra \emph{uml} para incorporar los diagramas UML en formato \emph{png}
+\end{itemize}
+\textbf{Consejos}
+\begin{itemize}
+\item Para la lectura de datos debes usar el constructor de la clase \emph{Scanner} que tenga como atributo un objeto de tipo \emph{File}, dicho objeto se crea con la clase \emph{File} y el constructor usa como parámetro un \emph{String} que corresponde a la ruta del fichero \emph{(File inFile = new File("path o ruta del fichero")}.
+\item El fichero \emph{txt} incorpora usuarios no válidos, por lo que debes gestionar correctamente la excepción.
+\end{itemize}
+
+\end{document}

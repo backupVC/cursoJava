@@ -1,0 +1,117 @@
+\documentclass{beamer} 
+\usetheme{default} 
+\setbeamercovered{transparent}
+
+%\useoutertheme{umbcfootline} 
+\setbeamertemplate{background canvas}[vertical shading][bottom=red!20,top=yellow!30] 
+
+
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{hyperref}
+\usepackage{color}
+
+\title{WRAPPER}
+
+\author{Manuel J. Molino Milla \and Luis Molina Garzón}
+
+\date{\today} %
+
+\institute{IES Virgen del Carmen \and Departamento de Informática}
+
+
+
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Logo}
+\begin{figure}
+\includegraphics[scale=1]{imagenes/logo.jpeg} 
+\caption{Logo Java}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Contenido}
+  \tableofcontents[pausesections]
+\end{frame}
+
+
+
+\section{Introduccion}
+
+\begin{frame}
+    \frametitle{Introduccion}
+
+\begin{itemize}[<+->]
+      \item A veces es muy conveniente poder tratar los datos primitivos (int, boolean, \dots.) como objetos
+      \item En el caso que usemos colecciones de objetos, estas colecciones solo pueden albergar objetos. Por lo tanto no puede almacenar tipos primitivos.
+	   \item Para esto java proporciona \emph{wrapper} (envoltorios) para solucionar este problema.      
+      \item Las clases envoltorio existentes son:
+      \begin{enumerate}
+\item \alert{Byte} para \alert{byte}
+\item \alert{Short} para \alert{short}
+\item \alert{Integer} para \alert{int}
+\item \alert{Long} para \alert{long}
+\item \alert{Boolean} para \alert{boolean}
+\item \alert{Float} para \alert{float}
+\item \alert{Double} para \alert{double}
+\item \alert{Character} para \alert{char}
+\end{enumerate}
+      \end{itemize}
+\end{frame}
+
+
+\section{Wrapper}
+\begin{frame}
+\frametitle{Métodos interesantes}
+\begin{description}[<+->]
+\item[static int parseInt(String s)] Convierte la cadena \emph{String s} en un número entero. Ejemplo de uso: \emph{int i = Integer.parseInt("1");}
+\item[static double parseDouble(String s)] Convierte la cadena \emph{String s} en un número double. Ejemplo de uso: \emph{double i = Double.parseInt("1");}
+\item[boolean isInfinite()] nos dice si el número es \emph{infinito}. Ejemplo: double d = (2.0/0); System.outlprintln(''2.0/0 es infinito? ''+d.isInfinite());
+\item[boolean isNaN()] nos dice si el número es \emph{NaN}. Ejemplo: double d = (0.0/0); System.outlprintln(''0.0/0 es NaN? ''+d.isNaN());
+\end{description}
+\end{frame}
+\section{Ejemplo}
+\begin{frame}[fragile]
+\frametitle{Ejemplo}
+\begin{verbatim}
+
+public class Test{ 
+
+   public static void main(String args[]){
+      int x =Integer.parseInt("9");
+      double c = Double.parseDouble("5");
+
+      System.out.println(x);
+      System.out.println(c);
+   }
+}
+\end{verbatim}
+\end{frame}
+
+\section{Documentación}
+\begin{frame}[fragile]
+Mejor consultar la documentacion de API de Oracle Byte, Short, Integer, \dots
+\vspace{1cm}
+\pause
+\begin{center}
+
+\begin{Huge}
+\textcolor{cyan}{FIN}
+\end{Huge}
+\end{center}
+\end{frame}
+
+
+\end{document}
+

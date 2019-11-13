@@ -1,0 +1,61 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO A}\\Sigue las intrucciones que marca cada ejercicio, no solo para la realización del mismo sino también para la entrega de los mismos.\\\emph{No se permite ningun documento de ayuda, excepto los aportados por el profesor}\\\emph{No se corregirá ningun ejercicio que tenga errores de compilación}}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+Realiza los siguientes programas en \emph{Java}
+\begin{questions}
+\question(8 ptos) Los tres lados \emph{a, b y c} de un triángulo deben satisfacer la desigualdad triangular: cada uno de los lados no puede ser más largo que la suma de los otros dos. Realiza una clase denominada \emph{Triangulo} que contenga los siguientes métodos:
+\begin{itemize}
+\item Un método estático que recibe como parámetros los tres lados del triángulo y nos diga si dicho triángulo es posible de acuerdo al principio de desigualdad triangular antes mencionado. Hay que hacer tres comprobaciones, una por cada lado.
+\item Otro método estático, que dado los tres lados nos devuelva el perímetro de dicho triángulo.
+\item Otro método, también estático, que nos diga si es un triángulo equilatero, esto será cierto cuando los tres lados sean iguales.
+\item Otro método que nos diga si es un triángulo rectángulo. Un triángulo rectángulo satisface el teorema de pitágoras ($a^2 = b^2 + c^2$). Para comprobar dicho teorema, previamente tienes que determinar cual es el lado mas grande comparando todos los lados y ese será la posible hipotenusa \emph{(a en la fórmula anterior)}.
+\item Y por último otro método estático que nos diga si es un triángulo isósoceles, es decir que tiene dos lados iguales y otro desigual.
+\end{itemize}
+Realiza una clase \emph{TestTriangulo} que lleve acabo las siguientes acciones:
+\begin{itemize}
+\item Mediante la clase \emph{Scanner} solicita los tres lados del triángulo. Dichos lados deben ser de tipo entero.
+\item En el caso que se introduzca un lado con valor negativo o cero, el programa terminará con un mensaje diciendo que dicho lado no se puede admitir.
+\item Se llamará al método de la clase \emph{Triangulo} que ratifica la desigualdad triangular, de manera que si el triángulo no es posible indicará que dicho triángulo no es válido y terminará el programa.
+\item En caso de que el triángulo es viable, el programa dirá si es o no equilatero, si es o no rectángulo y si es o no isósceles.
+\end{itemize}
+\newpage
+Puedes probar los siguientes valores:
+\begin{itemize}
+\item 1 5 9 No es posible el triángulo
+\item -1 2 3 No es válido algún lado
+\item 1 1 1 Triángulo equilatero, no rectángulo y no isósceles.
+\item 3 4 5 Triángulo no equilatero, rectángulo y no isósceles.
+\item 5 5 7 Triángulo no equilatero, no rectángulo y sí isósceles.
+\item 6 7 8 Triángulo no equilatero, no rectángulo y no isósceles.
+\end{itemize}
+Realiza la documentación de la clase \emph{Triangulo}, incluyendo las etiquetas autor y versión. Recuerda que no solo hay que documentar la cabecera de la clase, sino también todos los métodos.\par
+\vspace{0.5cm}
+Desglose de la puntuación
+\begin{parts}
+\part (4 ptos) Se valorará con 1 pto los métodos que comprueba la desigualdad triangular, si es isósceles y si es rectángulo. Los otros dos métodos se valoran con 0.5 ptos.
+\part (3 ptos) Si implementas correctamente la clase \emph{TestTriangulo}, se tendrá en cuenta el uso correcto de la clase \emph{Scanner}, la llamada a los métodos de la clase \emph{Triangulo}, el uso correcto de estructura de control para realizar las llamadas de los métodos inlcuidos la llamada al método que calcula el perímetro del triágulo y las salidas a consola de los correspondientes mensajes valorando el uso de \emph{printf}
+\part (1 pto) Por la documentación de la clase \emph{Triangulo}. 
+
+\end{parts}
+En el caso que no sepas modularizar en dos clases, usa una única clase -\emph{TestTriangulo}- que incluya el método \emph{main}. En este caso la puntuación máxima obtenida en el ejercicio será de 6 puntos. En este caso no merece la pena que realices documentación-
+\end{questions}
+
+\vspace{0,5cm}
+Debes entregar los siguientes documentos:
+\begin{itemize}
+\item Triangulo.java
+\item TestTriangulo.java
+\end{itemize}
+
+Entrégalos en un documento comprimido con el formato:\emph{ apellidosNombre.tar.gz} o \emph{apellidosNombre.zip}. Tanto a la plataforma \emph{moodle} como al profesor\par
+\vspace{0.5cm}
+La puntuación es de 8 puntos, pues la teoría se valora con 2 puntos.
+\end{document}

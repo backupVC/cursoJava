@@ -1,0 +1,75 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO B}\\Sigue las intrucciones que marca cada ejercicio, no solo para la realización del mismo sino también para la entrega de los mismos.\\\emph{No se permite ningun documento de ayuda, excepto los aportados por el profesor}\\\emph{No se corregirá ningun ejercicio que tenga errores de compilación}}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+Crea una carpeta denominada examen, creala tambien como repositorio local de \emph{git} y crea un archivo \emph{REAME.md} que contenga como etiquetas tu nombre y apellidos. Crea un archivo \emph{.gitignore} para que \textit{git} ignore los archivos binarios de java y el directorio de documentación denominado \textit{doc}\par 
+Crea un repositorio en tu \textit{GitHub} denominado \emph{examenPrimeraEvaluacion} y sincronízalo con el repositorio local
+
+\begin{questions}
+\question(5 ptos) Realiza el siguiente programa de cálculo numérico -denominado \emph{Numero.java}- en el cual el programa reciba mediante la clase \textit{Scanner} dos números enteros. Esto se hará en el método \emph{main}.
+\begin{itemize}
+\item Se debe comprobar que ambos números son mayores que cero y menores de 1000. En caso contrario el programa terminará indicando en pantalla que los numeros introducidos no son válidos.
+\item Mediante un método nos devolverá cuál de los dos números es mayor. En caso que sean iguales nos devolverá cualquiera de los números.
+\item Mediante un método mostraremos en pantalla los primeros diez primeros múltiplos de tres de uno de los números que se han leído en el \emph{Scanner}, da igual que número uses, solamente tienes que hacer la llamada en el método main con el número que tu quieras.
+\item Un método que nos diga si es capicúa alguno de los números leídos, una posibilidad es convertir el número en String y darle la vuelta, posteriormente convertirlo a entero con la clase Integer y comprobar que los número son iguales. Puedes usar cualquier otro algoritmo que se te ocurra.
+\end{itemize}
+Desglose de la puntuación:
+\begin{parts}
+\part (0.5 ptos) Si lees los número con el \emph{Scanner}. En el caso que no sabes hacerlo, introdúcelos directamente en el programa y esta parte queda sin valorar. 
+\part (1 pto) Por la comprobación y terminación del programa en el caso que los números solicitado no corresponda con las especificaciones.
+\part (0.5 ptos) Por el métodos que nos da el número mas grande. 
+\part (0.5 ptos) Por el métodos que nos da los múltiplos
+\part (1 pto) Por el método que nos dice si es capicúa o no
+\part (0.5 ptos) Si usas \emph{printf} para mostrar las salidas en consola.
+\part (1 pto) Realiza la documentación de la clase que incluya las etiquetas \emph{author} y \emph{version}, mas la documentación de cada uno de los métodos, todo ello en una carpeta denomina \emph{doc}. No olvides hacer la documentación de la clase después de la sentencia \emph{import} de la clase \emph{Scanner}
+
+\end{parts}
+\vspace{0.5 cm}
+\question (4 ptos) Realiza un programa -denominado \emph{Cadena.java}-que realiza lo siguiente: (apoyate en los metodos de la clase \emph{String}).
+\begin{itemize}
+\item Nos debe mostrar la cadena en mayúscula y minúscula, ejemplo (Cadena : MAYUSCULAminuscula).
+\item Recorriendo los caracteres de la cadena, nos diga cuantas vocales acentuadas tiene.
+\item Nos diga si acaba en consonante.
+\item Nos diga si la cadena empieza o acaba por vocal.
+\item Nos muestre la cadena, donde reemplacemos la vocal \emph{o} por el número {1} y la la vocal \emph{a} por el número {2}
+\end{itemize}
+Desglose de la puntuación:
+\begin{parts}
+\part (0.5 ptos) Si mostramos la concatenación de la cadena en mayúscula y minúscula.
+\part (1 pto) Por contar el número de vocales acentuadas.
+\part (0.5 ptos) Si nos dice que acaba en consonante.
+\part (0.5 ptos) Si nos dice que empieza o acaba en vocal
+\part (0.5 ptos) Si hacemos correctamente los reemplazos
+\part (1 pto) Si usas \emph{printf} para mostrar en pantalla los resultados, siempre debe aparecer la cadena original, ejemplo \emph{La cadena hormiga ¿acaba en consonante? false}
+\end{parts}
+\vspace{0.5 cm}
+
+\question (1 ptos) GitHub
+Crea los siguientes commmits:
+\begin{itemize}
+\item Un \emph{commit} denominado \emph{inicio del repositorio} que incluya el inicio del repositorio con los archivos \emph{README.md} y \emph{.gitignore}
+\item Un \emph{commit} denominado \emph{ejercicio 1}, que incluya al fichero del código fuente del primer ejercicio.
+\item Un \emph{commit} denominado \emph{documentación}, que la realizas cuando hayas realizado la documentación del primer ejercicio.
+\item Un \emph{commit} denominado \emph{ejercicio 2}, que incluya al fichero del código fuente del segundo ejercicio.
+\end{itemize}
+Sincroniza el directorio local con el remoto.
+
+\end{questions}
+\newpage
+\vspace{0,5cm}
+Debes entregar los siguientes documentos:
+\begin{itemize}
+\item Numero.java
+\item Cadena.java
+\item Fichero de texto cuyo contenido sea la \emph{URL} de tu repositorio del \emph{GitHub} del examen
+\end{itemize}
+
+Entrégalos en un documento comprimido con el formato:\emph{ apellidosNombre.tar.gz} o \emph{apellidosNombre.zip}. Tanto a la plataforma \emph{moodle} como al profesor.
+\end{document}

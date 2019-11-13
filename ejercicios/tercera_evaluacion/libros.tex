@@ -1,0 +1,88 @@
+\documentclass[a4paper,spanish]{article}
+\usepackage[spanish]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\S}{Sqlite }
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{\S}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+De acuerdo al ejercicio final propuesto en el tema anterior (\emph{sqlite}) que era el siguiente:
+
+El ejercicio final consistia en la realizacion de una BD para inventariar libros y permitir su posterior prestamo. Para esto hay que tener en cuenta los siguientes datos:
+\begin{itemize}
+\item Los libros pueden pertenecer a una unica categoria, que puede ser: Bases de datos, programacion, redes, ofimatica, hardware, seguridad, aplicaciones web,  sistemas operativos o miscelanea.
+\item De los libros debemos conocer el nombre, autor y editorial.
+\item De los usuarios su nombre y apellidos.
+\item Los libros pueden ser prestados, lo unico que tenemos que conocer es la persona que lo retira y la fecha de prestamo. 
+\item Prepara las siguientes consultas, si es necesario prepara vistas para las mismas.
+\begin{enumerate}
+\item El numero de libros prestados.
+\item El listado de libros prestados.
+\item El listado de libros por categorias.
+\item El listado de libros prestados por categorias.
+\item El listado de libros no prestados por categorias.
+\item El listado de libros no prestados.
+\item Los libros prestados a un usuario.
+\item Listado de usuarios.
+\end{enumerate}
+\item Prepara dos triggers para dar de baja a usuarios y libros.
+\end{itemize}
+
+La identificacion de las categorias se realiza de la siguiente manera:\par
+\vspace*{0.3cm}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+ID CATEGORIA & CATEGORIA\\
+\hline
+1	&	Base de datos\\
+\hline
+2	&	Programacion\\
+\hline
+3	&	Redes\\
+\hline
+4	&	Ofimatica\\
+\hline
+5	&	Hardware\\
+\hline
+6	&	Seguridad\\
+\hline
+7	&	Aplicaciones Web\\
+\hline
+8	&	Sistemas Operativos\\
+\hline 
+9	&	Miscelanea\\
+\hline
+\end{tabular}
+\vspace*{0.5cm}
+\end{center}
+Realiza un programa en Java que resuelva las siguientes especificaciones:
+\begin{itemize}
+\item Debes crear una clase que cargue los datos de las tablas libros del fichero \emph{libros.sql}
+\item Crear una clase que cargue en la BD las categorias con su correspondiente \emph{id}
+\item Crear una clase que cargue 10 usuarios que tu te inventes.
+\item Puedes obviar las clases anteriores e introducir los datos directamente en la BD.
+\item Crear una clase que resuelva la consulta de todos los datos de los libros que nos de el titulo, nombre y autor.
+\item Crear una consulta que nos de los datos de los usuarios (nombres y apellidos).
+\item Crear una clase que resuelva la consulta de los libros que pertenezcan a una categoria dada.
+\item Crear una clase que gestione el prestamo de libros.
+\item Otra clase que gestione la devolucion de libros.
+\item Crea una clase que nos de los libros prestados actualmente.
+\item Otra clase que nos de un historial de libros prestados.
+\item Por ultimo otra clase que facilite la  baja a libros y su posterior consulta.
+
+\end{itemize}
+
+
+\end{document}

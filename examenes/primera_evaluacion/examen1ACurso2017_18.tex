@@ -1,0 +1,71 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO A}\\Sigue las intrucciones que marca cada ejercicio, no solo para la realización del mismo sino también para la entrega de los mismos.\\\emph{No se permite ningun documento de ayuda, excepto los aportados por el profesor}\\\emph{No se corregirá ningun ejercicio que tenga errores de compilación}}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+Crea una carpeta denominada \emph{examen}, creala tambien como repositorio de \emph{git} y crea un archivo \emph{REAME.md} que contenga como etiquetas tu nombre y apellidos. Crea un archivo \emph{.gitignore} para que \textit{git} ignore los archivos binarios de java y el directorio de documentación denominado \textit{doc}\par 
+Crea un repositorio en tu \textit{GitHub} denominado \emph{examenPrimeraEvaluacion} y sincronízalo con el repositorio local
+
+\begin{questions}
+\question(4.5 ptos) Realiza el siguiente programa de cálculo numérico -denominado \emph{Numero.java}- en el cual el programa reciba por argumentos un número entero. Dicho argumento debera pasarse a tipo \textit{int} usando la clase \textit{Integer}.
+\begin{itemize}
+\item Se debe comprobar que dicho número es mayor que cuatro y menor de 1000. En caso contrario el programa terminará indicando en pantalla que el número introducido no es válido.
+\item Se comprobará si dicho número es par o impar, mostrando en consola dicha afirmación.
+\item Se comprobará si es múltiplo de tres y cinco a la vez, e igual que antes mostraremos dicha afirmación.
+\item Nos diga cuantos dígitos tiene, para esto puede usar métodos de la clase \emph{String} o bien usar cualquier algoritmo que se te ocurra. Tienes que mostrar dicho resultado en pantalla
+\end{itemize}
+Desglose de la puntuación
+\begin{parts}
+\part (1 pto) Si lees el número como argumento y lo conviertes a \emph{int}. En el caso que no sabes hacerlo, introducelo directamente en el programa y esta parte queda sin valorar. 
+\part (1 pto) Por la comprobación y terminación del programa en el caso que el número solicitado no corresponda con las especificaciones.
+\part (0.5 ptos) Por el métodos que nos dice si es par o impar. 
+\part (0.5 ptos) Por el métodos que nos dice si es múltiplo de acuerdo a lo indicado anteriormente.
+\part (1 pto) Por el método que nos diga el número de cifras del número.
+\part (0.5 ptos) Si usas \emph{printf} para mostrar las salidas en consola.
+
+\end{parts}
+\newpage
+\question (4.5 ptos) Realiza un programa -denominado \emph{Cadena.java}- que lea mediante la clase \emph{Scanner} una cadena en el método \emph{main} e implementa los siguientes métodos (los cuáles se llamarán en este método main):
+\begin{itemize}
+\item Un método que nos diga si dicha cadena empieza o acaba por vocal.
+\item Un método que nos cuente el número de vocales no acentuadas que contenga dicha cadena.
+\item Nos diga si contiene alguna consonante siguiente (m,n,p)
+\item Un método que nos diga si la cadena empieza o no por vocal.
+\end{itemize}
+Desglose de la puntuación
+\begin{parts}
+\part (0.5 ptos) Si la lectura del scanner es correcta. Si no eres capaz de usar la clase \emph{Scanner}, introduce directamente el valor de la cadena en una variable de tipo \emph{String}, en este caso no habrá puntuación alguna.
+\part (1 pto) Por el método que nos cuenta el número de vocales no acentuadas.
+\part (0.5 ptos) Por cada uno de los otros métodos.
+\part (0.5 ptos) Si usas \emph{printf} para mostrar las salidas en consola.
+\part (1 pto) Realiza la documentación de la clase que incluya las etiquetas \emph{author} y \emph{version}, mas la documentación de cada uno de los métodos, todo ello en una carpeta denomina \emph{doc}. No olvides hacer la documentación de la clase después de la sentencia \emph{import} de la clase \emph{Scanner}
+\end{parts}
+\vspace{0.5 cm}
+\question (1 ptos) GitHub
+Crea los siguientes commmits:
+\begin{itemize}
+\item Un \emph{commit} denominado \emph{inicio del repositorio} que incluya el inicio del repositorio con los archivos \emph{README.md} y \emph{.gitignore}
+\item Un \emph{commit} denominado \emph{ejercicio 1}, que incluya al fichero del código fuente del primer ejercicio.
+\item Un \emph{commit} denominado \emph{ejercicio 2}, que incluya al fichero del código fuente del segundo ejercicio.
+\item Un \emph{commit} denominado \emph{documentación}, que la realizas cuando hayas realizado la documentación del segundo ejercicio.
+\end{itemize}
+Sincroniza el directorio local con el remoto.
+
+\end{questions}
+\newpage
+\vspace{0,5cm}
+Debes entregar los siguientes documentos:
+\begin{itemize}
+\item Numero.java
+\item Cadena.java
+\item Fichero de texto cuyo contenido sea la \emph{URL} de tu repositorio del \emph{GitHub} del examen
+\end{itemize}
+
+Entrégalos en un documento comprimido con el formato:\emph{ apellidosNombre.tar.gz} o \emph{apellidosNombre.zip}. Tanto a la plataforma \emph{moodle} como al profesor.
+\end{document}

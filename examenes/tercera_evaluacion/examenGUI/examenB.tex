@@ -1,0 +1,86 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[utf-8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+%\usepackage{longtable}
+%\usepackage{array}
+%\usepackage{multirow}
+%\usepackage[latin1]{inputenc}
+%\inputencoding{latin1}
+%\usepackage{eurosym}
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\S}{Base de datos y Java}
+\author{Examen tercera evaluación}
+\author{Tipo B}
+\title{\textbf{\S}}
+\date{\today}
+
+\begin{document}
+\maketitle 
+%\tableofcontents
+%\newpage
+\section*{Creacion de la BD}
+El ejercicio consiste en una aplicación de gestión de cuentas bancarias. Las cuentas bancarias se identifican por el número de cuenta, el titular y el saldo.\par 
+Los datos se encuentran en un fichero \emph{sql} directo para insertar los mismos, denominado \emph{cuentas.sql}
+\begin{itemize}
+\item Crea un proyecto en \emph{eclipse} denominado \emph{ProyectoExamenFinal}
+\item Crea un carpeta denominada \emph{BD} que contenga una base de datos denominada \emph{cuentas.bd} y con una tabla denominada \emph{cuenta} con los atributos \emph{titular, saldo, numeroCuenta}, realizada en \emph{sqlite}, rellenando los datos con el fichero anterior.
+\item Crea una carpeta denominada \emph{LOGs} que contendrá un fichero de texto denominado \emph{logs.txt}
+\item Crea un interfaz gráfica que contega la siguiente funcionalidad:
+
+\begin{itemize}
+\item Una barra de menú, que tenga un menú denominado \emph{about}, con un item de menú denominado \emph{informacion}, que al activarlo despliegue un \emph{joptionPane} que muestre la fecha y hora actual.
+\item Un \emph{textArea} que mostrará datos. Que cuando arranque debe aparecer la información del número de cuentas (en dígito) y el saldo medio de todas las cuentas. El mensaje a mostrar que no sea solo dos dígitos, que contenga información de lo que se está mostrando (por ejemplo: Nº cuentas disponibles: 34, saldo medio: 4567 euros). Dichos valores deben proceder de una consulta de la base de datos.
+\item Un botón denominado \emph{saldos pequeños} que debe mostrar el número de cuentas con un saldo inferior a 100 euros. Los datos deben venir de una cosulta y mostrarse en el \emph{textArea}
+\item Un botón denominado \emph{borrar cuentas} que elimina aquellas filas de la tabla de la base de datos donde el \emph{saldo} sea cero. Cuando se realice la operación se debe indicar el número de cuentas borradas en el \emph{textarea}
+\item Un botón denominado salir que cuando lo pulsemos cierre la aplicación pero previamente guarde en el fichero \emph{logs.txt} la información que se muestra en el \emph{textarea} al iniciar la aplicación, mas la fecha actual. Ese fichero no debe sobreescribirse cada vez que se sale de la aplicación, se debe añadir dicha información.
+\item Utiliza un JOptionPane para separar la \emph{textarea} de los botones.
+\end{itemize}
+
+\item Utiliza el patrón \emph{singleton} para establecer la conexión.
+\item Utiliza el patron DAO y DTO para el modelo.
+\item Crea \emph{packages} para separar los componentes de la aplicación.
+\end{itemize}
+
+\section*{Cuestiones a tener en cuenta.}
+\begin{itemize}
+\item No hace falta cargar todos los datos de la base de datos en una lista. Debes hacer las consultas y el borrado directamente a la base de datos.
+\item Recomiendo el uso del patrón \emph{MVC}, en caso que no lo uses, comenta cada evento para facilitar su localización en el código.
+\item En el patrón DAO, crea una interfaz donde definas los métodos que deben implementar la clase derivada. 
+\item Empieza creando la base de datos, comprobando el correcto funcionamiento de la misma.
+\item Cuando implementes la clase \emph{DAO}, comprueba el correcto funcionamiento de las sentencias SQL.
+\item Usa un \emph{PrintWriter} para crear el fichero de salida de \emph{logs}.
+\end{itemize}
+\section*{Para los que trabajen en Windows}
+No usar variables ni comentarios con caracteres que no sean \emph{ASCII}, es decir que sobre todo no utilices acentos ni eñes.
+
+\section*{Criterios de evaluacion}
+Los criterios de evaluación son los indicados a continuación:\par 
+\vspace*{0.5cm}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{CRITERIO EVALUACION} & \textbf{PUNTUACION} \\
+\hline
+Creación de la base de datos & 1 pto.\\
+\hline
+Creación del modelo & 1.5 ptos.\\
+\hline
+Creación de la interfaz gráfica & 1.5 ptos.\\
+\hline
+Evento del botón \emph{saldos pequeños}& 1.5 ptos.\\
+\hline
+Evento del botón \emph{borrar cuentas}& 1.5 ptos.\\
+\hline
+Evento del botón salir & 2 ptos.\\
+\hline
+Uso del patrón MVC  & 1 ptos\\
+\hline
+\end{tabular}
+\section*{Subida de ficheros}
+Subir el \emph{workspace} comprimido a la plataforma y entregar una copia al profesor.
+\end{document}

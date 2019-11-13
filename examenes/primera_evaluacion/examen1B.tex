@@ -1,0 +1,86 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO B}\\Sigue las intrucciones que marca cada ejercicio, no solo para la realización del mismo sino también para la entrega de los mismos.\\\emph{No se permite ningun documento de ayuda, excepto los aportados por el profesor}}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+\begin{questions}
+\question(4 ptos)  Una ecuacion de segundo grado se puede representar de forma genérica, de la siguiente forma:
+\begin{large}
+\begin{center}
+$a \cdot x^2 + b \cdot x + c  = 0$
+\end{center}
+\end{large}
+La ecuación tiene soluciones reales si:
+\begin{center}
+$b² - 4 \cdot a \cdot c  >= 0$
+\end{center}
+Las dos soluciones de dicha ecuación son las siguientes:
+\begin{large}
+\begin{center}
+$x_1 = \frac{-b + \sqrt{b² - 4 \cdot a \cdot c}}{2 \cdot a}$ \\
+\vspace*{0.2cm}
+$x_2 = \frac{-b - \sqrt{b² - 4 \cdot a \cdot c}}{2 \cdot a}$ \\
+\end{center}
+\end{large}
+Se quiere realizar una clase que represente a dicha ecuación de segundo grado, para esto ten en cuenta lo siguiente:
+\begin{itemize}
+\item Usa como atributos los que consideres oportunos, de acuerdo a la representación genérica de un sistema de dos ecuaciones con dos incógnitas, y los tipos que sean \emph{double}
+\item Un constructor para los objetos de tipo Ecuación.
+\item Un método boolean que devuelva cierto o falso si el la ecuación tienes o no soluciones reales.
+\item Dos métodos que devuelvan el valor de $x_1$ e $x_2$. Los tipos a devolver deben ser acordes con los datos de inicialización.
+\end{itemize}
+\begin{parts}
+\part
+(2 ptos) Crea una clase TestEcuación, con el método \emph{main} que cree los dos siguientes objetos:
+\begin{large}
+\begin{center}
+$x^2 - 5 \cdot x + 6  = 0$
+\end{center}
+\end{large}
+\begin{large}
+\begin{center}
+$-2 \cdot x^2 +7 \cdot x - 10  = 0$
+\end{center}
+\end{large}
+Debe indicar por pantalla, si el la ecuación tiene o no soluciones reales. Y en el caso que tenga debe mostrar las dos soluciones.\\
+Para utilizar la función raiz cuadrada, debes emplear la siguiente función \emph{Math.sqrt(argumento)} donde \emph{argumento} es el valor al que le quieres hacer la raíz cuadrada. De esta manera no hace falta importar la biblioteca \emph{Math}
+\part
+(2 ptos) Modifica el archivo \emph{build.xml} que se suministra para que tenga los siguientes objetivos:
+\begin{description}
+\item[compila] Que solo compile el proyecto donde las fuentes se encuentren en un directorio llamado \emph{src} y las clases se disponga en un directorio denominado \emph{bin}
+\item[ejecuta] Que compile y ejecute el proyecto, tienendo en cueta la dependencia anterior, puedes ejecutarlo como empaquetado.
+\item[documenta] Que cree en un directorio denominado \emph{doc} donde se incluya la documentación de javadoc
+\end{description}
+\end{parts}
+\question(3 ptos) Segundo ejercicio.
+\begin{parts}
+
+\part Con las plantillas que se te suministra, añade el código necesario para que puedas realizar un programa que dada un numero nos diga:
+
+\begin{itemize}
+\item Si tiene dos o tres cifras nos debe decir si es capicua o no.
+\item Si tiene tres o mas cifras nos debe decir si es par o impar.
+\item Si tiene una sola cifra si es divisible o no por tres.
+\end{itemize}
+\part
+Repite el ejercicio, tanto la clase como el test para que se adjuste al paradigma de POO
+\end{parts}
+\end{questions}
+\vspace{0,5cm}
+\hrule
+\vspace{0,5cm}
+Entrega del ejercicio, el ejercicio se entregará en un documento comprimido con el formato: apellidosNombre.tar.gz o apellidosNombre.zip con la siguiente estrucutura:
+\begin{itemize}
+\item Se crearán dos directorios, uno denominado \emph{ejercicio1} y otro \emph{ejercicio2}.
+\item En el ejercicio1 si no se realiza la parte del \emph{ant} se entregaran tantos los documentos \emph{.class} y \emph{.java}
+\item Si en el ejercicio1 se ha realizado la parte del \emph{ant} se creara el subdirectorio \emph{src} donde se entregara las fuentes del ejercicio, no se entregara \emph{NADA} mas, excepto el fichero \emph{build.xml} modificado en la raíz del subdirectorio \emph{ejercicio1}
+\item En el ejercicio2 se crearan dos subdirectorios denominados \emph{sinobjetos} y otro \emph{objeto} donde se pondran tanto las fuentes como los ejecutables en cada uno de ellos.
+\end{itemize}
+
+\end{document}

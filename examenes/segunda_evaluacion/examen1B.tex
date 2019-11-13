@@ -1,0 +1,78 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO B}\\El ejercicio se realizará en eclipse. Usa un workspace distinto al que usas de forma habitual. Crea un proyecto de java nuevo denominado Examen.}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+\begin{questions}
+\question Queremos hacer un programa para registrar los datos de alumnos que cursan enseñanza de grado medio, para esto debemos implementar las siguientes clases:
+\begin{description}
+\item[clase Alumno] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre
+\item Apellidos
+\item Edad
+\item Un constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters}
+\item Sobreescribe el método \emph{toString()} para que retorno un \emph{String} con el siguiente formato:\\
+APELLIDOS: apellidos\_alumno ::: NOMBRE: nombre\_alumno ::: EDAD: edad\_alumno
+\end{itemize}
+\item[clase Profesor] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre
+\item Primer apellido.
+\item Si es profesor es definitivo o sustituto.
+\item Un constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters}
+\item Sobreescribe el método \emph{toString()} para que retorno un \emph{String} con el siguiente formato:\\
+APELLIDO: apellido\_profesor ::: NOMBRE: nombre\_profesor ::: DEFINITIVO (true o false)
+\end{itemize}
+\item[clase Módulo] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre.
+\item Horas de duración. 
+\item Un array para dos profesores que imparten el módulo.
+\item Una colección de alumnos (objetos)
+\item Un constructor que inicialice con el nombre y horas de duración como parámetros.
+\item Los correspondientes \emph{getters}
+\item Un método que devuelva una colección de alumnos menores de edad.
+\item \emph{setters},  uno para establecer a los alumnos matriculados y otro para establecer los profesores. Para el caso de profesores, dicho método debe añadir a dos profesores, por lo que los argumentos serán dos objetos de tipo \emph{Profesor}.
+\item Sobreescribe el método \emph{toString()} para que retorno un \emph{String} con el siguiente formato:\\
+\emph{ALUMNOS:\\
+lista de alumnos \\
+PROFESORES:\\
+lista de profesores\\
+NOMBRE DEL MÓDULO\\
+nombre\_mdulo\\
+HORAS
+horas\_mdulo}
+\end{itemize}
+\item[Curso] Clase usada para comprobar el funcionamiento de las tres clases anteriores. 
+Debes completar el código que se te suministra.
+\end{description}
+
+Consideraciones a tener en cuenta a la hora de hacer el ejercicio:
+\begin{itemize}
+\item Debes implementar las clases anteriores.
+\item Completa la clase \emph{Curso.java} de acuerdo a las instrucciones que incorpora dicho fichero.
+\item Deberas entregar el proyecto de la siguiente manera:
+\begin{enumerate}
+\item El directorio \textbf{src} del proyecto.
+\item El proyecto completo de eclipse. 
+\end{enumerate}
+\end{itemize}
+Criterios de evaluación:
+\begin{description}
+\item[1.5 pto.] Por el archivo Alumno.java funcionando correctamente.
+\item[1.5 pto.] Por el archivo Profesor.java funcionando correctamente.
+\item[3.5 pto.] Por el archivo Modulo.java funcionando correctamente.
+\item[3.5 ptos.] Por Curso.java funcionando correctamente.
+\end{description}
+\textbf{Formato del fichero de subida:} se subirá un archivo comprimido de la siguiente forma \emph{nombreApellidos.tar.gz} o \emph{nombre.Apellidos.zip}. incluyendo tanto el proyecto de eclipse como la carpeta \emph{src}.
+\end{questions}
+\end{document}

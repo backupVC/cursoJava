@@ -1,0 +1,69 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[utf-8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+%\usepackage{longtable}
+%\usepackage{array}
+%\usepackage{multirow}
+%\usepackage[latin1]{inputenc}
+%\inputencoding{latin1}
+
+\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\IO}
+\date{\today}
+
+\begin{document}
+\maketitle
+%\tableofcontents
+%\setlongtable 
+
+
+\section*{Ejercicio 1}
+Tomando como base el fichero \emph{personal.csv} implementa en \emph{Java} las siguientes clases:
+\begin{enumerate}
+\item Clase \emph{Persona}
+\item Clase \emph{Personal}
+\item Clase \emph{Auxiliar}
+\item Clase \textit{TestPersonal}
+\end{enumerate}
+La clase \emph{Persona} es una clase básica que tienes atributos correspondiente a la cabecera del fichero \emph{csv}. Debes implementar constructores, \emph{getters y setters} y sobreescribir los métodos \emph{toString()} y \emph{hasCode()} e \emph{equals()}. El método toString() como si fuera los registros del fichero \emph{csv}, es decir cada atributo separado por comas.
+La clase \emph{Personal} se obtiene como una agregación de objetos de la clase anterior. E implementas en ella los siguientes métodos:
+\begin{itemize}
+\item Un constructor para inicializar la colección de objetos \emph{Persona}
+\item Un método que nos sirva para añadir objetos \emph{Persona}
+\item Un método que elimine objetos \emph{Persona}, dado como argumento un objeto \emph{Persona}, esto obliga a decir que dos objetos Persona son iguales cuando tenga igual los campos \emph{firsName} y \emph{lastName}
+\item Un método que devuelva una lista de objetos \emph{Persona} dado como argumento el país al que pertenence.
+\item Otro método que devuelva otra lista de objetos \emph{Persona} dado como argumento el género.
+\item Otro método que borre un objeto \emph{Persona} dado como arguemento el \emph{email} de la misma.
+\item Otro método que nos devuelva el número de objetos \emph{Persona} que tenga una edad superior a una edad dada, dicha edad que se pasa como argumento es un número.
+\item Otro método que actualice el correo electrónico, dado un objeto \emph{Persona}
+\end{itemize}
+La clase \emph{Auxiliar} tendrá los siguientes dos métodos estáticos:
+\begin{enumerate}
+\item Un método estático que tenga como único argumento una fecha dada y devuelva los años transcurridos desde esa fecha hasta hoy. Este método se usará en la clase \emph{Personal} en el método que devuelve el número de objetos \emph{Persona} que tenga una edad superior a una edad dada.
+\item Un método que se pase como argumento el \emph{path} del archivo que contiene los datos \emph{csv}, debe leer dicho fichero y devolver una lista de objetos \emph{Persona} de dicho archivo.
+\item Otro método que pase como argumento una lista de objetos \emph{Persona} y escriba en un fichero \emph{csv} nuevo, con los datos de esa lista y con nombre de fichero \emph{personal\_fecha\_hora.csv}, donde fecha y hora hace referencia a la fecha y hora de creación de ese fichero.
+\end{enumerate}
+La clase \emph{TestPersonal} debe nada mas que arrancar la ejecución solicitar mediante \emph{Scaneer} el nombre del fichero \emph{csv} a leer, y crear una instancia de la clase \emph{Personal} con la lista de objetos \emph{Persona} obtenida mediante el segundo método de la clase \emph{Auxiliar} antes mencionado.\\
+Posteriormente, usando un bucle \emph{do while} mostrar un menú con las siguientes opciones:
+\begin{description}
+\item[0] Salir de la aplicación.
+\item[1] Borrar un objeto \emph{Persona} de la instancia de \emph{Personal} dado los campos \emph{firsName} y \emph{lastName}
+\item[2] Solicitar un país y nos muestre los objetos \emph{Persona} de dicho pais de la la instancia de \emph{Personal}
+\item[3] Igual que antes pero solicitando el género.
+\item[4] Borrar un objeto \emph{Persona} de la instancia de \emph{Personal} dado el campo \emph{email}
+\item[5] Nos solicita una edad, para mostrar el número de objetos \emph{Persona} de la instancia \emph{Personal} con mas edad que la solicitada
+\item[6] Añadir un nuevo objeto \emph{Persona} a la instancia de \emph{Personal}
+\item[7] Actualizar el email de un objeto \emph{Persona}, solicitando \emph{first name}, \emph{last name} y un nuevo \emph{email}
+\end{description}
+Se recomienda que después de entrar en el bucle \emph{do while} uses un método por ejemplo \emph{menu()} que despliegue el menú, posteriormente leas del \emph{Scanner} la opción pertinente, posteriormente entres en una estructura \emph{switch} y desplegar ese  menú hasta que la opción sea distinta de cero.\\
+Antes de terminar la aplicación debemos grabar los datos de la lista de objetos \emph{Persona} de la instancia \emph{Personal} en un fichero \emph{csv} de acuerdo al último método descrito de la clase \emph{Auxiliar}.\par
+\vspace{0.5cm}
+Se debe usar la clase \emph{Files} para la lectura del fichero usando el método \emph{readAllLines} y para la escritura usar los nuevos \emph{Buffered} de salida que ofrece las nuevas \emph{API} de \emph{Java}, e igualmente usar para la rutas de los ficheros objetos de tipo \emph{Path}
+\end{document}

@@ -1,0 +1,198 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+%\usepackage{longtable}
+%\usepackage{array}
+%\usepackage{multirow}
+\usepackage{amsmath}
+%\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Tipo de datos}
+\\Introducción a Java}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+% \setlongtables
+\newpage
+\section{Ejercicos generales}
+\subsection{Ejercicio 0}
+¿Qué tipo de datos usarías para almacenar los siguientes datos?
+\begin{itemize}
+\item La velocidad de la luz.
+\item La nota del curso 3.5
+\item La nota media del curso.
+\item El número de equipos  en el aula.
+\item $2^{65}$
+\item 234 \$
+
+\end{itemize}
+\subsection{Ejercicio 1}
+Traslada el siguiente algoritmo a código Java:
+\begin{itemize}
+\item Declara una variable de tipo \emph{float} denominada millasRecorridadas.
+\item Posteriormente inicialízala a \emph{100}
+\item Declara una constante de tipo \emph{float} denominada MILLAS\_POR\_KILOMETRO con el valor 1.609
+\item Declara una variable de tipo \emph{double} denominada kilometrosRealizados y asigna el valor de multiplicar los dos valores anteriores.
+\item Muestra por pantalla los valores anteriores.
+\end{itemize}
+Repite el ejercicio, pero ahora cambia el tipo de la variable \emph{millasRecorridadas} y la constante MILLAS\_POR\_KILOMETRO a tipo \emph{double}, y la la variable \emph{kilometrosRealizados} a tipo \emph{float}
+\subsection{Ejercicio 2}
+Asume que \emph{int a = 1} y \emph{double d = 1.0} y que cada expresion es independiente de las anteriores. ¿Cual es el resultado de las siguientes expresiones?\\
+Realiza el cálculo sin llevar un programa en java. Posteriormente realiza los cálculos en \emph{jshell}
+\begin{itemize}
+\item a = 46 / 9;
+\item a = 46 \% 9 + 4 * 4 - 2;
+\item a = 45 + 43 \% 5 * (23 * 3 \% 2);
+\item a \%= 3 / a + 3;
+\item d= 4 + d * d + 4;
+\item d += 1.5 * 3 + (++a);
+\item d -= 1.5 * 3 + a++;
+\end{itemize}
+\subsection{Ejercicio 3}
+¿Cuales es el resultado de las siguientes operaciones?
+\begin{itemize}
+\item 56 \% 6
+\item 78 \% -4
+\item -34 \% 5
+\item -34 \% -5
+\item 5 \% 1
+\item 1 \% 5
+\end{itemize}
+Compruebalo posteriormente en \emph{jshell}
+\subsection{Ejercicio 4}
+¿Qué operación utilizarías para la siguiente proposición:
+\begin{verse}
+Si hoy es lunes, qué día de la semana será dentro de 100 días.
+\end{verse}
+
+\subsection{Ejercicio 5}
+Identifica y corrige los errores en el siguiente codigo:
+\begin{verbatim}
+public class Test {
+   public void main(string[] args) {
+   int i;
+   int k = 100.0;
+   int j = i + 1;
+
+   System.out.println("j es " + j + " y k es " + k);
+   }
+}
+\end{verbatim}
+
+
+
+\subsection{Ejercicio 6}
+Muestra la salida del siguiente codigo:
+\begin{verbatim}
+float f = 12.5F;
+int i = (int)f;
+System.out.println("f es " + f);
+System.out.println("i es " + i);
+\end{verbatim}
+Compruebalo posteriormente en \emph{jshell}
+
+
+\subsection{Ejercicio 7}
+Muestra la salida del siguiente codigo:
+\begin{verbatim}
+System.out.println("1"+1);
+System.out.println('1'+1);
+System.out.println("1"+1+1);
+System.out.println("1"+(1+1));
+System.out.println('1'+1+1);
+\end{verbatim}
+Compruebalo posteriormente en \emph{jshell}
+
+\subsection{Ejercicio 8}
+¿Cuales de los siguientes identificadores es una constante, un metodo, una variable o una clase?
+\begin{quote}
+MAX\_VOR, Test, valor, leerEntero
+\end{quote}
+
+
+\section{Ejercicio de codigo}
+\subsection{Ejercicio 1}
+Escribe un programa que compute la siguiente expresion matematica:\\
+\begin{center}
+{\huge $\frac{9.5 * 4.5 - 2.5 * 3}{ 45.5 - 3.5}$}
+\end{center}
+\newpage
+\subsection{Ejercicio2}  
+Dado el siguiente código:
+\begin{verbatim}
+ /**
+ * Esta clase define objetos que contienen 
+ * un atributo denominado número
+ * y posee un método para devolver
+ * el valor doble
+ * @author: Manuel Molino
+ * @version: 1.0
+ */
+public class Numero{
+   private int numero; //propiedad de los objetos.
+   /**
+   * Constructor: es un método que tiene
+   * el mismo nombre que la clase y se
+   * usa para crear objetos
+   * @param n parámetro para inicializar el objeto
+   * se usa para inicializar los objetos
+   * de tipo número
+   */
+   public Numero(int n){
+        this.numero=n;
+   }
+    /**
+    * método que devuelve el valor doble
+    * @return el valor doble del atributo
+    * numero de dicho objeto.
+    */
+   public int cacularDoble(){
+     return this.numero*2;
+   }
+}
+//clase para comprobar el funcionamiento de la 
+//clase anterior
+class TestNumeros {
+   public static void main(String[] arg){
+       //Creo uno objeto de tipo Número
+       Numero n1 = new Numero(4);
+       //Imprimo su valor doble
+       System.out.println("Valor doble: "+n1.calcularDoble());
+   }
+}
+\end{verbatim}
+\newpage
+\begin{itemize}
+\item ¿Cómo debes llamar al fichero que guarda dicho código?
+\item ¿Cómo se compila? 
+\item ¿Cuántos fichero de tipo \emph{class} genera?
+\item ¿Cómo se ejecuta?
+\item Genera la documentación con \emph{javadoc} y que quede ubicada en un directorio denominado \emph{doc}
+\end{itemize}
+
+\subsection{Ejercicio 2}
+Modifica el fichero anterior y crea dos nuevos métodos que se llamen \emph{calcularTriple()} y \emph{calcularMitad()} de manera que se pueda mostrar su valor triple y la mitad de su valor. Añade los comentarios necesarios. Y vuelve a generar la documentación.
+
+\subsection{Ejercicio 4}
+Crea código como en el \emph{Ejercicio1} que nos sirva para convertir de euros a dólares y viceversa. Denomina la clase \emph{Moneda}
+
+\subsection{Ejercicio 6}
+Crea un nuevo programa, denominado Unidades.java que intercambie unidades del sistema metrico decimal y el el sistema anglosajon. Las unidades a intercambiar son:
+\begin{itemize}
+\item De libras a kilogramos.
+\item De pies a metros.
+\item De yardas a metros.
+\item De millas a metros.
+\item De acres a hectareas.
+\item De onzas a mililitros.
+\item De galones a litros.
+\end{itemize}
+
+
+\end{document}

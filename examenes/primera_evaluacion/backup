@@ -1,0 +1,70 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO A}\\Sigue las intrucciones que maraca cada ejercicio, no solo para la realización del mismo sino también para la entrega de los mismos.}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+\begin{questions}
+\question(3.5 ptos)  Los sistemas de ecuaciones lineales, en el caso de dos ecuaciones con dos incógnitas se pueden representar de forma genérica de la siguiente forma:
+\begin{large}
+\begin{center}
+$\left.
+a \cdot x + b \cdot y  = e \atop
+c \cdot x + d \cdot y = f
+\right\}$
+\end{center}
+\end{large}
+Un sistema de ecuaciones tiene solución si:
+\begin{center}
+$a \cdot d - b \cdot c  \not= 0$
+\end{center}
+La solución de un sistema de dos ecuaciones con dos incognitas, en el caso que lo tenga, viene dado por la siguiente regla, derivada de la regla de Cramer:
+\begin{large}
+\begin{center}
+$x = \frac{e \cdot d - b \cdot f}{a \cdot d - b \cdot c}$ \\
+\vspace*{0.2cm}
+$y = \frac{a \cdot f - e \cdot c}{a \cdot d - b \cdot c}$
+\end{center}
+\end{large}
+Se quiere realizar una clase que represente a dicho sistemas de dos ecuaciones con dos incógnitas, para esto ten en cuenta lo siguiente:
+\begin{itemize}
+\item Usa como atributos los que consideres oportunos, de acuerdo a la representación genérica de un sistema de dos ecuaciones con dos incógnitas, y los tipos que sean \emph{double}
+\item Un constructor para los objetos de tipo Ecuación.
+\item Un método boolean que devuelva cierto o falso si el sistema es resoluble o no.
+\item Dos métodos que devuelvan el valor de x e y. Los tipos a devolver deben ser acordes con los datos de inicialización.
+\end{itemize}
+\begin{parts}
+\part
+(2 ptos) Crea una clase TestEcuación, con el método \emph{main} que cree los dos siguientes objetos:
+\begin{large}
+\begin{center}
+$\left.
+x + y  = 1 \atop
+2 \cdot x + 2 \cdot y = 2
+\right\}$
+\end{center}
+\end{large}
+\begin{large}
+\begin{center}
+$\left.
+2 \cdot x + y  = 7 \atop
+-x + 2 \cdot y = -1
+\right\}$
+\end{center}
+\end{large}
+Debe indicar por pantalla, si el sistema es resoluble o no. Y en el caso que sea resoluble debe mostrar la resolucion de dicho sistema de ecuaciones.
+\part
+(1.5 ptos) Modifica el archivo \emph{build.xml} que se suministra para que tenga los siguientes objetivos:
+\begin{description}
+\item[compila] Que solo compile el proyecto donde las fuentes se encuentren en un directorio llamado \emph{src} y las clases se disponga en un directorio denominado \emph{bin}
+\item[ejecuta] Que compile y ejecute el proyecto, tienendo en cueta la dependencia anterior, puedes ejecutarlo como empaquetado.
+\item[documenta] Que cree en un directorio denominado \emph{doc} donde se incluya la documentación de javadoc
+\end{description}
+\end{parts}
+\question(3,5 ptos) Con las plantillas que se te suministra, añade el c
+\end{questions}
+\end{document}

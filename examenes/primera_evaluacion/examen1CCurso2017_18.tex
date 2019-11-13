@@ -1,0 +1,88 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{amssymb, amsmath, amsbsy} % simbolitos
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO C}\\Sigue las intrucciones que marca cada ejercicio, no solo para la realización del mismo sino también para la entrega de los mismos.\\\emph{No se permite ningun documento de ayuda, excepto los aportados por el profesor}\\\emph{No se corregirá ningun ejercicio que tenga errores de compilación}}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+Crea una carpeta denominada \emph{examen}, creala tambien como repositorio de \emph{git} y crea un archivo \emph{REAME.md} que contenga como etiquetas tu nombre y apellidos. Crea un archivo \emph{.gitignore} para que \textit{git} ignore los archivos binarios de java y el directorio de documentación denominado \textit{doc}\par 
+Crea un repositorio en tu \textit{GitHub} denominado \emph{examenPrimeraEvaluacion} y sincronízalo con el repositorio local
+
+\begin{questions}
+\question(4 ptos) Las ecuaciones físicas para la caída libre de un cuerpo son:\par
+Cálculo de la velocidad con la que un cuerpo llega al suelo:
+\begin{equation}
+\sqrt{2 \cdot g \cdot h}
+\end{equation}
+Y el tiempo que tarda en llegar vale:
+\begin{equation}
+\sqrt{\frac{2 \cdot h}{g}}
+\end{equation}
+donde \emph{\textbf{g} es la aceleración de gravedad que vale 9.8} y \emph{\textbf{h} es la altura}\par 
+Crea un programa en \emph{Java} denominado \emph{Fisica.java} que haga:
+\begin{itemize}
+\item Lea mediante la clase \emph{Scanner} el valor de la altura,
+\item Comprueba que esa altura sea positiva y menor de 1000. En caso que no corresponda dentro de estos valores el programa terminara y mostrara un mensaje de error.
+\item Crea una constante que defina la gravedad, denomínala \emph{ACELERACION\_GRAVEDAD}
+\item Crea un método que devuelva el valor de la velocidad con la que un cuerpo llega al suelo.
+\item Crea otro método que nos devuelva el tiempo que tarda en llegar al suelo.
+\end{itemize}
+Desglose de la puntuación
+\begin{parts}
+\part (0.5 ptos) Si usas correctamente el Scanner, en el caso que no sepas hacerlo introduce el valor de la altura como una variable local del método \emph{main}. En este caso no habrá puntuación en este apartado.
+\part (1 pto) Por la comprobación y terminación del programa en el caso que el número solicitado no corresponda con las especificaciones.
+\part (0.5 ptos) Por el método que calcula la velocidad de llegada al suelo 
+\part (0.5 ptos) Por el método que calcula el tiempo que tarda en caer el cuerpo.
+\part (0.5 ptos) Si usas \emph{printf} para mostrar las salidas en consola. Dicha salidas corresponde a las llamadas de los métodos.
+\part (1 pto) Realiza la documentación de la clase que incluya las etiquetas \emph{author} y \emph{version}, mas la documentación de cada uno de los métodos, todo ello en una carpeta denomina \emph{doc}. No olvides hacer la documentación de la clase después de la sentencia \emph{import} de la clase \emph{Scanner}
+
+\end{parts}
+\newpage
+\question (4.5 ptos) Realiza un programa -denominado \emph{Cadenas.java}- que lea mediante argumentos dos cadenas y realice lo siguiente:
+\begin{itemize}
+\item Comprobar que las cadenas tengan una longitud mínima de 4 caracteres. En caso contrario el programa acabara.
+\item Un método que devuelva una cadena que proceda de la concatenación de las dos cadenas leídas.
+\item Un método que nos devuelva la cadena de mayor longitud.
+\item Un método que nos devuelva una de las cadenas en mayúscula.
+\item Un método que nos digas cuantas veces la segunda cadena contiene el primer caracter de la primera cadena.
+\item Un método que nos diga si la segunda cadena empieza por el último caracter de la primera cadena.
+\end{itemize}
+Desglose de la puntuación
+\begin{parts}
+\part (0.5 ptos) Si la lectura de las cadenas son correcta. En el caso que no sepas hacerlo introduce dichas cadenas como dos variables locales del método \emph{main}. En este caso no habrá puntuación en este apartado.
+\part (1 pto) Por la comprobación y terminacion del programa
+\part (0.5 ptos) Por el método que nos devuelve la cadena de mayor longitud.
+\part (0.5 ptos) Por el método que nos devuelve la cadena en mayuscula.
+\part (1 pto) Por el método que que nos digas cuantas veces la segunda cadena contiene el primer caracter de la primera cadena.
+\part (1 pto) Por el método que nos diga si la segunda cadena empieza por el último caracter de la primera cadena.
+\part (0.5 ptos) Si usas \emph{printf} en las llamadas a los métodos dentro del método \emph{main} de la clase principal
+
+\end{parts}
+\vspace{0.5 cm}
+\question (1 ptos) GitHub
+Crea los siguientes commmits:
+\begin{itemize}
+\item Un \emph{commit} denominado \emph{inicio del repositorio} que incluya el inicio del repositorio con los archivos \emph{README.md} y \emph{.gitignore}
+\item Un \emph{commit} denominado \emph{ejercicio 1}, que incluya al fichero del código fuente del primer ejercicio.
+\item Un \emph{commit} denominado \emph{documentación}, que la realizas cuando hayas realizado la documentación del primer ejercicio.
+\item Un \emph{commit} denominado \emph{ejercicio 2}, que incluya al fichero del código fuente del segundo ejercicio.
+\end{itemize}
+Sincroniza el directorio local con el remoto.
+
+\end{questions}
+\newpage
+\vspace{0,5cm}
+Debes entregar los siguientes documentos:
+\begin{itemize}
+\item Fisica.java
+\item Cadena.java
+\item Fichero de texto cuyo contenido sea la \emph{URL} de tu repositorio del \emph{GitHub} del examen
+\end{itemize}
+
+Entrégalos en un documento comprimido con el formato:\emph{ apellidosNombre.tar.gz} o \emph{apellidosNombre.zip}. Tanto a la plataforma \emph{moodle} como al profesor.
+\end{document}

@@ -1,0 +1,163 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+%\usepackage{longtable}
+%\usepackage{array}
+%\usepackage{multirow}
+
+%\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\Introducción a Java}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+% \setlongtables
+\section{Ejercicios de repaso}
+\subsection{Ejercicio 1}
+¿Qué significa que un lenguaje de programación sea \emph{case sensitive}.? ¿Se puede aplicar a Java?
+\subsection{Ejercicio 2}
+¿Qué se necesita en un computador para correr un programa de java?
+\subsection{Ejercicio 3}
+¿Cuáles son la entrada y salida en un compilador java?
+\subsection{Ejercicio 4}
+¿Qué es JVM?
+\subsection{Ejercicio 5}
+¿Qué son las palabras reservadas de un lenguaje de programación? Indica algunas que hayas visto en Java.
+\subsection{Ejercicio 6}
+¿Cuál es la extensión de un fichero fuente de Java? ¿Y del fichero que contiene los bytecodes?
+\subsection{Ejercicio 7}
+Los siguientes programas no compilan ¿por qué?\par
+Intenta averiguar porqué no compila y posteriormente compila el código tal y como está para posteriormente obsevar las salidas de error del compilador.
+\begin{verbatim}
+\\Programa 1
+public static void main(String[] args) {
+}
+public class Welcome {
+    System.out.println("afternoon");
+    System.out.println("morning");
+}
+
+\\Programa 2
+public class Welcome {
+   public void Main(String[] args) {
+   System.out.println('Welcome to Java!);
+   }
+)
+\\Programa 3
+public class Hola{
+    public static void main(){
+    System.out.println('Welcome to Java!);
+    }
+}	
+\\Programa 4
+public class Hola{
+   public static void main(String[] a){
+   System.out.println('Welcome to Java!);
+}
+\end{verbatim}
+
+\subsection{Ejercicio 8}
+¿Cuales son los comandos para compilar y ejecutar un programa en Java, respectivamente?
+
+\section{Javadoc}
+\subsection{Ejercicio1}
+Modifica tu programa \emph{HolaMundo} para que pueda genera documentación con javadoc.\\
+Una vez realizado en \emph{Ubuntu}, copia el fichero de salida de compilación y comprueba su correcta ejecución en \emph{Windows}
+\newpage
+
+\subsection{Ejercicio2}
+Dado el siguiente programa:
+\begin{verbatim}
+import java.util.ArrayList;
+import java.util.Random;
+
+/**
+* Esta clase define objetos que contienen tantos enteros aleatorios entre 0 y 1000 como se le definen al crear un objeto
+* @author: Mario R. Rancel
+* @version: 22/09/2016/A
+* @see <a href = "http://www.aprenderaprogramar.com" /> aprenderaprogramar.com – Didáctica en programación </a>
+*/
+
+public class SerieDeAleatoriosD {
+
+    //Campos de la clase
+    private ArrayList<Integer> serieAleatoria;
+    /**
+     * Constructor para la serie de números aleatorios
+     * @param numeroItems El parámetro numeroItems define el número de elementos que va a tener la serie aleatoria
+     */
+
+    public SerieDeAleatoriosD (int numeroItems) {
+        serieAleatoria = new ArrayList<Integer> ();
+        for (int i=0; i<numeroItems; i++) {  serieAleatoria.add(0);  }
+        System.out.println ("Serie inicializada. El número de elementos en la serie es: " + getNumeroItems() );
+    } //Cierre del constructor
+
+    /**
+    * Método que devuelve el número de ítems (números aleatorios) existentes en la serie
+    * @return El número de ítems (números aleatorios) de que consta la serie
+    */
+
+    public int getNumeroItems() { return serieAleatoria.size(); }
+
+    /**
+     * Método que genera la serie de números aleatorios
+     */
+
+    public void generarSerieDeAleatorios () {
+        Random numAleatorio;
+        numAleatorio = new Random ();
+        for (int i=0; i < serieAleatoria.size(); i++) { serieAleatoria.set(i, numAleatorio.nextInt(1000) ); }
+        System.out.print ("Serie generada! ");
+    } //Cierre del método
+
+} //Cierre de la clase y del ejemplo aprenderaprogramar.com
+\end{verbatim}
+\begin{itemize}
+\item ¿Cúal es el nombre del fichero que contiene el ćodigo fuente?
+\item Compila el programa y comprueba el fichero de salida
+\item Intenta ejecutar el programa. ¿Qué ocurre?
+\item Antes de generar la documentación, indica cuales comentarios no saldrán en la misma.
+\item Genera la documentación.
+\end{itemize}
+\section{Codigo}
+\subsection{Ejercicio 1}
+Crea un programa que muestre por pantalla tu nombre cinco veces y la edad, en lineas diferentes.\\
+Ejemplo:
+\begin{verse}
+Juan Gabriel Medina Río 22\\
+Juan Gabriel Medina Río 22\\
+Juan Gabriel Medina Río 22\\
+Juan Gabriel Medina Río 22\\
+Juan Gabriel Medina Río 22\\
+\end{verse}
+\subsection{Ejercicio 2}
+Compila y ejecuta el siguiente código en Ubuntu:
+\begin{verbatim}
+public class Colores {
+public static void main(String[] args) {
+        String rojo = "\033[31m";
+        String verde = "\033[32m";
+        String naranja= "\033[33m";
+        String azul = "\033[34m";
+        String morado = "\033[35m";
+        String blanco = "\033[37m";
+        System.out.print(naranja + "mandarina" + verde + " hierba");
+        System.out.print(naranja + " saltamontes" + rojo + " tomate");
+        System.out.print(blanco + " sábanas" + azul + " cielo");
+        System.out.print(morado + " nazareno" + azul + " mar");
+        }
+}
+\end{verbatim}
+\subsection{Ejercicio 3}
+Escribe un programa que muestre tu horario de clase. Puedes usar espacios o tabuladores para alinear el texto. También puedes usar el mismo color para el mismo módulo.
+\end{document}
+
+

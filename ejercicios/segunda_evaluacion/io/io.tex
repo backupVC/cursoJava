@@ -1,0 +1,76 @@
+\documentclass[a4paper,spanish]{article}
+\usepackage[spanish]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+
+\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\Entrada y Salida}
+\date{\today}
+
+\begin{document}
+\maketitle 
+
+
+\section*{Ejercicio 1}
+Escribe una clase denominada PosiblePassword, que tenga como único atributo un String. Una contraseña es válida de acuerdo a las siguientes reglas:
+\begin{itemize}
+\item Tenga al menos 8 caracteres.
+\item Debe contener letras y números obligatoriamente.
+\item Debe contener al menso una letra en mayúscula.
+\item Como mínimo dos digitos.
+\end{itemize}
+Crea una clase denominada TestPassword que lea por teclado contraseñas y nos diga si son válidas o no.
+\section*{Ejercicio 2}
+Un anagrama es una palabra o frase que resulta de la transposición de letras de otra palabra o frase. Por ejemplo:
+\begin{quote}
+AMOR - ROMA - OMAR - MORA - RAMO - ARMO - MARO\\
+MONJA - JAMÓN - MOJAN\\
+LÁMINA - ANIMAL\\
+ESPONJA - JAPONÉS
+\end{quote}
+Escribe una clase PosibleAnagrama, con los atributos que consideres oportunos y que compruebe si dos palabras son o no un anagrama.\par 
+Escribe una clase denominada TestAnagrama que lea por pantalla dos palabras y nos diga si son o no anagramas.
+
+\section*{Ejercicio 3}
+Crea una clase denominada Parse.java que dado un fichero html \emph{descargado de Internet} nos de el número de tags h1 que posee.
+
+\section*{Ejercicio 4}
+Crea un un programa que se ejecute de la siguiente forma:
+\begin{quote}
+java Cambiar viejoFichero nuevoFichero palabra
+\end{quote}
+Donde:
+\begin{description}
+\item[viejoFichero] es el fichero de entrada inicial.
+\item[palabra] es la \emph{palabra} que debe convertirse en mayuscula.
+\item[nuevoFichero] es el fichero de salida, donde se han reemplazado las palabras a mayusculas.
+\end{description}
+Tambien en \emph{nuevoFichero} debe aparecer al final el numero de palabras reemplazadas y el numero de palabras totales del fichero.
+
+\section*{Ejercicio 5}
+Crea un programa que lea por pantalla distintas letras, para averiguar una palabra previamente guardada en el programa. Ejemplo de ejecución del programa:
+\begin{verbatim}
+******
+m
+m*****
+q
+m*****
+a
+ma****
+o
+ma*o*o
+l
+ma*olo
+m
+ma*olo
+n
+manolo
+\end{verbatim}
+\end{document}

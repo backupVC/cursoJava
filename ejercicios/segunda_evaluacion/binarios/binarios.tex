@@ -1,0 +1,49 @@
+\documentclass[a4paper,spanish]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+
+\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\FICHEROS BINARIOS}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Ejercicio 1}
+Escribe un programa que cree un fichero llamado \emph{ejercicio1.txt}  y  añade 100 números enteros de forma aleatoria. Usa clases I/O relacionadas con archivos de texto (InputStreamReader)
+
+\subsection*{Ejercicio 2}
+Escribe un programa que cree un fichero llamado \emph{ejercicio2.dat} y  añade 100 números de tipo \emph{float} de forma aleatoria. Usa clases I/O relacionadas con archivos binarios (InputStream).\\
+Posteriormente crea otro programa que lea dichos 100 números y que muestre el valor de su suma.
+
+\subsection*{Ejercicio 3}
+Escribe un programa que lea el fichero \emph{fundacionEImperio.txt} y nos diga el numero de lineas que contiene dicho fichero y cuantas palabras posee, en este caso consideramos una palabra cuando despues de esta aparece uno o mas espacios en blancos o un salto de linea.
+
+\subsection*{Ejercicio 4}
+Escibe una clase denominada Persona que tenga las siguientes características:
+\begin{itemize}
+\item Atributos: nombre, apellidos, edad y dirección.
+\item Constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters y setters}
+\item La clase debe ser serializable.
+\end{itemize}
+Crea un programa que cree cinco objetos del tipo Persona y que los guarde en un fichero binario denominado ejercicio4.dat.\\
+Posteriormente crea otro programa que lea dichos objetos y muestre por pantalla cada uno de los objetos.
+
+\subsection*{Ejercicio 5}
+Realiza un programa que divida un fichero en distintos trozos mas pequeños. La sintáxis de ejecución sería:
+\begin{quote}
+\emph{java Leer ficheroEntrada numeroTrozos}
+\end{quote}
+Donde \emph{Leer} es es nombre del programa ejecutable en java, \emph{ficheroEntrada} es el fichero a dividir en trozos y \emph{numeroTrozos} es un numero que indica en el numero de partes en que se va a dividir el fichero. Usando \emph{Scanner} solicita el nombre de los ficheros de salida.
+\end{document}

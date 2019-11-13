@@ -1,0 +1,73 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[utf-8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+%\usepackage{longtable}
+%\usepackage{array}
+%\usepackage{multirow}
+%\usepackage[latin1]{inputenc}
+%\inputencoding{latin1}
+
+\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\COLECCIONES BÁSICAS}
+\date{\today}
+
+\begin{document}
+\maketitle
+%\tableofcontents
+%\setlongtable 
+
+
+\section*{Ejercicio 1}
+¿Cuales de las siguientes sentencias son validas para la declaración de un array?
+\begin{itemize}
+\item int i = new int(30);
+\item double d[ ] = new double[30];
+\item char[ ] r = new char(1..30);
+\item int i[ ] = (3, 4, 3, 2);
+\item float f[ ] = \{2.3, 4.5, 6.6\};
+\item char[ ] c = new char();
+\end{itemize}
+
+\section*{Ejercicio 2}
+Crea una clase denominada \emph{Colecciones} que realice:
+\begin{itemize}
+\item Declare dos \emph{arrays} de tipo \emph{int} de 10 valores.
+\item Usando un bucle, rellena uno de ellos con valores fijos (ejemplo: 3)
+\item El otro se rellena también de forma automática usando la clase \emph{Arrays} y el método \emph{fill}
+\item Defien un método que se encargue de mostrar los datos de los dos arrays, de manera que se muestra por linea valores de igual posicion, es decir el primer elemento del primer \emph{array} y el primero del segundo \emph{array} en la misma linea, posteriormente se hace un salto de linea y asi con el resto de elementos. 
+\end{itemize}
+
+\section*{Ejercicio 3}
+Crea una clase que se denomine \emph{ColeccionAleatoria} y que realice:
+\begin{itemize}
+\item Cree un array de de 100 valores de tipo int.
+\item Usando un bucle rellénalo con valores aleatorios comprendidos entre 0 y 100. Usa \emph{Math.random()} para esto.
+\item Crea un metodo que devuelva el valor medio de los datos.
+\item Otro que nos de la \emph{desviación tipica}.
+\item Otro que nos devuelva el array ordenado.
+\item Otro que nos devuelva un array con los números pares
+\item Otro el valor mínimo.
+\item Y otro el valor máximo.
+\end{itemize}
+
+
+\section*{Ejercicio 4}
+Crea una clase denominada \emph{ColeccionDinamica} y realice:
+\begin{itemize}
+\item Declare un \emph{ArrayList} para guardar objetos de tipo \emph{String}.
+\item Usando la clase Scanner, rellena dicha colección con cadenas, la terminación de elementos acabará cuando pongamos la cadena \emph{fin} o \emph{FIN}, esta cadena no se incluirá en la colección.
+\item Crea un método que nos devuelva una colección de cadenas que tengan la mayor longitud (como puede haber cadenas de igual longitud, por eso devolvemos una colección y no una única cadena).
+\item Un método que se le pase por argumento una cadena y nos diga si dicha cadena se encuentra en la colección anterior.
+\item Un método que nos sirva para añadir nuevas cadenas a la colección.
+\item Un método que elimine una cadena de la colección
+
+\end{itemize}
+
+\end{document}

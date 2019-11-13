@@ -1,0 +1,46 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[utf-8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+%\usepackage{longtable}
+%\usepackage{array}
+%\usepackage{multirow}
+%\usepackage[latin1]{inputenc}
+%\inputencoding{latin1}
+
+\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\EXCEPCIONES}
+\date{\today}
+
+\begin{document}
+\maketitle
+%\tableofcontents
+%\setlongtable 
+
+\begin{abstract}
+Intenta realizar los ejercicios aproximandote al máximo al paradigma de \emph{POO}. De todas formas es opcional, pero si muy recomendable su realización.
+\end{abstract}
+
+
+\subsection*{Ejercicio 1}
+Crea una clase denominada Triangulo, que tenga como constructor un método con tres parámetros, que son la longitud de los lados del mismo. Crea una excepción denominada \emph{IlegalTrianguloExcepcion} que se lance cuando crear un triangulo no válido.
+Los tres lados a, b y c de un triángulo deben satisfacer la desigualdad triangular: cada uno de los lados no puede ser más largo que la suma de los otros dos.
+\subsection*{Ejercicio 2}
+Crea dos clases denominada ConversionHexadecimal y ConversionBinaria que implementen los siguientes métodos:
+\begin{description}
+\item[hexADecimal(String hexString)] que dado un String que representa un número en hexadecimal, lo convierta a decimal.
+\item[binarioAoDecimal (String binaryString)] que dado un String que representa un número binario, lo convierta a decimal
+\end{description}
+Añade las excepciones correspondientes para que no se permita introducir valores no válidos.\\
+Crea dos programas denominados TestConversionBinario y TestConversionHexadecimal que compruebe el correcto funcionamiento de dicha clase.
+\\
+Para realizar el ejercicio no uses ninguna API que realice la conversión directa. Implementa el algoritmo.
+
+
+\end{document}

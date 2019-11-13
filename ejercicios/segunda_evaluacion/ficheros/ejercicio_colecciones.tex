@@ -1,0 +1,51 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[utf-8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+%\usepackage{longtable}
+%\usepackage{array}
+%\usepackage{multirow}
+%\usepackage[latin1]{inputenc}
+%\inputencoding{latin1}
+
+\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\COLECCIONES}
+\date{\today}
+
+\begin{document}
+
+
+\maketitle
+
+\subsection*{Ejercicio 1}
+Escribe un programa que lea dos ficheros de texto que se suministran comprimidos (nombres\_hombre.zip y nombre\_mujer.zip). Uno con el nombres de hombre y otro con nombre de mujeres. La clase debe denominarse \emph{Listas} con las siguientes características:
+\begin{itemize}
+\item Tiene como atributos tres ArrayList distintos, para guardar los nombre de mujeres, hombres y el total de ellos.
+\item Un constructor que inicialice dichas lista a lista vacias.
+\item Métodos que añadan los nombres de hombres y mujeres desde un fichero de texto que se te proporciona.
+\item Un método que cree la lista de todos los nombres fundiendo ambas listas.
+\item Métodos que nos digan, dado un nombre si es mujer u hombre.
+\item Todo aquellos métodos que crees necesarios.
+\end{itemize}
+Una vez implimentada la clase, comprueba su funcionamiento.
+\subsection*{Ejercicio 2}
+Escribe un programa que lea el fichero de texto \emph{entrada.txt} con la intencion de calcular el numero de palabras que tiene y la frecuencia de repeticion de las mismas. Ten en cuenta lo siguiente:
+\begin{itemize}
+\item Crea tres atributos privados que sean tres colecciones diferentes, un ArrayList, un HashSet y un HashMap.
+\item El constructor debe inicializar las colecciones sin elemento alguno.
+\item Un método 	que añada las palabras del texto al ArrayList.
+\item Los \emph{getters y setter que creas correspondiente}
+\item Un método que calcule la frecuencia de las palabras del texto, para esto usa el método \emph{Collections.frequency}.
+\item Un método que imprima el valor de las colecciones usando un \emph{Iterator}
+\item Otro método que los imprima en orden.
+\item Otro método que nos de el tamaño de las colecciones.
+\end{itemize}
+Para leer el fichero de texto, no debes leer signos de puntuación, usa si quieres el método \emph{replaceAll} de la clase \emph{String} que reemplaza dichos signos por cadena vacía. O bien usa cualquier estrategia en la lectura del texto que elimine dichos signos.
+
+\end{document}

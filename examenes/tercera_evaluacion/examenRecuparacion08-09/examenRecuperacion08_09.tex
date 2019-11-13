@@ -1,0 +1,89 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN RECUPERACIÓN}\\El ejercicio se realizará en eclipse. Usa un workspace distinto al que usas de forma habitual. Crea un proyecto de java nuevo denominado \emph{RECUPERACION} donde desarrollar las carpetas, packages y programas}}}
+\end{center}
+\vspace{0.1in}
+La estructura del proyecto será la siguiente:
+\begin{itemize}
+\item Dos carpetas en la raiz del proyecto denominadas \emph{database} y \emph{lib}. En la primera debe situar la base de datos \emph{userApp.db} y en la otra se coloca el driver de \emph{sqlite}. Se debe añadir a las bibliotecas del proyecto, de manera que la importación del mismo no requiera volver añadir este \emph{jar}
+\item Un package denominado \emph{clases} donde colocar las disitintas clases y otro package denominado \emph{test} donde colocar el programa que arranca la aplicación.
+\end{itemize}
+La aplicación usará como persistencia la base de datos antes mencionada, se entrega el \emph{script sql} de creación del esquema de la base de datos, no hay que usarlo para nada ya que se entrega la base de datos ya implementada y con valores de usuario. Solo hay que leerlo para entender la jerarquía de la base de datos, la cuál consta de:
+\begin{itemize}
+\item Tabla \emph{user}, con clave un \emph{id} autoincrementable, y con otros tres campos nombre, apellidos y email. Se sobreescribe los métodos \emph{hasCode() y equals()} para decir que dos usuarios son el mismo si el \emph{email} es el mismo.
+\item Tabla \emph{guest}, hace referencia a usuario invitado, que solo exisitirá uno y solo uno en la aplicación y que tiene como campos el \emph{id} que es la clave primaria y hace referencia al \emph{id} de la tabla anterior, mas un campo que inicialmente está a cero y que controla el número de veces que accede el usuario invitado, cada vez que accede este, este campo se incrementará.
+\item Tabla \emph{registeredUser} que hace referencia a usuarios registrados, igual que antes tiene una clave \emph{id} que hace referencia al \emph{id} de la tabla \emph{user} mas otro campo que corresponde a la última fecha de acceso, dicha fecha de acceso se modificará en el caso de que el usuario entre en la aplicación.
+\end{itemize}
+\newpage
+
+\begin{questions}
+\question Queremos realizar un aplicación que realice algunas operaciones de tipo \emph{CRUD} sobre dicha base de datos, para esto se debe realizar la estructura de clases de acuerdo con el paradigma de herencia de \emph{POO} que ofrece \emph{Java}. Para esto se implementará una clase para cada entidad. Los atributos de cada clase deberán estar acordes -en nombre y tipo- con las columnas de cada tabla, para esto es aconsejable mirar el \emph{script} de creación de la base de datos y el esquema de cada tabla en la base de datos. En relación a las clases se tendrán en cuenta:
+\begin{description}
+\item[clase User] que hace referencia a la tabla \emph{user}
+\item[clase Guest] que hace referencia a la tabla \emph{guest}
+\item[clase RegisteredUser] que hace referencia a la tabla \emph{registeredUser}
+\end{description}
+Se creará la interfaz \emph{UserInterface} con los siguientes métodos:
+\begin{itemize}
+\item  \emph{boolean existUser(User user)} que nos dice si existe el usuario, la sentencia \emph{SQL} a emplear es:\\
+\textbf{select * from registeredUser where email = ?;}
+\item boolean createRegisteredUser(User user) que inserta un nuevo usuario, las sentencias \emph{SQL} a emplear es:\\
+\textbf{insert into user (firstName , lastName , email) VALUES ( ? , ?, ?);\\
+insert into registeredUser VALUES (?, ?);}
+\item \emph{boolean deleteUser(User user)} que nos borra un usuario de la aplicación, la sentencia \emph{SQL} a emplear es:\\
+\textbf{delete from user where id\_user = ?;}
+\item \emph{boolean increaseAccessGuest()} que incrementa el número de accesos del invitado, y las sentencias a emplear implica primero obtiene el número de accesos y posteriormente ejecutar una sentencia de actualización para incrementar en uno ese valor:\\
+\textbf{select numberAccess from guest ;\\
+update guest set numberAccess = ? where id\_guest = 1;}
+\item \emph{boolean updateLastAccessUser (User user)}  que actualiza la última fecha de acceso a la aplicación, la sentencia a emplear es:\\
+\textbf{update registeredUser set lastAccessDate = ? where id\_registered = ?;}
+\item En la mayoría de los métodos se usa como argumento \emph{(User user)} por lo que las clases, en este caso solo una, debe utilizar el paradigma de \emph{POO} denominada polimorfismo.
+\item Además se creará un método estático que valide mediante una expresión regular la validez del email, lo única que hay que controlar es que contenga una \emph{arroba} entre medias. 
+\end{itemize}
+\newpage
+Además se crearán las siguientes clases:
+\begin{description}
+\item[Clase ConnectionDB] que mediante patrón \emph{singleton} se encargue de abrir y cerrar la conexión a la BD. Además debemos tener en cuenta que la base de datos relacional implica la integridad referencial, por lo que debemos incluirlo en la configuración de la conexión:
+\begin{verbatim}
+SQLiteConfig config = new SQLiteConfig () ;
+config.enforceForeignKeys ( true ) ;
+DriverManager.getConnection ( database/userApp.db , config.toProperties () );
+\end{verbatim}
+\item[Clase UserDAO] que se encarga de la implementación de la interfaz anterior.
+
+\item[Clase App] que arranca la aplicación, muestra un menú donde nos de a elegir  lo siguiente:
+\begin{itemize}
+\item Solicite por Scanner un nuevo usuario, se solicitan los campos:
+\begin{enumerate}
+\item nombre
+\item apellidos
+\item email
+\end{enumerate}
+Se comprueba que el email es correcto, que el usuario no existe y se añade el usuario, devolviendo una mensaje creado o no creado el usuario. Se tendrá en cuenta que la fecha de último acceso será la actual del sistema.
+\item Posteriormente se borrará dicho usuario, no hay que solicitar nada, sino emplear la misma referencia del objeto de usuario registrado creada anteriormente. También se dirá si ha ocurrido con éxito o no.
+\item Se actualiza la fecha de último acceso al usuario con \emph{id} igual a 9 con la fecha actual del sistema. También se dirá si ha ocurrido con éxito o no.
+\item Se incrementara el acceso de usuario invitado. También se dirá si ha ocurrido con éxito o no.
+\item Usaremos \emph{printf} para mostrar esos mensajes.
+\end{itemize} 
+%\end{itemize}
+\end{description}
+
+\newpage
+Criterios de evaluación:
+\begin{description}
+\item[0.5 ptos] Por la correcta implementación de la estructura del proyecto.
+\item[0.5 ptos.] Por la clase \emph{ConnectionDB}
+\item[2 ptos.] Por las clases que implementan la estructura de herencia.
+\item[1 pto.] Por la interfaz, incluyendo el método de validación del \emph{email}
+\item[4 ptos.] Por la clase que implementa la interfaz
+\item[2 ptos.] Por la clase \emph{App}
+\end{description}
+\textbf{Formato del fichero de subida:} se subirá el \emph{workspace} completo del proyecto del examen.
+\end{questions}
+\end{document}

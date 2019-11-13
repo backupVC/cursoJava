@@ -1,0 +1,59 @@
+\documentclass[a4paper,spanish]{article}
+\usepackage[spanish]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+
+\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\COLECCIONES}
+\date{\today}
+
+\begin{document}
+
+\end{document}
+
+\maketitle
+
+\subsection*{Ejercicio 1}
+Escribe un programa que implemente la clase Listas con las siguientes característacas:
+\begin{itemize}
+\item Tiene como atributos tres ArrayList, para guardar los nombre de mujeres, hombres y el total de ellos.
+\item Un constructor que inicialice dichas lista a lista vacias.
+\item Métodos que añadan los nombres de hombres y mujeres desde un fichero de texto.
+\item Un método que cree la lista de todos los nombres fundiendo ambas listas.
+\item Métodos que nos digan, dado un nombre si es mujer u hombre.
+\item Todo aquellos que crees necesario.
+\end{itemize}
+Una vez implimentada la clase, comprueba su funcionamiento, pasando un parámetro que sea un nombre y nos devuelva si es válido ese nombre o no, así como si es nombre de  mujer u hombre.
+\subsection*{Ejercicio 2}
+Escribe un programa que cree un fichero llamado \emph{ejercicio2.dat} si no existe, y que añada 100 números enteros de forma aleatoria, usando clases I/O relacionadas con archivos binarios.\\
+Posteriormente crea otro programa que lea dichos 100 números y que muestre el valor de su suma.
+
+\subsection*{Ejercicio 3}
+Escribe un programa que lea lineas desde un fichero de texto y posteriormente las escriba dentro de un fichero binario denominado ejercicio3.dat\\
+Posteriormente escribe otro programa que lea el fichero \emph{ejercicio3.dat}, y que nos diga el número de bytes del fichero. Comprueba si coincide con los datos que tiene el sistema operativo.
+
+\subsection*{Ejercicio 4}
+Escibe una clase denominada Persona que tenga las siguientes características:
+\begin{itemize}
+\item Atributos: nombre, apellidos, edad y dirección.
+\item Constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters y setters}
+\item La clase debe ser serializable.
+\end{itemize}
+Crea un programa que cree cinco objetos del tipo Persona y que los guarde en un fichero binario denominado ejercicio4.dat.\\
+Posteriormente crea otro fichero que lea dichos objetos y muestre por pantalla cada uno de los objetos.
+
+\subsection*{Ejercicio 5}
+Realiza un programa que divida un fichero en distintos trozos mas pequeños. La sintáxis de ejecución sería:
+\begin{quote}
+\emph{java Leer ficheroEntrada numeroTrozos}
+\end{quote}
+Donde \emph{Leer} es es nombre del programa ejecutable en java, \emph{ficheroEntrada} es el fichero a dividir en trozos y \emph{numeroTrozos} es un numero que indica en el numero de partes en que se va a dividir el fichero.
+\end{document}

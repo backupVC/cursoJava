@@ -1,0 +1,50 @@
+\documentclass[a4paper,spanish]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8x]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\Packages}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\setlongtables
+
+
+\section*{Fechas en Java}
+\subsubsection*{Ejercicio 1}
+Realiza un programa que lea la fecha actual utilizando las clases \emph{LocalDate} y \emph{LocalDateTime}, usando el método \emph{now}. Imprime el valor de la fecha anteriormente leída.
+\\
+Posteriormente formatea dicha fecha, para que tenga un formato en español.\\
+Utiliza como referencia los ejemplos que aparecen en esta página:\\
+\href{https://www.solvetic.com/tutoriales/article/1345-trabajando-con-fechas-en-java-8/}{Ejemplo práctico}
+
+\subsection*{Creación de packages}
+Crea un package denominido \emph{com.iesvirgendelcarmen.matemáticas} que tenga las dos siguientes clases:
+\begin{itemize}
+\item \emph{Geometria}, que tenga métodos estáticos para calcular el área de un triangulo, cuadrado, pentágono y hexágono.
+\item \emph{Estadisticas}, que contenga métodos de instancia para calcular la media, la moda, la varianza y la desviación tipica.
+\item En otro package denominado \emph{com.iesvirgendelcarmen.test} crea una clase TestMatemáticas donde pruebes el funcionamiento de las bibiliotecas anteriores.
+\item En otro proyexto independiente crea un nuevo package denominado test e incluye una clase denominada \emph{TestMatemáticas} donde pruebes el funcionamiento de las bibiliotecas anteriores.
+
+\end{itemize}
+
+\subsection*{Creación de jar ejecutable}
+Crea un jar ejecutable de los dos ejercicios anteriores. Para esto consulta información de como realizarlo en Eclipse.
+
+\section*{Ejercicio bibliotecas externas}
+\subsubsection*{Ejercicio 1}
+Crea un package denominado \emph{com.iesvirgendelcarmen.ficheros} y un directorio en la ráiz de tu proyecto denominado \emph{pdf}, incorpora la librería \emph{itext} a tu proyecto y crea un documento de tipo pdf en la carpeta anterior y prueba el funcionamiento de dicha librería.\\
+Para encotrar el fichero \emph{itext-X.Y.Z.zip}  visita la siguiente URL \url{http://developers.itextpdf.com/developers-home} donde también encontrarás la documentación pertinente.
+
+\end{document}

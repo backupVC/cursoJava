@@ -1,0 +1,65 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO A}\\Sigue las intrucciones que marca el ejercicio, no solo para la realización del mismo sino también para la entrega.\\\emph{No se permite ningun documento de ayuda, excepto los aportados por el profesor}\\La realización del ejercicio será en el \emph{IDE} Eclipse, utilizando un workspace vacío creando un proyecto llamado \emph{Examen} y un \emph{package} denominado \emph{\textit{segundaevaluacion}}}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+
+\begin{questions}
+
+
+\question Crea una clase denominada \emph{Telefono} que tiene los siguientes atributos:
+\begin{itemize}
+\item Numero de telefono
+\item Titular
+\item Si es fijo o móvil
+\end{itemize}
+Crea -si lo ves necesario- los correspondeintes getters, setter, constructor o constructores y sobreescribir el  método \emph{toString}\\
+Crea una excepción denominada \emph{TelefonoException} que se lanzará cuando el número de teléfono no tenga 9 dígitos, aunque puedes contemplar -de forma voluntaria- la opción de +34 delante de estos 9 dígitos (+34953505050). También se lanzará la excepción en el caso que el número de un móvil no empiece por 6 o 7, o en el caso de un fijo que no comience por 9. \\ 
+Posteriormente crea una clase denominada \emph{Agenda} que tenga los siguientes atributos:
+\begin{itemize}
+\item Categoria (ejmplo: amigos, familia o trabajo)
+\item Una colección de telefonos.
+\end{itemize}
+Incorpora en esta clase métodos para añadir y eliminar teléfonos. Genera los getters y setters correspondientes, si son necesarios, constructor o constructores y sobreescribes si lo consideras útil el método \emph{toString} 
+\vspace{0.3cm}
+\\
+Crea una clase denomninada \emph{TestAgenda} que cree tres agendas de teléfono y que corresponden a las categorías de amigos, familia y trabajo. Lee los datos del CSV que se incorpora (inclúyelo en una carpeta denominada \emph{datos} en la raíz de tu workspace), de manera que si leemos la categoría amigos la incorporamos a la agenda de categoría amigos y así respectivamente.
+\vspace{0.3cm}
+\\
+Una vez leido los datos debes mostrar por consola las tres agendas.
+\vspace{0.3cm}
+\\
+Añade un método a la clase \emph{Agenda}, que dado un número de teléfono nos diga el titular de la línea, así como otro que haga lo contrario, es decir dado el titular nos diga el teléfono o telefonos, pues puede darse el caso que un titular tenga varios números de teléfono sean móviles o fijos. Deja una prueba en el \emph{main} de la clase \emph{TestAgenda} el correcto funcionamiento de estos dos métodos.\\
+\newpage
+\textbf{Criterios de evaluación}
+\begin{description}
+\item[1 pto.] Estructura correcta de la clase \emph{Telefono}.
+\item[2 pto.] Funcionamiento correcto de la excepción esto incluye la validación de los números de teléfono en la clase \emph{Telefono}.
+\item[1.5 pto.] Estructura correcta del clase \emph{Agenda}.
+\item[2 pto.] Lectura del fichero con el Scanner. En el caso que no seas capaz de hacerlo, realiza la lógica en el método \emph{main} de la clase \emph{TestAgenda}, lee los datos desde la entrada estándar y crea una única agenda, en este caso se valorará este apartado con un solo punto.
+\item[2 pto.] Por la correcta implementación de los métodos que buscan titulares o telefonos en la clase \emph{Agenda}
+\item[0.5 ptos.] Diagrama UML de las clases \emph{Telefono} y \emph{Agenda} 
+\item[0.5 ptos.] Creación del jar ejecutable de \emph{TestAgenda}.
+\item[0.5 ptos.] Creación de la documentación de la clase \emph{Telefono} 
+\end{description}
+\end{questions}
+%\newpage
+\textbf{Formato del fichero de subida:}\\
+Se subirá un archivo comprimido de la siguiente forma nombreApellidos.tar.gz o nombre.Apellidos.zip. En el debes incluir:
+\begin{itemize}
+\item El \emph{workspace} donde has realizado el examen que debe incluir ademas cuatro carpetas, una \emph{doc} para la documentación, otra \emph{jar} para el fichero ejecutable, otra \emph{datos} donde se localice el fichero \emph{csv} para la lectura de datos. y otra \emph{uml} para incorporar los diagramas UML en formato \emph{png}
+\end{itemize}
+\textbf{Consejos}
+\begin{itemize}
+\item Para la lectura de datos debes usar el constructor de la clase \emph{Scanner} que tenga como atributo un objeto de tipo \emph{File}, dicho objeto se crea con la clase \emph{File} y el constructor usa como parámetro un \emph{String} que corresponde a la ruta del fichero \emph{(File inFile = new File("path o ruta del fichero")}.
+\item El fichero \emph{csv} incorpora teléfonos no válidos, por lo que debes gestionar correctamente la excepción.
+\end{itemize}
+
+\end{document}

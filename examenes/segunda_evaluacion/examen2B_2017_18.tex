@@ -1,0 +1,70 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO B}\\El ejercicio se realizará en eclipse. Usa un workspace distinto al que usas de forma habitual. Crea un proyecto de java nuevo denominado Examen y posteriormente un package denominado ejercicio, donde desarrollar los programas}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+\begin{questions}
+\question Queremos hacer un programa para controlar una agenda de contactos, para esto debemos desarrollar las siguientes clases con las especificaciones que se solicitan.
+\begin{description}
+\item[clase Contacto] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre y apellidos
+\item Teléfono móvil
+\item Teléfono fijo.
+\item Ciudad de residencia.
+\item Un constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters}
+\item Sobreescribe el método \emph{toString()} para que cuando tratemos la referencia de estos objetos como \emph{String}, nos muestre los datos con el siguiente formato:\\
+Nombre: (nombre y apellidos) - Teléfono móvil: (móvil) - Teléfono fijo: (fijo)
+\end{itemize}
+\item[clase Agenda] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre de la agenda.
+\item Coleccion dinamica de contactos.
+\item Un constructor que inicialice atributo nombre.
+\item Un método que nos sirva para añadir objetos \textit{Contacto} a la coleccion de contactos.
+\item Un método que nos devuelva una colección de objetos \emph{Contacto} cuando se le pasa como argumento el nombre de un lugar de residencia.  Es valido pasar el nombre tanto en mayusculas como en minusculas.
+\item Un método que nos diga el numero de contactos . Pasamos como argumento el nombre del lugar de residencia, es valido pasar el nombre tanto en mayusculas como en minusculas.
+\item Un método que pasamos un numero de telefono y nos devuelva el objeto \emph{Contacto} al que pertenece dicho numero. El numero puede corresponder a fijo o movil.
+\item Sobreescribe el método \emph{toString} a tu gusto.
+\item Puedes añadir cualquier método que veas necesario, aunque no es necesario para el desarrollo del ejercicio. Explica el porqué de su uso.
+\end{itemize}
+\item[FijoException] Nos sirve para el caso que intentemos crear un objeto \emph{Contacto} cuando el telefono no empiece por el numero 9.
+\item[MovilException] Nos sirve para el caso que intentemos crear un objeto \emph{Contacto} cuando el telefono movil no empiece por el numero 6 o 7.
+\item[TestAgenda] Qué tiene que realizar lo siguiente:
+\begin{itemize}
+\item Contener el método main.
+\item Crear un objeto Agenda, con el nombre \emph{TRABAJO}.
+\item Mediante la clase \emph{Scanner} leer los datos para crear tantos objetos \emph{Contacto} como sea posible, usando los datos aportados al final del documento. Observa que hay valores de telefono que harán saltar las correspondientes excepciones.
+\item Usando programacion defensiva mediante expresiones regulares, no permitas datos que no sean cadenas para el nombre de los contactos y el lugar de residencia y los telefonos no sean nueve números, no hay que controlar si empiezan por 6, 7 o 9, para eso estan las excepciones
+\item Añadir los objetos \emph{Contacto} válidos al objeto \emph{Agenda}
+\item Mostrar en consola la referencia del objeto \emph{Agenda} de acuerdo a la sobreescritura del método \emph{toString}
+\item Realizar la llamada al método \emph{obtenerDatosDeAgenda} que se detalla abajo.
+\item Crear un método aparte del main, denominado \emph{obtenerDatosDeAgenda}, que tenga como argumento un objeto \emph{Agenda} y el  nombre de un lugar de residencia y que muestre en consola las llamadas de los métodos de la clase \emph{Agenda} que  muestran los objetos \emph{Contactos} de ese lugar de residencia y el número de contactos que pertenecen a ese lugar de residencia, también usando la llamada del método. Usan \emph{printf} para formatear la salida.
+\end{itemize}
+\end{description}
+Consideraciones a tener en cuenta a la hora de hacer el ejercicio:
+Criterios de evaluación:
+\begin{description}
+\item[2 pto.] Por el control correcto de las excepciones.
+\item[1 pto.] Por la clase \emph{Contacto}
+\item[2.5 ptos.] Por la clase \emph{Agenda}
+\item[2.5 ptos.] Por la clase \emph{TestAgenda}
+\end{description}
+\textbf{Formato del fichero de subida:} se subirá el \emph{workspace} del proyecto del examen.
+\end{questions}
+\begin{verbatim}
+     Ciudad           T. fijo      T. móvil             Ciudad
+     Pedro García     910123456    610123456             Jaén
+     Luis Fernández   910123457    610123457             Jaén
+     María Fernández  910123458    610123458             Jaén 
+     Error 1          9101234578   610123457             Jaén 
+     Error2           910123457    10123457              Madrid
+\end{verbatim}
+\end{document}

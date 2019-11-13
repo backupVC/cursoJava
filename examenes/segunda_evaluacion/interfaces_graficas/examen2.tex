@@ -1,0 +1,42 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\pointsinmargin
+\marginpointname{\%}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN INTERFACES GRÁFICAS}\\Sigue las intrucciones que marca el ejercicio, no solo para la realización del mismo sino también para la entrega.\\\emph{No se permite ningun documento de ayuda, excepto los aportados por el profesor, para este caso tienes el tutorial de swing en \emph{http://cisco/java/swing}.}\\Realiza el ejercicio en Eclipse.\\
+Es interesante que redimensiones la ventana de la interfaz para que determines su comportamiento, asi como cerrar, minimizar, \dots para comprobar si hay algun evento de ventana incorporada a la misma.\\
+Se te entrega una carpeta denominada codigo.tar.gz que tiene los jar ejecutables.}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+\begin{questions}
+\question[35] Ejecuta el programa \emph{Ejercicio1} y realiza la misma interfaz usando las clases de \emph{swing}. Observa que hay tres eventos incorporados al mismo.
+\question[35] Ejecuta el programa \emph{Ejercicio2} teniendo en cuenta que que se aporta la base de datos requerida para obtener los datos para el modelo de tabla. Implementa el ejercicio sabiendo que tienes todas las clases necesarias para crear el modelo de tabla que son:
+\begin{itemize}
+\item Alumno.java
+\item AlumnosDB.java
+\item ListadoAlumno.java
+\item AlumnoTableModel.java
+\end{itemize}
+\question[30] Ejecuta el programa \emph{Ejercicio3} teniendo en cuenta que es una combinación de los dos ejercicios anteriores donde se incorporan algunos componentes más, y más eventos. Entre otros:
+\begin{itemize}
+\item Una barra de menú.
+\item Un botón insertar que añade un alumno con los datos del formulario, donde es obligatorio tener relleno los campos dni, nombre y apellidos.
+\item En el menú ayuda aparece un dialogo modal.
+\item También en el menu Alumno tenemos la posibilidad de añadir un alumno vacío.
+\end{itemize}
+\end{questions}
+\vspace*{1cm}
+\begin{center}
+\fbox{\fbox{{\large \textbf{Formato del fichero de subida}}}}
+\end{center}
+%\par\vspace*{0.5cm}
+Se subirá un archivo comprimido de la siguiente forma nombreApellidos.tar.gz o nombre.Apellidos.zip. que incluirá:
+\begin{itemize}
+\item El directorio del examen del workspace de eclipse.
+\end{itemize}
+\end{document}

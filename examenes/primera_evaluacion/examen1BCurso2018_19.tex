@@ -1,0 +1,56 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO B}\\Sigue las intrucciones que marca cada ejercicio, no solo para la realización del mismo sino también para la entrega de los mismos.\\\emph{No se permite ningun documento de ayuda, excepto los aportados por el profesor}\\\emph{No se corregirá ningun ejercicio que tenga errores de compilación}}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+Realiza los siguientes programas en \emph{Java}
+\begin{questions}
+\question(8 ptos) Una figura de 4 lados puede ser un cuadrado o un rectángulo. Implementa una clase denominada \emph{Figura4Lados} que contenga los siguientes métodos estátiscos en los cuáles se pasa como argumentos el valor de dos lados, en el caso del cuadrado el mismo valor para cada argumento, es decir el valor repetido dos veces, ejemplo:\\ \emph{\dots metodo(valor, valor) \dots}
+\begin{itemize}
+\item Recibiendo como parámetros los dos lados nos devuelva una cadena de texto dicendo si es un cuadrado o un rectángulo. Sobra decir que una cuadrado es aquél que tiene todos los lados iguales y el rectángulo aquel que tiene dos parejas de lados iguales y dos lados desiguales.
+\item Otro método que nos devuelva el perímetro de dicha figura.
+\item Otro método que nos devuelva el área de la figura.
+\item Otro método que nos devuelva el valor de la diagonal. El cálculo de la diagonal se realiza mediante la siguiente fórmula: ($diagonal = \sqrt{a^2 + b^2}$).
+\end{itemize}
+Realiza una clase \emph{TestFigura} que lleve acabo las siguientes acciones:
+\begin{itemize}
+\item Mediante la clase \emph{Scanner} solicita los dos lados de la figura de cuatro lados. Dichos lados deben ser de tipo entero.
+\item En el caso que se introduzca un lado con valor negativo o cero, el programa terminará con un mensaje diciendo que dicho lado no se puede admitir.
+\item Se llamará a cada uno de los métodos de la clase anterior para posteriormente usando \emph{printf} mostraremos una salida como \emph{Cuadrado de lado \textbf{valor} de périmetro \textbf{valor}, de área \textbf{valor} y diagonal \textbf{valor}} o \emph{Rectángulo de lado1 \textbf{valor}, de lado2 \textbf{valor}, de périmetro \textbf{valor}, de área \textbf{valor} y diagonal \textbf{valor}}, En \textbf{valor} introduciremos el correspondiente valor devuelto por la llamada a los métodos, en el caso de la diagonal debemos poner dos decimales.
+\end{itemize}
+\newpage
+Puedes probar los siguientes valores:
+\begin{itemize}
+\item -1 2  No es válido algún lado
+\item 1 1  Cuandrado de lado 1, de périmetro 4, \dots
+\item 1 2  Rectángulo de lado1 1, lado2 2, de perímetro 6, \dots
+\end{itemize}
+Realiza la documentación de la clase \emph{Figura4Lados}, incluyendo las etiquetas autor y versión. Recuerda que no solo hay que documentar la cabecera de la clase, sino también todos los métodos.\par
+\vspace{0.5cm}
+Desglose de la puntuación
+\begin{parts}
+\part (4 ptos) Se valorará con 1 pto cada método implementado correctamente de la clase \emph{Figura4Lados}.
+\part (3 ptos) Si implementas correctamente la clase \emph{TestFigura}, se tendrá en cuenta el uso correcto de la clase \emph{Scanner}, la llamada a los métodos de la clase \emph{Figura4Lados}, el uso correcto de estructura de control para realizar las llamadas de los métodos y las salidas a consola de los correspondientes mensajes valorando el uso de \emph{printf}
+\part (1 pto) Por la documentación de la clase \emph{Figura4Lados}. 
+
+\end{parts}
+En el caso que no sepas modularizar en dos clases, usa una única clase -\emph{TestFigura}- que incluya el método \emph{main}. En este caso la puntuación máxima obtenida en el ejercicio será de 6 puntos. En este caso no merece la pena que realices documentación
+\end{questions}
+
+\vspace{0,5cm}
+Debes entregar los siguientes documentos:
+\begin{itemize}
+\item Figura4Lados.java
+\item TestFigura.java
+\end{itemize}
+
+Entrégalos en un documento comprimido con el formato:\emph{ apellidosNombre.tar.gz} o \emph{apellidosNombre.zip}. Tanto a la plataforma \emph{moodle} como al profesor\par
+\vspace{0.5cm}
+La puntuación es de 8 puntos, pues la teoría se valora con 2 puntos.
+\end{document}

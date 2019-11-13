@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<project default ="main">
+	<property name="src" location="./src" />
+	<property name="bin" location="./bin" />
+	<property name="jar" location="./jar" />
+	<property name="doc" location="./doc" />
+
+	<target name="main" depends="init, compila,documenta, comprima,ejecuta">
+	</target>
+
+	<target name="init">
+		<mkdir dir="${bin}"/>
+		<mkdir dir="${jar}"/>
+		<mkdir dir="${doc}"/>
+	</target>
+
+	<target name="compila">
+		<javac srcdir="${src}" includeAntRuntime="no" destdir="${bin}"/>
+	</target>
+
+	<target name="comprima">
+		<jar destfile="${jar}/Proyecto.jar" basedir="${bin}">
+			<manifest>
+				<attribute name="Main-Class" value="primero.Uno" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="documenta">
+		<javadoc sourcefiles="${src}/Uno.java,${src}/Dos.java" destdir="${doc}" version="true" author="true" />
+	</target>
+
+	<target name="ejecuta" >
+		<java jar="${jar}/Proyecto.jar" fork="true" />
+	</target>
+
+</project>
+

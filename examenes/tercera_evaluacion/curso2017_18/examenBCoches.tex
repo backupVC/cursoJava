@@ -1,0 +1,88 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[utf-8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+%\usepackage{longtable}
+%\usepackage{array}
+%\usepackage{multirow}
+%\usepackage[latin1]{inputenc}
+%\inputencoding{latin1}
+%\usepackage{eurosym}
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\S}{Java}
+\author{Examen tercera evaluación}
+\author{Tipo B}
+\title{\textbf{\S}}
+\date{\today}
+
+\begin{document}
+\maketitle 
+%\tableofcontents
+%\newpage
+\section*{Descripción del ejercicio}
+El ejercicio consiste en la creación una aplicación para gestionar el stock de películas de un videoclub. El registro de cada película viene determinado por los siguientes aspectos
+\begin{description}
+\item[Codigo] que una secuencia única de 2 números, 2 caracteres, 1 número. alfanumericos.
+\item[Título] que es el título de la película.
+\item[Género] al que corresponde la película.
+\item[Número de cintas] correspondiente a la cantidad de cintas
+\end{description}
+Para ver datos y tipos se aporta la base de datos \emph{peliculas.db} realizada en \emph{sqlite}
+
+\section*{Creacion de la aplicación}
+Se aporta el esquema de un proyecto de eclipse, con la definición de la mayor parte de clases y metodos a implementar.\\
+Tenemos que crear una conexión a la base de datos usando el patron de instancia única o \emph{singlenton} \\
+Debemos crear una aplicación en \emph{Java} que nos permita hacer operaciones \emph{CRUD} sobre la \emph{base de datos} anterior, las operaciones que debes realizar son:
+\begin{itemize}
+\item Obtener el número de cintas dado el código de una película.
+\item Listar las películas de un género determinado.
+\item Borrar un película dado el código de la misma.
+\item Actualizar el número de cintas de una película.
+\item Crear una nueva película.
+\end{itemize}
+Para esto debemos usar los patrones \emph{DAO} y \emph{DTO}. Se aporta la interfaz \emph{DAO} para su posterior implementación. En el caso de la clase que usa el patron \emph{DAO} sobreescribe los metodos \emph{toString()}, \emph{hasCode() y equals()}, en este caso dos objetos \emph{PeliculaDTO} son iguales cuando tengan el mismo codigo.
+\par 
+Tambien se debe implementar una clase \emph{Logs} que nos ayude a recoger las operaciones realizadas sobre la base de datos, de manera que podamos guardar en un fichero la fecha de realizacion de dicha operación, usando el método \emph{now} de la clase \emph{LocalDateTime}, mas la operacién realizada \emph{(lectura, borrado, actualización o creación de datos)}. Los datos \textbf{no deben sobreescribir} a lo que ya tenga el fichero.\par
+Aparte se aporta la clase \emph{Principal} donde arranca la aplicación y se detalla las operaciones a realizar.
+
+\section*{Diagramas}
+Se realizara los diagramas UML de las clase que generan la conexion a la base de datos, las relacionadas con los patrones DAO y DTO, y finalmente la clase \emph{Logs}.
+
+\section*{Aspectos a tener en cuenta}
+Se usaran los paradigma de \emph{POO} y el tratamiento de excepciones se hara de acuerdo a las especificaciones de \emph{java 1.7}. Todos los flujos que se abran deben cerrarse en la aplicacion, desde la apertura de la conexion a la base de datos, operaciones sobre ella, lectura y escrituras \emph{I/O}.\par
+La lectura y escritura sobre ficheros se hara usando técnicas de \emph{buffer}\\
+No olvides cerrar la conexión a la base de datos correctamente.\\
+La introducción de parámetros en las acciones sobre la base de datos deben evitar inyecctión SQL.
+
+\section*{Criterios de evaluacion}
+Los criterios de evaluación son los indicados a continuación:\par 
+\vspace*{0.5cm}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{CRITERIO EVALUACION} & \textbf{PUNTUACION} \\
+\hline
+Programa funcionado correctamente & 1 pto\\
+\hline
+Clase \emph{Log} & 1.5 ptos.\\
+\hline
+Clase \emph{DAO} & 1.5 ptos.\\
+\hline
+Clase \emph{DTO} & 3 ptos.\\
+\hline
+Clase \emph{Main} & 2 ptos.\\
+\hline
+Diagrama UML & 1 pto.\\
+\hline
+
+\end{tabular}
+\par 
+\vspace{0.3cm}
+De forma adicicional se concedera un punto en el caso que se prepare una interfaz grafica para recepcionar los datos pedidios en la clase \emph{Main}
+\section*{Subida de ficheros}
+Debes subir el \emph{workspace} del proyecto del examen.
+\end{document}

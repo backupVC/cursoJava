@@ -1,0 +1,97 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[utf-8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+%\usepackage{longtable}
+%\usepackage{array}
+%\usepackage{multirow}
+%\usepackage[latin1]{inputenc}
+%\inputencoding{latin1}
+%\usepackage{eurosym}
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\S}{Base de datos y Java}
+\author{Examen tercera evaluación}
+\author{Tipo B}
+\title{\textbf{\S}}
+\date{\today}
+
+\begin{document}
+\maketitle 
+%\tableofcontents
+%\newpage
+\section*{Creacion de la BD}
+El ejercicio consiste en la creación de una base de datos llamada ExamenB, en un SGBD \emph{sqlite} que abarque la siguientes descripción:\par 
+Queremos organizar los productos de una empresa de informática, para esto debemos controlar los siguientes aspectos:
+\begin{itemize}
+\item Un producto informático se caracteriza por su nombre, el precio y la categoría a la que pertenece, por ejemplo una tarjeta de sonido de 25 euros y pertenece a la categoría hardware, drivers tarjeta sonido 2 euros de la categoría software, sistema operativo windows 8, 250 euros de sistemas operativos, \dots
+\item Un producto solo puede pertenecer a una categoría y en una categoría puede haber mas de un producto.
+\item Las categorías se caracterizan únicamente por su nombre. 
+\end{itemize}
+Debes aportar el correpondiente diagrama ER, realizar un script para la creación de las correspondientes tablas, que debe contemplar la integridad referencial del \emph{SGBD} e introducir el nombre de diez productos informáticos y cuatro categorías. La asignación que hagas de productos a categorías es libre.\par 
+Añade al script las siguientes características:
+\begin{itemize}
+\item Una \emph{vista} que nos de el nombre del producto, el precio  y el nombre de la categoría a la que pertenence.
+\item Un \emph{trigger} que controle el historial de antiguos precios de los productos, es decir que cuando un producto modifique su precio, quede registrado el antiguo precio de la fecha de modificación.
+\end{itemize}
+
+\section*{Creacion de la aplicación}
+Debemos crear una aplicación en \emph{Java} que nos permita hacer operaciones sobre la \emph{base de datos} anterior, las operaciones que debes realizar son:
+\begin{itemize}
+\item Insertar categorias, dado su nombre.
+\item Cambiar el nombre de una categoría.
+\item Borrar una categoría.
+\item Aprovechando la vista anterior, una consulta que nos de una lista de productos  que incluya la categoría a la que pertenece.
+\end{itemize}
+Te aconsejo que crees dos clases \emph{Categoria} y \emph{Producto}, con los atributos que mapeen los atributos de ambas tablas en la \emph{BD}, con sus correpondeintes \emph{getters y setter}, constructor, \dots \par 
+La \emph{BD} la debes incorporar a la carpeta raíz de tu workspace, de manera que la llamada a la BD la hagas solo con el nombre de dicha \emph{BD} sin indicar nada de ruta o path.
+\par 
+Comenta el código siempre que te sea posible, no se trata que uses \emph{javadoc}
+
+\section*{Para los que trabajen en Windows}
+No usar variables ni comentarios con caracteres que no sean \emph{ASCII}, es decir que sobre todo no utilices acentos ni eñes.
+
+\section*{Criterios de evaluacion}
+Los criterios de evaluación son los indicados a continuación:\par 
+\vspace*{0.5cm}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{CRITERIO EVALUACION} & \textbf{PUNTUACION} \\
+\hline
+Creacion de tablas en el script & 1.5 pto.\\
+\hline
+Integridad referencial en la BD & 0.5 ptos.\\
+\hline
+Insercción datos & 0.5 ptos.\\
+\hline
+Creacción de la vista & 0.5 ptos.\\
+\hline
+Creacción del trigger & 0.5 ptos.\\
+\hline
+Uso del patrón Singleton para la conexión  & 2 ptos\\
+\hline
+No uso del patrón en la conexión & 1 ptos.\\
+\hline
+Uso DAO y DTO aplicación & 3 pto.\\
+\hline 
+No uso del patrón DAO y DTO pero si POO  & 2 ptos.\\
+\hline
+No uso del patrón DAO y DTO y sin POO & 1 pto.\\
+\hline
+Diagrama ER correcto & 0.5 ptos.\\
+\hline
+Diagrama UML  de las clases& 1 pto.\\
+\hline
+\end{tabular}
+\section*{Subida de ficheros}
+Debes incluir tres ficheros:
+\begin{itemize}
+\item El \emph{workspace} comprimido, en el que esté incluido la \emph{BD}, que quiere decir esto: que incorpores en la carpeta del worspace la \emph{BD} creada en \emph{sqlite}. También debe aparecer el diagrama UML en formato \emph{png o jpeg}.
+\item El script de creación de la \emph{BD}.
+\item El diagrama ER realizado en \emph{dia} o cualquier otro programa y lo exportas a un formato imagen.
+\end{itemize}
+\end{document}

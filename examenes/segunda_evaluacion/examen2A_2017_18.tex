@@ -1,0 +1,72 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO A}\\El ejercicio se realizará en eclipse. Usa un workspace distinto al que usas de forma habitual. Crea un proyecto de java nuevo denominado Examen y posteriormente un package denominado ejercicio, donde desarrollar los programas}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+\begin{questions}
+\question Queremos hacer un programa para registrar los datos de distintas ciudades para esto debemos implementar las siguientes clases:
+\begin{description}
+\item[clase Ciudad] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre de la ciudad
+\item Latitud
+\item Longitud.
+\item Nº de habitantes.
+\item Un constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters}
+\item Sobreescribe el método \emph{toString()} para que cuando tratemos la referencia de estos objetos como \emph{String}, nos muestre los datos con el siguiente formato:\\
+Ciudad: (nombre de la ciudad) - Nº habitantes: (nº habitantes)
+\end{itemize}
+\item[clase Pais] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre del pais.
+\item Coleccion dinamica de ciudades.
+\item Un constructor que inicialice atributo nombre.
+\item Un método que nos sirva para añadir objetos \emph{Ciudad} a la coleccion de ciudades.
+\item Un método que nos devuelva el objeto \emph{Ciudad} con mas habitantes.
+\item Un método que nos diga si una ciudad existe o no. Pasamos como argumento el nombre de la ciudad, es valido pasar el nombre tanto en mayusculas como en minusculas.
+\item Un método que nos devuelva la población media de los distintos objetos \emph{Ciudad} que posee la lista de dichos objetos.
+\item Sobreescribe el método \emph{toString} a tu gusto.
+\item Puedes añadir cualquier método que veas necesario, aunque no es necesario para el desarrollo del ejercicio. Explica el porqué de su uso.
+\end{itemize}
+\item[LatitudException] Nos sirve para el caso que intentemos crear un objeto \emph{Ciudad} con un valor de la latitud errónea. La latitud es la distancia angular entre la línea ecuatorial (el ecuador), y un punto determinado de la Tierra. Sus valores pueden oscilar entre -90 (valor del polo sur) a 90 (valor del polo norte) pasando por 0 (valor del ecuador).
+\item[LongitudException] Nos sirve para el caso que intentemos crear un objeto \emph{Ciudad} con un valor de la longitud errónea. La longitud expresa la distancia angular entre un punto dado de la superficie terrestre y el meridiano que se toma como 0 (es decir, el meridiano de Greenwich. Su valor oscila entre 0 y 360 (este último valor corresponde de nuevo a 0).
+\item[TestCiudades] Qué tiene que realizar lo siguiente:
+\begin{itemize}
+\item Contener el método main.
+\item Crear un objeto \emph{Pais} denominado \emph{ESPAÑA	}.
+\item Mediante la clase \emph{Scanner} leer los datos para crear tantos objetos \emph{Ciudad} como sea posible, usando los datos aportados al final del documento. Observa que hay valores de latitud y longitud que harán saltar las correspondientes excepciones.
+\item Usando programacion defensiva mediante expresiones regulares, no permitas datos que no sean cadenas para el nombre de ciudad, ni numeros sin formato correcto para la longitud y latitud, y que no sean enteros para el numero de habitantes.
+\item Añadir los objetos \emph{Ciudad} válidos al objeto \emph{Pais}
+\item Mostrar en consola la referencia del objeto \emph{Pais} de acuerdo a la sobreescritura del método \emph{toString}
+\item Realizar la llamada al método \emph{obtenerDatosDePais} que se detalla abajo.
+\item Crear un método aparte del main, denominado \emph{obtenerDatosDePais}, que tenga como argumento eun objeto \emph{Pais} y que muestre en consola las llamadas del  método de la clase \emph{Pais} que nos devuelve el objeto \emph{Ciudad} con mas habitantes, mostrando el nombre de la ciudad y el número de habitantes, así como la llamada del método que nos devuelve la población media, usando \emph{printf} formateando con dos decimales
+\end{itemize}
+\end{description}
+Consideraciones a tener en cuenta a la hora de hacer el ejercicio:
+Criterios de evaluación:
+\begin{description}
+\item[2 pto.] Por el control correcto de las excepciones.
+\item[1 pto.] Por la clase \emph{Ciudad}
+\item[2.5 ptos.] Por la clase \emph{Pais}
+\item[2.5 ptos.] Por la clase \emph{TestCiudades}
+\end{description}
+\textbf{Formato del fichero de subida:} se subirá el \emph{workspace} del proyecto del examen.
+\end{questions}
+\begin{verbatim}
+     Ciudad     Latitud      Longitud             Habitantes
+     Madrid     40.461688    -3.70319             3273049
+     Jaén       37.7793464   -3.78515             114238
+     Barcelona  41.3850379    2.17336             1608746
+     Alicante   38.34601,    -0.49069             329988
+     Error1     120	          0                   12222
+     Error2     12	           500                 600
+     Lugo       43.0099289    -7.556834900000013  97995
+\end{verbatim}
+\end{document}

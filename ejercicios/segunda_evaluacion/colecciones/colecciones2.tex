@@ -1,0 +1,68 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[utf-8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+%\usepackage{longtable}
+%\usepackage{array}
+%\usepackage{multirow}
+%\usepackage[latin1]{inputenc}
+%\inputencoding{latin1}
+\usepackage{hyperref}
+\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\IO}
+\date{\today}
+
+\begin{document}
+\maketitle
+%\tableofcontents
+%\setlongtable 
+
+
+\section*{Ejercicio 1}
+El ejercicio a realizar consiste en la gestión de una base de datos sobre coches. Para obtener los datos, usando la URL \href{https://www.mockaroo.com/}{de mockaroo} genera un fichero de \emph{array de json} con los siguientes campos:
+\begin{enumerate}
+\item modelo del coche
+\item fabricante del coche.
+\item matrícula del coche
+\end{enumerate}
+Los campos \emph{model}o y \emph{fabricante} lo ofrece por defecto \emph{mockaroo} y en el caso de la matrícula usa una expresión regular con el formato cuatro números y tres letras.\\
+Crea una clase base o modelo denominado \emph{Coche} con los siguientes atributos:
+\begin{itemize}
+\item Modelo.
+\item Fabricante.
+\item Matrícula.
+\end{itemize}
+Crea una clase auxiliar con los siguientes métodos:
+\begin{itemize}
+\item Un método estático que lea el fichero del \emph{array de json}, usando una librería externa \emph{gson} situandp a ésta en el proyecto en un directorio denominado \emph{lib} y obtén dicha librería usando el repositorio de \emph{maven}. Este método debe devolver un \emph{Map} con clave la matrícula y un \emph{array de String}, siendo el primer elemento del \emph{array} el modelo y el segundo el fabricante.
+\end{itemize}
+Una clase que gestione la conexión a la base de datos de acuerdo al patrón \emph{singleton}. Usa un fichero de propiedades para la gestión de la base de datos.\\
+En relación a la clase que gestiona el patrón \emph{DAO}, tendrá como atributo un \emph{map} con las características anteriormente mencionadas e implementará los siguientes métodos:
+\begin{itemize}
+\item Un método que cree la tabla para la insercción de datos.
+\item Un método que obtenga los datos de la base de datos, devolverá un objeto \emph{map} con la estructura antes indicada.
+\item Un método que vuelque los datos a la base de datos usando los valores del atributo \emph{map}
+\item Un método que borre los datos de la base de datos.
+\item Un método que añada al \emph{map} una nueva entrada.
+\item Un método que devuelva un objeto \emph{Coche} del \emph{map} dada una matrícula del coche.
+\item Un método que borre una entrada del \emph{map} dada una matrícula del coche.
+\item Un método que actualice el modelo y/o fabricante dada la matrícula del coche.
+\end{itemize}
+Una clase \emph{Test} que realice las siguientes operaciones:
+\begin{itemize}
+\item Crea un objeto \emph{DAO}, para eso hay que inicializar el atributo \emph{map} de dicha clase, teniendo en cuenta:
+\begin{enumerate}
+\item Si existe la base de datos y la tabla tiene datos, lo obtendremos de la base de datos.
+\item En caso contrario lo leeremos del fichero usando el método correspondiente, además de crear la tabla de la base de datos y volcar los datos a dicha tabla.
+\end{enumerate}
+\item Crearemos un menú con las opciones \emph{CRUD} indicadas en el objeto \emph{DAO}
+\item Una opción será salir del programa, la salida del programa conlleva el borrado de los datos de la tabla, el volcado de los nuevos datos y el cierre de la conexión de la base de datos. (Se puede obviar esto si no ha habido cambios en los datos, es decir solo se han hecho consultas).
+\end{itemize}
+En el caso que necesites algún método, si está relacionado con el objeto \emph{DAO} lo creas en dicha clase, y sino en la clase \emph{Auxilidar}
+\end{document}

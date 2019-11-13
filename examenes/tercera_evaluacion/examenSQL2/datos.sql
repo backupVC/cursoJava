@@ -1,0 +1,28 @@
+insert into continente (nombre) values ('Europa');
+insert into continente (nombre) values ('America del Sur');
+insert into continente (nombre) values ('America del Norte');
+insert into continente (nombre) values ('America Central');
+insert into continente (nombre) values ('Asia');
+insert into continente (nombre) values ('Africa');
+insert into continente (nombre) values ('Oceanía');
+
+insert into pais values ('SA', 'Sudáfrica', 'afrikaans', 6);
+insert into pais values ('MR', 'Marruecos', 'árabe', 6);
+insert into pais values ('EG', 'Egipto', 'árabe', 6);
+insert into pais values ('RU', 'Rusia', 'ruso', 1);
+insert into pais values ('SP', 'España', 'español', 1);
+insert into pais values ('PT', 'Portugal', 'portugués', 1);
+insert into pais values ('UK', 'Reino Unido', 'inglés', 1);
+insert into pais values ('FR', 'Francia', 'francés', 1);
+insert into pais values ('GE', 'Alemania', 'alemán', 1);
+insert into pais values ('AU', 'Austria', 'alemán', 1);
+insert into pais values ('US', 'Estados Unidos', 'inglés', 3);
+insert into pais values ('CA', 'Canada', 'inglés', 3);
+insert into pais values ('MX', 'México', 'español',4 );
+insert into pais values ('CR', 'Costa Rica', 'español',4 );
+insert into pais values ('AR', 'Argentina', 'español',2 );
+insert into pais values ('UR', 'Uruguay', 'español',2 );
+insert into pais values ('BR', 'Brasil', 'portugúes',2 );
+insert into pais values ('CH', 'China', 'chino',5 );
+insert into pais values ('JP', 'Japón', 'japonés',5 );
+insert into pais values ('AT', 'Australia', 'inglés',7 );

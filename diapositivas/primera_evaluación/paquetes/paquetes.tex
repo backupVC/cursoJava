@@ -1,0 +1,499 @@
+\documentclass{beamer} 
+\usetheme{default}
+\usecolortheme{albatross} 
+
+
+%\useoutertheme{umbcfootline} 
+%\setbeamertemplate{background canvas}[vertical shading][bottom=red!20,top=yellow!30] 
+
+
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+
+
+\title{Paquetes en Java}
+\subtitle{Ocultando la implementación}
+\author{Manuel J. Molino Milla \and Luis Molina Garzón}
+
+\date{\today} %
+
+\institute{IES Virgen del Carmen \and Departamento de Informática}
+
+
+
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Logo}
+\begin{figure}
+\includegraphics[scale=1]{imagenes/logo.jpeg} 
+\caption{Logo Java}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Contenido}
+  \tableofcontents[pausesections]
+\end{frame}
+
+
+
+\section{Introduccion}
+
+\begin{frame}
+    \frametitle{Introducción}
+
+\begin{itemize}[<+-| alert@+>]
+      \item Un paquete es lo que se obtiene cuando se usa la palabra clave \emph{import}
+      \item \emph{import java.util.*}
+      \item Se importan todas las bibibliotecas desde el paquete \emph{java.util}      
+      \item \emph{import java.util.Scanner}
+      \item Ahora disponemos de la clase Scanner y sobre todo de sus metodos.
+      \item Cuado se crea un fichero fuente de \emph{Java} se crea lo que se conoce como una \emph{unidad de compilacion}
+      \item Cada una de estas unidades tienen un nombre que acaba en \emph{.java}
+      \item Dentro de cada unidad de compilacion solo habra una clase publica.
+      \item El resto deben quedar ocultas para todo el exterior. Seran clases de apoyo.
+    \end{itemize}
+    \pause
+\end{frame}
+
+\begin{frame}
+    \frametitle{Introducción}
+
+\begin{itemize}[<+-| alert@+>]
+      \item Cuando se compila un fichero \emph{.java} se obtiene un fichero de salida que tiene exactamente el mismo nombre pero con extension \emph{.class}  
+      \item Se pueden tener bastante ficheros \emph{.class} partiendo de un numero pequeño de fichero \emph{.java}
+      \item Un programa en Java es un compendio de ficheros \emph{.java} que pueden empaquetarse y comprimise en un fichero \emph{.jar}      
+      \item Para esto usaremos la herramienta \emph{jar} de Java.
+      \item El intérprete de Java es el responsable de encontrar, cargar e interpretar estos ficheros.
+      \item Si las clases están relacionadas se crean bibliotecas y a veces se empaquetan en un único fichero.
+    \end{itemize}
+    \pause
+\end{frame}
+
+
+
+\section{Package}
+
+
+
+\begin{frame}[fragile]
+    \frametitle{Bibliotecas}
+
+\begin{itemize}[<+-| alert@+>]
+      \item Una biblioteca tambien es un conjunto de estos fichero de clase.
+      \item Generalmente cada fichero tiene una clase publica.
+      \item Si todos los ficheros estan relacionados formamos un paquete \emph{package}
+      \item Para eso ponemos como primera linea de cada fichero que forman la biblioteca:
+      \item \emph{package nombre\_del\_paquete}.
+      \item Aquellas clases que quieran utilizar esta biblioteca indicaran en la cabecera:
+      \item \emph{import nombre\_del\_paquete}
+    \end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Ejemplos de package e import}
+\begin{block}{Definicion del paquete}
+
+    \begin{verbatim}
+package mipaquete;
+public class MiClase{ 
+.....
+\end{verbatim}
+\end{block}
+
+\pause
+\begin{exampleblock}{Uso sin import}
+\begin{verbatim}
+mipaquete.MiClase m =  new mipaquete.MiClase();
+.....
+\end{verbatim}
+\end{exampleblock}
+\begin{alertblock}{Uso con import}
+
+\pause
+\begin{verbatim}
+import mipaquete;
+MiClase m =  new MiClase();
+.....
+\end{verbatim}
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Package}
+    
+\begin{itemize}[<+-| alert@+>]
+\item Un package es una agrupación de clases afines.
+\item Equivale al concepto de librería existente en otros lenguajes o sistemas.
+\item Una clase puede definirse como perteneciente a un package y puede usar otras clases definidas en ese o en otros packages.
+\item Los packages delimitan el espacio de nombres (space name).
+\item El nombre de una clase debe ser único dentro del package donde se define.
+\item Dos clases con el mismo nombre en dos packages distintos pueden coexistir e incluso pueden ser usadas en el mismo programa.
+\end{itemize}
+\pause
+\end{frame}
+
+\begin{frame}
+    \frametitle{Package}
+    
+\begin{itemize}[<+-| alert@+>]
+\item Los packages además también tienen un significado físico que sirve para almacenar los módulos ejecutables (ficheros con extensión .class) en el sistema de archivos del ordenador. 
+\item Supongamos que definimos una clase de nombre \emph{miClase} que pertenece a un package de nombre \emph{misPackages.Geometria.Base}
+\item Cuando la JVM vaya a cargar en memoria miClase  buscará el módulo ejecutable (de nombre miClase.class) en un directorio en la ruta de acceso \emph{misPackages/Geometria/Base}
+\item Si una clase no pertenece a ningún package (no existe clausula package )  se asume que pertenece a un package por defecto sin nombre, y la JVM buscará el archivo .class en el directorio actual. 
+\item Si una clase no se declara public sólo puede ser usada por clases que pertenezcan al mismo package.  
+\end{itemize}
+\pause
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Paquetes}
+Si compilamos el siguiente codigo con \alert{javac -d .}
+\begin{verbatim}
+package libreria.utilidades;
+public class Clase{
+    ......
+}
+\end{verbatim}
+\pause 
+Generamos automaticamente la siguiente estructura de directorios y archivos:
+\pause
+\begin{verbatim}
+        directorio_raiz
+             |
+             |--- Clase.java
+             |
+             |--- libreria
+             |        |
+                      |---utilidades
+                      |       |
+                              |---Clase.class
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Classpath}
+\begin{itemize}[<+-| alert@+>]
+\item Es una opción admitida en la línea de órdenes o mediante variable de entorno
+\item Indica a la Máquina Virtual de Java dónde buscar paquetes y clases definidas por el usuario a la hora de ejecutar programas.
+
+\item Cuando ejecutamos \emph{java ClasePrincipal}. Java busca las clases que necesita en unos determinados directorios y ficheros .jar. Por defecto los buscará en los .jar propios de java y en el directorio en el que se esté ejecutando el comando java. 
+\end{itemize}
+\pause
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Ejemplo}
+\begin{footnotesize}
+\begin{verbatim}
+DirectorioRaiz
+     |
+     |---DirectorioFuentes
+     |         |
+     |         |-ClasePrincipal.java
+     |         |
+     |---DirectorioLibrerias
+     |         |
+     |         |-ClaseAuxiliar.class
+     |         |-Paquetes.jar
+\end{verbatim}
+\pause
+\alert{Compilamos} javac -cp ../DirectorioLibrerias/:../DirectorioLibrerias/Paquetest.jar\\
+\pause
+Se crea en el directorio \alert{DirectorioFuentes} \emph{ClasePrincipal.class}\\
+\pause
+\alert{Ejecutamos} java -cp ../DirectorioLibrerias/:../DirectorioLibrerias/Paquetes.jar:.\\
+\pause 
+En windows cambiamos los \alert{:} por \alert{;}\\
+\pause
+Debemos recordar que tenemos la herramienta \alert{ant} para automatizar tareas.
+\end{footnotesize}
+
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Creacion de paquetes unicos}
+\begin{footnotesize}
+\begin{itemize}[<+->]
+\item La agrupacion de ficheros en paquete en un subdirectorio asegura nombre de paquetes unicos.
+\item Tambien asegura una correcta localizacion de los mismos.
+\item El interprete de java encuetra primero la variable de entorno \emph{CLASSPATH}
+\item Establecidad por el sistema operativo o por el programa de instalacion de Java.
+\item \emph{CLASSPATH} contiene uno o mas directorios como raiz para la busqueda de ficheros \emph{.class}
+\item Si encuentra un paquete en le codigo fuente llamado \emph{package foo.bar.bax}
+\item Lo convierte (en caso de Ubuntu) en foo/bar/bax y lo concatena a la estructura de directorios de \emph{CLASSPATH}
+\item Busca el fichero \emph{.class} necesario.
+\item Si no localiza dicho clase devuelve un error de clase no encontrada.
+\item Para la creacion de paquetes unicos para su posterior uso se puede usar un dominio publico.
+\item Ejemplo: package com.iesvirgendelcarmen.utilidades;
+\end{itemize}
+\end{footnotesize}
+\pause
+\end{frame}
+
+\section{Modificadores de acceso en Java}
+\begin{frame}
+\frametitle{Modificadores usados}
+Se colocan delante de cada declaración de cada miembro de la clase, bien sea un \emph{atributo} o bien un \emph{método}, controlando el acceso sólo para esa definción en particular.
+\begin{itemize}[<+-|alert@+>]
+\item Amistoso.
+\item \emph{public}
+\item \emph{private}
+\item \emph{protected}
+\end{itemize}
+\pause
+\end{frame}
+
+\subsection{Amistoso}
+\begin{frame}
+\frametitle{Modificador amistoso}
+\begin{itemize}[<+->]
+\item Cuando no se define ningun modificador se dice que tiene acceso \emph{amistoso}.
+\item Todas las clases del paquete actual tienen acceso al miembro amistoso. 
+\item Pero las clases fuera del paquete no tienen acceso.
+\item Este acceso da significado para agrupar juntas las clases de un paquete.
+\end{itemize}
+\pause
+\end{frame}
+
+\subsection{Public}
+\begin{frame}
+\frametitle{Modificador public}
+\begin{itemize}[<+->]
+\item Dicho atributo es accesible por todo el  mundo.
+\item En especial al programador cliente que hace uso de las bibliotecas.
+\end{itemize}
+\pause
+\end{frame}
+
+
+\subsection{Private}
+\begin{frame}
+\frametitle{Modificador private}
+\begin{itemize}[<+->]
+\item Nadie puede acceder a ese miembro excepto a traves de los metodos de esa clase.
+\item Otras clases del mismo paquete no pueden acceder a dichos miembros.
+\item Se suelen usar para \emph{métodos ayudantes}
+\end{itemize}
+\pause
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Acceso privado}
+\begin{footnotesize}
+\begin{verbatim}
+        class Punto {
+            private int x , y ;
+            static private int numPuntos = 0;
+            Punto ( int a , int b ) {
+                x = a ; y = b;
+                numPuntos ++ ;
+            }
+            int getX() {
+                return x;
+            }
+            int getY() {
+                return y;
+            }
+            static int cuantosPuntos() {
+                return numPuntos;
+            }
+        }
+\end{verbatim}  
+\pause
+\begin{center}
+\alert{Obtenemos un ERROR si hacemos: \\
+\pause
+Punto p = new Punto(0,0);\\
+p.x = 5;}
+\end{center}
+\end{footnotesize}
+\end{frame}
+
+
+\subsection{Protected}
+\begin{frame}
+\frametitle{Modificador protected}
+\begin{itemize}[<+->]
+\item Esta relacionado con el concepto de \emph{herencia}
+\item Proporciona acceso público para las clases derivadas.
+\item Y acceso privado (prohibido) para el resto de clases.
+\end{itemize}
+\pause
+\end{frame}
+
+\begin{frame}
+\frametitle{Uso de tipo de accesos}
+\begin{itemize}[<+->]
+\item El modificador \emph{private} solo se aplica a miembros de clase (métodos y atributos) 
+\item El modificador \emph{public} se aplica a clases y atributos de la clase.
+\item El uso de modificadores \emph{públic y private} en variables locales originará error.
+\item En la mayoría de los casos los constructores deberían ser \emph{public}
+\item Podemos usar el modificador \emph{private} para constructores cuando queremos asegurarnos que no se puedan crear objetos de esa clase.
+\item En el caso de la clase \emph{Math} donde sus miembros son \alert{static} podemos crear un constructor private:
+\item private Math() \{ \}
+\end{itemize}
+\pause
+\end{frame}
+
+\begin{frame}
+\frametitle{Buenas prácticas}
+\begin{itemize}[<+->]
+\item Se aconseja declarar todos los atributos como \emph{private}
+\item Cuando necesitemos consultar su valor o modificarlo, utilicemos los métodos \emph{get} y \emph{set}.
+\item En caso de que el tipo de valor devuelto por el método sea un boolean, se utilizará \emph{is} en vez de \emph{get}.
+\end{itemize}
+\pause
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Ejemplo 1}
+\begin{verbatim}
+//Atributos private
+private String nombre;
+private boolean casado;
+ 
+//Metodos get y set para estos atributos
+public void setNombre(String nombre) {
+    this.nombre = nombre;
+}
+public void setCasado(boolean casado) {
+    this.casado = casado;
+}
+public String getNombre() {
+    return nombre;
+}
+public boolean isCasado() {
+    return casado;
+}
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Ejemplo 2}
+\begin{footnotesize}
+\begin{verbatim}
+public class Vehiculo {
+    //Atributos con acceso private
+    private String modelo;
+    private int velocidad;
+    private boolean arrancado;
+    //El constructor siempre debe de ser public
+    public Vehiculo(String modelo, int velocidad, boolean arrancado) {
+        this.modelo = modelo;
+        this.velocidad = velocidad;
+        this.arrancado = arrancado;
+    }  
+    //Atributos getter con acceso public
+    public String getModelo() {
+        return modelo;
+    } 
+    public int getVelocidad() {
+        return velocidad;
+    } 
+    public boolean isArrancado() {
+        return arrancado;
+    }
+}
+\end{verbatim}
+\end{footnotesize}
+\end{frame}
+
+\section{Archivos jar}
+\begin{frame}
+\frametitle{Archivos jar}
+\begin{itemize}[<+->]
+\item Los ficheros Jar \emph{(Java ARchives)} permiten recopilar en un sólo fichero varios ficheros diferentes, almacenándolos en un formato comprimido para que ocupen menos espacio.
+\item La particularidad de los ficheros .jar es que no necesitan ser descomprimidos para ser usados.
+\item El intérprete de Java es capaz de ejecutar los archivos comprimidos en un archivo jar directamente. 
+\item Ejemplo:
+\item \alert{java -jar aplic.jar}
+\end{itemize}
+\pause
+\end{frame}
+
+\begin{frame}
+\frametitle{Crear jar}
+\begin{itemize}[<+->]
+\item Si el fichero .jar contiene muchos ficheros .class, ¿cuál de todos se ejecuta?
+\item Sabemos que debe ejecutarse el que contiene el método main pero, ¿cómo sabe el intérprete de Java que clase de todas las del fichero contiene este método?
+\item La respuesta es que lo sabe porque se lo tenemos que decir durante la creación del fichero jar.  
+\item Para crearlo debemos seguir los siguientes pasos:
+\begin{enumerate}
+\item Crear un directorio META-INF (las mayúsculas son necesarias) y dentro un fichero MANIFEST.MF
+\item En el fichero \emph{MANIFEST.MF} ponemos: Main-Class: Principal
+\item Creamos el fichero: \alert{\emph{jar cfm fich.jar META-INF/MANIFEST.MF *.class}}
+\item Podemos saber el contenido del fichero: \alert{\emph{jar tf fich.jar}}
+\item Lo lanzamos con: \alert{\emph{java -jar fich.jar }}
+\end{enumerate}
+
+\end{itemize}
+\pause
+\end{frame}
+
+\section{Miscelánea}
+\begin{frame}
+\frametitle{API java Fechas}
+Las nuevas clases que se aportan en \emph{Java 8}:
+\begin{description}[<+->]
+\item[Instant] es, básicamente, un timestamp numérico. Es una clase útil para realizar logs y usar para frameworks de persistencia.
+\item[LocalDate] sirve para almacenar una fecha sin hora. Por ejemplo, un cumpleaños como ''16-12-1979''
+\item[LocalTime] sirve para almacenar una hora sin fecha. Por ejemplo, un horario de apertura a las ''9:30''.
+\item[LocalDateTime] sirve para almacenar una fecha con hora. Por ejmplo, puede almacenar ''1979-12-16T12:30''
+\item[ZonedDateTime] almacena hora y fecha con información de uso horario.
+\end{description}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Ejemplo}
+\begin{footnotesize}
+\begin{verbatim}
+import java.time.*;
+public class Fechas{
+   public static void main(String[] arg){
+      //imprimir la fecha actual
+      LocalDate date = LocalDate.now();
+      System.out.println(date);
+      System.out.printf("%s-%s-%s%n", date.getDayOfMonth(),
+            date.getMonthValue(),  date.getYear());
+      //vamos a sumar 5 horas
+      LocalTime time = LocalTime.now();
+      System.out.println(time);
+      LocalTime newTime;
+      newTime = time.plusHours(5);
+      System.out.println(newTime);
+      //imprimimos fecha y hora
+      LocalDateTime dateTime = LocalDateTime.now();
+      System.out.println(dateTime);
+   }
+}
+\end{verbatim}
+\end{footnotesize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Preguntas} 
+\begin{figure}
+\includegraphics[scale=0.9]{imagenes/dudas.png} 
+\caption{Lenguaje máquina}
+\end{figure} 
+\end{frame}
+
+\end{document}
+

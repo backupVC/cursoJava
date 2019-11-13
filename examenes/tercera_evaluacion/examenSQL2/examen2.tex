@@ -1,0 +1,93 @@
+\documentclass[a4paper,spanish]{article}
+\usepackage[spanish]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\S}{Base de datos y Java}
+\author{Examen tercera evaluación}
+\title{\textbf{\S}}
+\date{\today}
+
+\begin{document}
+\maketitle 
+%\tableofcontents
+%\newpage
+\section*{Creacion de la BD}
+El ejercicio consiste en la creación de una base de datos llamada Mundo. La debes crear en \emph{mysql} con integridad referencial y con las siguientes tablas (crea un script para la creación de dichas tablas para posterior entrega en el examen):
+\begin{description}
+\item[continentes] que contiene un \emph{id} como clave primaria con autoincremento y el nombre del continente.
+\item[paises] que tiene los siguiente campos:
+\begin{enumerate}
+\item \emph{id} como clave primaria, de tipo \emph{VARCHAR}.
+\item \emph{nombre} que corresponde al nombre del pais.
+\item \emph{idioma} que corresponde al idioma hablado en dicho páis.
+\item \emph{idContinente} que corresponde a una clave foranea de la tabla continente.
+\end{enumerate}
+\end{description}
+Vuelca los datos que se te proporcionan en el fichero datos.sql\par 
+Crea una vista que dado el nombre de un idioma nos diga el nombre de los paises donde se habla y el nombre del continente al que pertenece (Añádela al script anterior de la creación de la BD).\par 
+Crea dos usuarios \emph{cliente y administrador} el primero sólo con permisos de consulta y el otro con permisos de selección, insercción, borrado y actualización. (Añáde las sentencias al script anterior de la creación de la BD)
+
+\section*{Creacion de clases}
+Crea las clases siguientes usando \emph{jdbc}. En cada clase se conecta y se desconecta de la BD. Debes usar uno de los dos usuarios para cada clase, según veas conveniente:
+\begin{itemize}
+\item Una clase por cada tabla con sus datos correspondientes.
+\item Una clase que facilite la consulta del numero total de paises que tiene un continente, valor que es solicitado en un scanner en la clase \emph{TestMundo.java}.
+\item Una clase que imprima el nombre de todos los paises que empiezan por \emph{C}
+\item Una clase que solicite por la entrada estándar (con scanner y en la clase \emph{TestMundo.java}) el nombre del \emph{idioma} nos devuelva el nombre del país y continente. (Aprovecha la vista que has usado).
+\item Una clase que añada un nuevo páis. Los datos se recogen mediante un scanner en \emph{TestMundo.java}, para el caso del continente se debe introducir el nombre del continente, nunca el \emph{id} de dicho continente. 
+\item Una clase que borre los paises \emph{España} y \emph{Portugal} y cree un nuevo país denominado \emph{Iberia} con \emph{id} denominado \emph{IB}. Ten encuenta que las ejecuciones de las sentencia abarcan una transacción.
+\item Crea una clase denominada TestMundo que contenga el metodo \emph{main} que pruebe todos los metodos anteriormente expuestos.
+\end{itemize}
+
+\section*{Optimizacion}
+Escribe en una clase denominada Cuestion.java que imprima por pantalla como se puede optimizar esta BD.
+
+\section*{Criterios de evaluacion}
+Los criterios de evaluación son los indicados a continuación:\par 
+\vspace*{0.5cm}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{CRITERIO EVALUACION} & \textbf{PUNTUACION} \\
+\hline
+Creacion de tablas e inserccion de datos & 2 ptos.\\
+\hline
+Vista & 0.5 ptos.\\
+\hline
+Usuarios & 0.5 ptos.\\
+\hline
+TestMundo.java y resto de java no asociados a la BD & 1 pto.\\
+\hline
+Clase para conocer el numero de paises  & 1 pto.\\
+\hline 
+Clase para conocer los paises que empiezan por C & 1 pto.\\
+\hline
+Clase para conocer el nombre del pais dado el idioma & 1 pto.\\
+\hline
+Clase para la inserccion de un pais & 1 pto\\
+\hline
+Clase conteniendo la transaccion & 1 pto.\\
+\hline
+Clase sobre optimización & 1 pto\\
+\hline
+\end{tabular}
+\section*{Subida de ficheros}
+Debes subir el proyecto de eclipse junto al script de la BD.
+\section*{Ayuda}
+Para la conexion de la BD en \emph{java} mediante \emph{jdbc} ten encuenta las siguientes sentencias:
+\begin{quote}
+Class.forName(''com.mysql.jdbc.Driver'');\\
+Connection conexion = DriverManager.getConnection (''jdbc:mysql://localhost/nombreBD'',''usuario'', "clave'');\\
+\end{quote}
+También puedes consultar las siguientes direcciones web:
+\begin{quote}
+http://http://www.mysqltutorial.org//\\
+http://docs.oracle.com/javase/tutorial/jdbc/basics/index.html
+\end{quote}
+\end{document}

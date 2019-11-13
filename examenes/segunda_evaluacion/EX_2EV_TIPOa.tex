@@ -1,0 +1,90 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO A}\\El ejercicio se realizará en eclipse. Usa un workspace distinto al que usas de forma habitual. Crea un proyecto de java nuevo denominado \emph{Examen} y en el dos \emph{packages} \emph{clases} y \emph{test} }}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+\begin{questions}
+\question Queremos hacer un programa para registrar los datos de productos de un supermercado, para esto debes implementar las siguientes clases:
+\begin{description}
+\item[clase Producto] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre del producto.
+\item Código de barras (EAN-13).
+\item Fecha de incorporación.
+\item Un constructor que inicialice dichos atributos, excepto el fecha de incorporación que debe coincidir con la fecha actual del sistema en el momento de la creación del objeto.
+\item Los correspondientes \emph{getters}
+\item Sobreescribe el método \emph{toString()} para que cuando tratemos la referencia de estos objetos como \emph{String}, nos muestre el producto con el siguiente formato:\\
+Nombre: nombre\_producto - código: código\_barras - fecha de incorporación.
+\end{itemize}
+\item[clase Supermercado] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre del supermercado.
+\item Telefono.
+\item Colección de objetos \emph{Producto}.
+\item Un constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters}.
+%\item Un método que añada objetos a la colección anterior.
+\item Sobreescribe el método \emph{toString()} para que cuando tratemos la referencia de estos objetos como \emph{String}, nos muestre  el siguiente formato:\\
+\emph{Nombre: nombre\_supermercado - número de productos: numero\_productos}
+\end{itemize}
+\item[CodigoBarraExcepcion] Con la siguiente implementación:
+\begin{itemize}
+\item Debe sobreescribir el método de la clase \emph{Exception} para que cuando se lance la excepción muestre el mensaje \emph{Código de barras erróneo}. El tratamiento algorítmico de verificación de un código de barra se detalla abajo.
+\end{itemize}
+\item[Clase TestSupermercado] que realice las siguientes tareas:
+\begin{itemize}
+%\item Crea una instancia de la clase \emph{Supermercado}
+\item Usando la clase \emph{Scanner} solicita los siguientes datos:
+\begin{enumerate}
+\item El nombre del supermercado. Usando expresiones regulares el formato del mismo es una secuencia de caracteres alfanuméricos, ejemplo \emph{Supermaket, Super 21, \dots.}\\ Debemos solicitarlos hasta que tenga el formato correcto.
+\item El teléfono del supermercado, que lo solicitaremos teniendo en cuenta que son 9 dígitos y que debe empezar bien por 6, 9 ó 7. Usa una expresión regular para esto. Debemos estar solicitando el teléfono hasta que este sea válido.
+\item Solicita tres productos, primero solicitando el nombre del producto y posteriormente el código de barra.
+\item Usando expresiones regulares permite que el nombre solicitado sean solo carácteres alfanuméricos (números no valen) y el código de barras esté formado por 13 números. En el caso que no sea así, se siguirá solicitando datos hasta que complete el número de tres productos.
+\item Habrá que contemplar la excepción de \emph{CodigoBarraExcepcion} de manera que no se admite código de barras no válidos. Está vendrá propagada del constructor de la clase \emph{Producto}.
+\item Los tres productos se añadirán a una lista de objetos \emph{Productos} para que con el nombre del supermercado se pueda crear una instancia de la clase \emph{Supermercado}, y deben ser tres objetos \emph{Producto}, ni uno mas ni uno menos.
+\end{enumerate}
+\end{itemize}
+\end{description}
+Consideraciones a tener en cuenta a la hora de hacer el ejercicio:
+\begin{itemize}
+\item Las clases \emph{Producto} y \emph{Supermercado} irán en el \emph{package} \emph{clases} y en el \emph{package test} irá la clase \emph{TestSupermercado}
+\item Para que el código sea mas limpio, usa métodos estáticos en la clase \emph{TestSupermercado} para verificar los formatos del nombre del supermercado, teléfono, nombre del producto y códido de barras.
+\item Crea en la clase \emph{TestSupermercado} un método estático que se le pasa como argumento la referencia del objeto \emph{Supermercado} y muestre por pantalla la referencia de la misma y posteriormete recorriendo el atributo lista de objetos \emph{Producto} encapsulados, imprima cada una de las referencias de dichos objetos, mostrando los datos acorde a los métodos \emph{toString()} de ambas clases.
+%\end{enumerate}
+\end{itemize}
+En relación al algoritmo de verificación del código de barras hay que tener en cuenta lo detallado en el documento \emph{pdf} adjuntado.\\
+Para la verificación se hará de formar similar a la que se ha hecho en clase con la verificación del DNI o el número de una tarjeta de cŕedito, es decir:
+\begin{itemize}
+\item Se creará un método estático en la clase \emph{Producto} que usará como argumento el código de barra a veririfcar.
+\item El método verificará si es correcto o no dicho número.
+\item Usaremos una clase interna local, en cuyo constructor pasaremos el código de barra sin el último número que es la cifra de control.
+\item Habrá un método en dicha clase interna que calcule dicho cifra de control.
+\item Y en el método comprobaremos si son iguales el código de barra pasado al método estático, al código de barra correcto, calculado con la cifra de control que devuelve el método de la clase interna.
+\item Usaremos este método en el constructor de la clase \emph{Producto}, de manera que cuando pasemos un código de barra en el constructor, verificamos éste y si no es válido salte la excepción y no se permita crear el objeto correspondiente.
+\end{itemize}
+
+Criterios de evaluación:
+\begin{description}
+\item[0.5 ptos.] Por estructura de proyecto en eclipse correcta.
+\item[0.5 ptos.] Por el programa corriendo correctamente.
+\item[1 pto.] Por el la clase \emph{Producto} enfocada correctamente de acuerdo al paradigma \emph{POO}
+\item[1 pto.] Por el la clase \emph{Supermercado} enfocada correctamente de acuerdo al paradigma \emph{POO}
+\item[1.5 ptos] Por los métodos estáticos de verificación de la entradas del \emph{Scanner}.
+\item[0.5 ptos] Implementación de la clase \emph{CodigoBarraExcepcion}
+\item[0.5 ptos] Por el manejo de la excepción en el constructor de la clase \emph{Producto}
+\item[2 ptos] Por el método de verificación del número de código de barra. En el caso que no uses una clase interna la puntuación de este método sera de \emph{1 pto}.
+\item[0.5 ptos] Para el método que muestra los datos del objeto de la clase \emph{Supermercado}
+\item[0.5 ptos] Por la lógica de la solicitud de datos hasta que encaje con los patrones correspondientes de las expresiones regulares.
+\item[0.5 ptos] Si creas un \emph{jar ejecutable}. Lo dejaremos en una carpeta del proyecto llamada \emph{jar}
+\item[0.5 ptos] Por la documentación de la clase \emph{Producto}. 
+\item[0.5 ptos] Por los diagramas UML de las clase \emph{Producto} y la clase \emph{Supermercado}, guardando éstos en una carpeta del proyecto \emph{UML}
+\end{description}
+\textbf{Formato del fichero de subida:} se subirá un archivo comprimido de la siguiente forma \emph{nombreApellidos.tar.gz} o \emph{nombre.Apellidos.zip}. incluyendo la carpeta completa del proyecto de eclipse.
+\end{questions}
+\end{document}

@@ -1,0 +1,72 @@
+\documentclass[a4paper,spanish]{article}
+\usepackage[spanish]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+
+\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\INTERFACES}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Ejercicio 1}
+Consultando el API de \emph{java.lang.CharSequence} indica qué métodos debe desarrollar una clase que implemente dicha interfaz.
+
+\subsection*{Ejercicio 2}
+¿Qué está mal en la siguiente interfaz?
+\begin{verbatim}
+public interface SomethingIsWrong {
+    void aMethod(int aValue){
+        System.out.println("Hi Mom");
+    }
+}
+\end{verbatim}
+Implementa dicha interfaz para que esté correcta.
+
+\subsection*{Ejercicio 3}
+¿Está correcta la siguiente interfaz?
+\begin{verbatim}
+public interface Marker {
+}
+\end{verbatim}
+
+\subsection*{Ejercicio 4}
+Escribe una clase que implemente la interfaz \emph{java.lang.CharSequence} La  implementación debe devolver el String en orden inverso. Escribe un test que compruebe el funcionamiento de la clase, donde se compruebe todos los métodos especificados en la interfaz.
+
+\subsection*{Ejercicio 5}
+Supón que tienes que diseñar un servidor de sincronización de tiempo, que periódicamente tienes que informar a los clientes del tiempo y hora. Escribe una interfaz en java que el servidor debe utilizar para crear un protocolo con los clientes.
+
+\subsection*{Ejercicio 6}
+Construir una clase \emph{ArrayReales} que declare un atributo de tipo \emph{double[]} y que implemente una interfaz llamada \emph{Estadisticas}. El contenido de esta interfaz es el siguiente:
+\begin{verbatim}
+public interface Estadisticas {
+   double minimo();
+   double maximo();
+   double sumatorio();
+}
+\end{verbatim}
+
+\subsection*{Ejercicio 7}
+Construir una clase \emph{final Math3} que amplíe las declaraciones de métodos estáticos de la clase \emph{Math} y que implemente una interfaz llamada \emph{Extremos} compilada con el siguiente código fuente.
+\begin{verbatim}
+public interface Extremos{
+  int min(int [] a);
+  int max(int [] a);
+  double min(double [] a);
+  double max(double [] a);
+}
+\end{verbatim}
+
+
+
+
+\end{document}

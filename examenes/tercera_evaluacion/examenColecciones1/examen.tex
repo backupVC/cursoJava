@@ -1,0 +1,92 @@
+\documentclass[a4paper,spanish]{article}
+\usepackage[spanish]{babel}
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\S}{Excepciones, colecciones y polimorfismo}
+\author{Examen tercera evaluación}
+\title{\textbf{\S}}
+\date{\today}
+
+\begin{document}
+\maketitle 
+%\tableofcontents
+%\newpage
+\vspace{2cm}
+\begin{center}
+\begin{large}
+\textbf{Diagrama UML de la aplicación}
+\end{large}
+\end{center}\par 
+\includegraphics[scale=0.45]{UML.png}
+\vspace{0.5cm}
+\section*{Ejercicio 1}
+Crea un proyecto denominado \emph{ejercicio1} y en él incorpora las correspondientes clases, teniendo en cuenta las características que se te indican a contiunuación.
+\begin{itemize}
+\item Crea las clases que se te piden en el diagrama UML anterior.
+\item El conjunto de numero naturales esta constituido por todos los numeros enteros positivos excepto el cero.
+\item Debes sobreescribir los metodos \emph{equals} y \emph{hasCode} para que dos objetos \emph{NumeroNatural} sean iguales cuando coincidan en el atributo \emph{valor}
+\item Debes crear una excecpcion, denominada \emph{NoNaturalException} para el caso que intentemos construir un objeto \emph{NumeroNatural} con un valor \emph{int} negativo o \emph{0} lance esa excepcion.
+\item En la clase \emph{Conjunto} usa la clase \emph{Set} como tipo declarado y \emph{HashSet} para crear las colecciones.
+\item \emph{¿OJO!} El constructor de la clase \emph{Conjunto}  no inicializa el \emph{HashSet} a vacío, sino que se rellena con un \emph{Conjunto} con datos que se pasan como parámetros, en este caso un \emph{Set} de objetos \emph{NumeroNatural}.
+\item En la clase \emph{Conjunto}, los métodos \emph{union} e \emph{interseccion} hacen referencia al concepto matemáticos de unión e intersección de la teoría de conjuntos. La intersección es un nuevo conjunto que representan los objetos \emph{NumeroNatural} que se encuentran en ambos conjuntos, es decir, para que un elemento pertenezca a este nuevo conjunto deben encontrarse en los dos conjuntos, no pudiendo pertenecer a este conjunto si solo se encuentra en uno de los dos conjuntos. Mientrás que la unión representa todos los elementos de ambos conjutos, incluso se pueden repetir.
+\item Crea una clase denominada \emph{TestConjuntos1} con un método main que lea los datos desde la clase \emph{Scanner} desde el fichero \emph{datos1.txt}
+\item En esta clase crea tres objetos \emph{Conjunto} denominalos como \emph{Primero, Segundo y Tercero}
+\item El fichero \emph{datos1.txt} tiene 30 números -de los cuales los 10 primeros y los 10 siguientes son iguales - y en la lectura del mismo debes crear tanto objetos \emph{NumeroNatural} como datos tienes. Y rellenar los tres objetos conjunto (\emph{Primero, Segundo y Tercero}) cada uno con 10 objeto \emph{NumeroNatural}. (Usa un contador para añadir los 10 primeros al primer conjunto, los 10 siguientes al segundo conjunto y los 10 últimos al último conjunto.
+\item Debes dejar preparado el \emph{Scanner} para que cuando lea un número \emph{int} que no sea natural lance la excepción \emph{NoNaturalException}, esto lo puedes comprobar con el fichero que se te aporta denominado \emph{datos2.txt} que tiene un elemento que no es un número natural.
+\item Usando el método \emph{toString} imprime los datos de los tres conjuntos.
+\item Crea dos nuevos objetos \emph{Conjunto} con la intersección de los conjunto \emph{Primero y Segundo} e imprime el número de elementos de dicho conjunto y nos diga si está vacío. (En este caso la intersección tiene sólo 10 elementos y por tanto no está vacío).
+\item Crea un nuevo colección para guardar la unión de los conjuntos \emph{Segundo y Tercero}, teniendo en cuenta que los elementos se pueden repetir (aunque este no el el caso). Indica el tamaño del nuevo conjunto y si está vacío o no. (En este caso la unión de los dos conjuntos originan 20 elementos, por lo tanto no está vacío)
+\end{itemize}
+\section*{Ejercicio 2}
+\begin{itemize}
+\item Añade al proyecto anterior dos clases denominadas \emph{NumeroNaturalPar} y \emph{NumeroNaturalImpar} que sean clases dervidas de la clase \emph{NumeroNatural} que incluya obligatoriamente un método \emph{toString} que imprima \emph{Número par o Número impar mas su correspondiente valor}
+\item Vas a crear una nueva clase \emph{TestConjuntos2} que lea mediante la clase \emph{Scanner} lea los números y cree objetos \emph{NumeroNatural} desde el fichero \emph{datos3.txt} que tiene 30 elementos que van desde el 1 al 30.
+\item Crea dos nuevos objetos \emph{Conjunto} denominados \emph{ConjuntoPares y ConjutoImpares} de manera que cuando leas los datos desde el fichero, si el número es par lo añadas al objeto \emph{ConjuntoPares} sino al objeto \emph{ConjutoImpares}
+\item Crea dos nuevos objetos \emph{List} y \emph{Conjunto} con la unión y la intersección de ambos conjuntos respectivamente. (La unión genera todos los elementos de ambos conjuntos y la intersección es el conjunto vacío).
+\item Comprueba que el objeto \emph{Conjunto} procedente de la intersección es el conjunto vacío.
+\item Indica también el tamaño del conjunto unión.
+\item Con el objeto procedente de la unión, recorrelo con la ayuda de un bucle mejorado u otro tipo de bucle y nos imprima el valor de los objetos, indicando su valor y si es par o impar. Aprovecha los métodos \emph{toString} implementados y el paradigma del \emph{polimorfismo} en \emph{POO}.
+\item Probablemente debas añadir algún \emph{getter} a las clases anteriores.
+\end{itemize}
+\section*{Cuestion}
+En un fichero de texto contesta a las siguientes dos cuestiones:
+\begin{itemize}
+\item ¿Qué hubiera ocurrido si no sobreescribimos el método \emph{equals} y \emph{hasCode} en la clase \emph{NumeroNatural}?
+\item ¿Qué hubiera ocurrido si no se sobrescriben el método \emph{toString} en las clases \emph{NumeroNatural}, \emph{NumeroNaturalPar} y \emph{NumeroNaturalImpar}?
+\end{itemize}
+\section*{Criterios de evaluacion}
+Los criterios de evaluación son los indicados a continuación:\par 
+\vspace*{0.5cm}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{CRITERIO EVALUACION} & \textbf{PUNTUACION} \\
+\hline
+Archivo NumeroNatural.java bien & 1 pto.\\
+\hline
+Archivo Conjunto.java bien & 2 ptos. \\
+\hline
+NoNaturalException funcionando correctamente & 1 pto.\\
+\hline
+Lectura de los datos con Scanner en TestConjuntos1 correctos & 1 pto.\\
+\hline 
+Impresión de datos correctos en TestConjuntos1 & 1 pto.\\
+\hline
+NumeroNaturalPar y NumeroNaturalImpar correctos & 1 pto.\\
+\hline
+Lectura de los datos con Scanner en TestConjuntos2 correctos & 1 pto.\\
+\hline
+Impresión de datos correctos en TestConjuntos2 & 1 pto.\\
+\hline
+Cuestiones correctas & 1 pto\\
+\hline
+\end{tabular}
+\section*{Subida de ficheros}
+Comprime el directorio de trabajo de eclipse y comprimelo junto al fichero de las cuestiones y lo subes a la plataforma.
+\end{document}

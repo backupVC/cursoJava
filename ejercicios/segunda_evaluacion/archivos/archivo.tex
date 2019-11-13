@@ -1,0 +1,77 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[utf-8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+%\usepackage{longtable}
+%\usepackage{array}
+%\usepackage{multirow}
+%\usepackage[latin1]{inputenc}
+%\inputencoding{latin1}
+
+\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\I/O}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Ejercicio 1}
+Escribe un programa que genere 20 números enteros comprendidos entre el 20 al 40 de forma aleatoria. Posteriormente el programa debe crear los siguientes fichero de acuerdo a las especificaciones siguientes:
+\begin{description}
+\item[numeros.dat] usando \emph{DataOutputStream}, \emph{BufferedOutputStream} y \emph{FileOutputStream}, este fichero es binario.
+\item[numeros.txt] usando \emph{BufferedWriter}, este fichero es de texto por lo que debes tratar los números como cadenas.
+\end{description}
+
+\subsection*{Ejercicio 2}
+Ahora debes leer los dos ficheros anteriores y mostrar por pantalla el valor medio de los datos guardados. \\
+Usa para el primer caso \emph{DataInputStream} y para el segundo un \emph{BufferedReader}.
+
+\subsection*{Ejercicio 3}
+Repite el ejercicio usando un RandomAccesFile, debes crear dos programas uno que genere el fichero de salida y otro que lea dicho fichero y nos muestre en consola el valor medio de los datos.
+
+\subsection*{Ejercicio 4}
+Usando alguna de las clases de \emph{Reader} lee el archivo \emph{libros.csv} que contiene una lista de datos sobre libros entre los que incluye el título, nombre del autor e ISBN. Con esos datos realiza el siguiente ejercicio. 
+\begin{itemize}
+\item Una clase denominada \emph{Libro} con los atributos: titulo, autor e isbn. Añade los métodoos que necesites posteriormente.
+\item En la misma clase que leas el archivo de entrada, crea una colección de objetos \emph{Libro} y añade cada objeto creado a la misma.
+\item Escoge aleatoriamente diez objetos \emph{Libro} de esta colección y crea una nueva colección que los guarde, hay que tener en cuenta que los objeto \emph{Libro} no se pueden repetir en la nueva colección.
+\item Guarda esta última lista en un fichero de datos denominado \emph{libros.dat}.
+\item Posteriormente crea una clase que lea este fichero y muestre el contenido del mismo. Es decir los diez libros escogidos aleatoriamente.
+\end{itemize}
+
+\subsection*{Ejercicio 5}
+Usando la clase  \emph{Scanner}  lee el archivo \emph{geografia.csv} que contiene una lista de datos sobre posiciones de ciertas localidades y realiza:
+\begin{itemize}
+\item Una clase denominada \emph{Localidad} con los atributos que aparecen en el archivo csv.
+\item Crea una clase denominada \emph{Mapa} que tenga como atributo una colección de objetos \emph{Localidad}. No uses constructor y crea los siguientes métodos:
+\begin{itemize}
+\item getters y setters.
+\item Un método que añada localidades a la colección.
+\item Sobreescribe el método \emph{toString}
+\item Un método que dado el nombre de la localidad nos devuelva un array con la longitud y latitud de la misma.
+\end{itemize}
+\item Crea una clase que lea el archivo de entrada, crea un objeto de tipo Mapa y añada la informacion obtenida del fichero.
+\item Guarda dicho objeto en un fichero de datos.
+\item Crea una clase que lea el fichero anterior y que mediante un Scanner pasa una localidad y obtén la longitud y latitud de la misma.
+\end{itemize}
+
+\subsection*{Ejercicio 6}
+Realiza un programa que divida un fichero en distintos trozos mas pequeños. La sintáxis de ejecución sería:
+\begin{quote}
+\emph{java Leer ficheroEntrada numeroTrozos}
+\end{quote}
+Donde \emph{Leer} es es nombre del programa ejecutable en java, \emph{ficheroEntrada} es el fichero a dividir en trozos y \emph{numeroTrozos} es un numero que indica en el numero de partes en que se va a dividir el fichero.\\
+Utiliza un fichero de texto como fichero de entrada.
+
+
+\subsection*{Ejercicio 7}
+Realiza el proceso contrario, es decir coge todos los trozos del fichero que has desmenuzado y vuelve a reensamblarlo en un nuevo fichero usando clases de I/O de java.
+
+\end{document}

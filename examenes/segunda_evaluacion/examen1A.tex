@@ -1,0 +1,74 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO A}\\El ejercicio se realizará en eclipse. Usa un workspace distinto al que usas de forma habitual. Crea un proyecto de java nuevo denominado Examen.}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+\begin{questions}
+\question Queremos hacer un programa para registrar los datos de una pelicula, para esto desarrollaremos las siguientes clase con las correspondientes métodos:
+\begin{description}
+\item[clase Actor] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre
+\item Apellidos
+\item Edad
+\item Un constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters}
+\item Sobreescribe el método \emph{toString()} para que cuando tratemos la referencia de estos objetos como \emph{String}, nos muestre al actor con el siguiente formato:\\
+Nombre: nombre\_actor - apellidos\_actor --- Edad: edad\_actor
+\end{itemize}
+\item[clase Director] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre.
+\item Apellidos.
+\item Un constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters}
+\item Sobreescribe el método \emph{toString()} para que cuando tratemos la referencia de estos objetos como \emph{String}, nos muestre al director con el siguiente formato:\\
+\emph{Nombre: nombre\_director - apellidos\_director}
+\end{itemize}
+\item[Película] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Una colecion de actores
+\item Una colección de directores.
+\item Presupuesto.
+\item Dos métodos que añadan actores  a la colección de actores y otro que haga lo mismo con los directores.
+\item Un método que defina el presupuesto de la película. (\emph{setter})
+\item Un método que devuelva la edad media de los actores que conforman la película.
+\item Los correspondientes \emph{\emph{getters}}
+\item No uses un constructor en esta clase.
+\item Sobreescribe el método \emph{toString()} para que cuando mostramos la película como \emph{String} nos muestre los datos con el siguiente formato:\\
+\newpage
+\emph{ACTORES:\\
+lista de actores \\
+DIRECTORES:\\
+lista de directores\\
+PRESUPUESTO\\
+presupuesto en euros}
+\end{itemize}
+\item[Clase TestPelicula] Completa el fichero \emph{TestPelicula.java} que se aporta.
+\end{description}
+Consideraciones a tener en cuenta a la hora de hacer el ejercicio:
+\begin{itemize}
+\item Debes implementar las clases anteriores.
+\item Completa la clase \emph{TestPelicula.java} de acuerdo a las instrucciones que incorpora dicho fichero.
+\item Deberas entregar el proyecto de la siguiente manera:
+\begin{enumerate}
+\item El directorio \textbf{src} del proyecto.
+\item El proyecto completo de eclipse. 
+\end{enumerate}
+\end{itemize}
+Criterios de evaluación:
+\begin{description}
+\item[1.5 pto.] Por el archivo Actor.java funcionando correctamente.
+\item[1.5 pto.] Por el archivo Director.java funcionando correctamente.
+\item[3.5 pto.] Por el archivo Pelicula.java funcionando correctamente.
+\item[3.5 ptos.] Por TestPelicula.java funcionando correctamente.
+\end{description}
+\textbf{Formato del fichero de subida:} se subirá un archivo comprimido de la siguiente forma \emph{nombreApellidos.tar.gz} o \emph{nombre.Apellidos.zip}. incluyendo tanto el proyecto de eclipse como la carpeta \emph{src}.
+\end{questions}
+\end{document}

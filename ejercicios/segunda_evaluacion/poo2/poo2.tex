@@ -1,0 +1,78 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[utf-8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{longtable}
+%\usepackage{array}
+%\usepackage{multirow}
+%\usepackage[latin1]{inputenc}
+%\inputencoding{latin1}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+
+\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\POO II}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Ejercicio 1}
+Crea una clase denominada \emph{Rectangulo} que contenga:
+\begin{itemize}
+\item Dos campos de tipo \emph{double} denominados \emph{ancho} y \emph{alto}.
+\item El valor por defecto para ambos valores es \emph{1}
+\item Crea un constructor sin argumentos para crear objetos \emph{Rectangulo} con los valores de los atributos por defecto.
+\item Un constructor que crea objetos \emph{Rectangulo} dado el alto y el ancho.
+\item Un método que devuelva el área de dichos objetos.
+\item Un método que devuelva perímetro de dichos objetos.
+\item Una variable que almacene el número de objetos \emph{Rectangulo} creados, para esto usa una variable de clase. La visibilidad de la misma debe ser privada.
+\end{itemize}
+ %\renewcommand{\labelitemi}{a)}
+\begin{enumerate}
+\item[a)] Crea posteriormente un clase denominada \emph{TestRectangulo} que cree tres objetos \emph{Rectangulo} diferentes y alguno de ellos sea un \emph{Rectangulo} por defecto.
+\item[b)] Obtén también posteriormente el número de objetos creados consultando a la variable de clase. Utiliza dos formas o bien un método público para que devuelva el valor de dicha variable o usando una clase interna que contenga un método que devuelva dicho valor.
+\item[c)] Dibuja el diagrama UML de la clase \emph{Rectangulo}
+\item[d)] Crea un jar ejecutable para esta aplicación.
+
+\end{enumerate}
+
+\subsection*{Ejercicio 2}
+Crea una clase denominada \emph{TarjetaCredito} que contenga como atributos:
+\begin{itemize}
+\item Un número de tarjeta (16 dígitos)
+\item Titular
+\item Un campo denominado \emph{fechaCreacion} que almacena la fecha cuando es creada la cuenta. Se tomará como fecha de creación la fecha actual del sistema.
+\end{itemize}
+Cómo métodos, los siguientes:
+\begin{itemize}
+\item Constructor que inicializa los atributos nº de tarjeta y titular
+\item \emph{getters y setters}
+\item \emph{toString()} sobreescrito.
+\item Un método estático que valga para validar el nº de tarjeta. Dentro de este método estático crea una clase denominada \emph{NumeroTarjeta} de manera que cuando se le pase en el constructor una cifra de 15 digitos, devuelva otra de 16 digitos que contiene como última cifra, la cifra de control. De manera que el método estático anterior devuelva si el número de tarjeta pasado como argumento al método es igual al numero de tarjeta generado con la clase interna.
+\end{itemize}
+La cifra de control se obtiene mediante el \emph{algoritmo de Luhn}, por lo tanto busca información de como obtener dicho valor.\\
+El formato de la cadena que debe devolver el método \emph{toString()} debe ser:
+\begin{quote}
+TITULAR DE LA CUENTA\\
+Nº TARJETA\\
+Fecha validez: MES/AÑO(con dos dígitos) (dicho valor es cuatro años mas que la fecha de creación)
+\end{quote}
+Crea una clase TestTarjetaCredito que haga:
+\begin{itemize}
+\item Solicite por Scanner el titular de la cuenta
+\item Genere de forma aleatoria los 16 dígitos
+\item A partir de los datos anteriores crea un objeto \emph{TarjetaCredito}
+\item Y finalmente que nos diga si dicha tarjeta es correcta o no.
+\end{itemize}
+Para generar la cadena de salida del método \emph{toString()} busca información del método \emph{format(\dots)} de la clase \emph{String}.\\
+Y para la manipulación de fechas usa la clase \emph{LocalDate}
+\end{document}

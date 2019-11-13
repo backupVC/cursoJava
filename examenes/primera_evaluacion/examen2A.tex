@@ -1,0 +1,80 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO A}\\Sigue las intrucciones que marca el ejercicio, no solo para la realización del mismo sino también para la entrega.\\\emph{No se permite ningun documento de ayuda, excepto los aportados por el profesor}\\Se permite la realización del ejercicio en Eclipse o Netbeans}}}
+\end{center}
+\vspace{0.1in}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+\begin{questions}
+\question Queremos hacer un programa para registrar los datos de una pelicula, para esto desarrollaremos las siguientes clase con las correspondientes métodos:
+\begin{description}
+\item[clase Actor] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre
+\item Apellidos
+\item Edad
+\item Un constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters y setters}
+\item Y el metodo \emph{toString} que imprima el objeto en el siguiente formato: Nombre Apellidos, edad:edad, ejemplo \emph{Luis Garcia Montero, edad: 45}
+\end{itemize}
+\item[clase Director] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Nombre y apellidos.
+\item Un array con sus dos actores preferido. 
+\item Un constructor que inicialice dichos atributos.
+\item Los correspondientes \emph{getters y setters}
+\item Y el metodo \emph{toString()} que imprima el objeto en el siguiente formato: Nombre Apellidos, actores preferidos: Nombre Apellidos, edad:edad, ejemplo \emph{Pedro Carbana Luque, actores preferido: Luis Garcia Montero, edad: 45 y Felipe Mellizo Megaro, edad: 31}
+\end{itemize}
+\item[Película] Qué tiene los siguientes atributos y métodos:
+\begin{itemize}
+\item Título.
+\item Director.
+\item Un arrayList para los actores de la película.
+\item Un constructor que inicialice los atributos de título y director, y el arrayList de actores que se inicialice vacía.
+\item Los correspondientes \emph{getters y setters}
+\item Un método que añada actores a la película.
+\item Un método que nos diga si un actor pertenece o no a una película.
+\item Y un método \emph{toString()} que imprima el objeto de la siguiente forma: Titulo, director: nombre del director, número de actores: n. Ejemplo Programando en Java, director: Manuel Molino, número de actores: 23.
+\end{itemize}
+\item[TestPelicula] Qué tenga en cuenta lo siguiente:
+\begin{itemize}
+\item El método main para iniciar el programa.
+\item Crea cinco actores.
+\item Crea dos directores.
+\item Crea dos películas.
+\item Elige una película e indica, de acuerdo a POO:
+\begin{itemize}
+\item El director de la película, de acuerdo a su método toString().
+\item Los actores de dicha película, de acuerdo a su método toStrig(), para ello debes recorrer el ArrayList.
+\end{itemize}
+\item Para los cinco actores creados, debes decirnos si participan o no en las dos películas, para ello usa el método que has creado en la clase \emph{Pelicula} para esto.
+\end{itemize}
+\end{description}
+Consideraciones a tener en cuenta a la hora de hacer el ejercicio:
+\begin{itemize}
+\item Todas las clases deben pertenecer a un paquete denominado \emph{cine}
+\item Crea las clases de forma secuencial, primero la clase Actor, luego la clase Director, luego la clase Pelicula y finalmente la clase TestPelicula.
+\item Cuando creas una clase, bien Actor, Director o Pelicula, incluye un método main para comprobar el correcto funcionamiento de la clase. Genera para esta clase un fichero \emph{jar ejecutable} (que posteriormente debes incluir en el examen) y después comenta dicho método main para que no interfiera en las posteriores clases. Guarda los ficheros jar que posteriormente se te van a solicitar.
+\end{itemize}
+Criterios de evaluación:
+\begin{description}
+\item[2 ptos] Por los ficheros jar, son cuatro correpondiente a las cuatro clases. Cada uno de ellos correctamente funcionando son 0.5 ptos. Recuerda una vez que hagas, por ejemplo el de la clase Actor, comenta el método main para que no interfiera en el siguiente jar, el de la clase Director, y así sucesivamente.
+\item[1 pto.] Por un fichero build.xml para la clase TestPelicula.
+\item[1 pto.] Si generas la documentación.
+\item[1 pto.] Por la clase Actor, desarrollada correctamente.
+\item[1 pto.] Por la clase Director, desarrollada correctamente.
+\item[2 ptos] Por la clase Pelicula, desarrollada correctamente.
+\item[2 ptos] Por la clase TestPelicula, desarrollada correctamente.
+\end{description}
+Formato del fichero de subida: se subirá un archivo comprimido de la siguiente forma nombreApellidos.tar.gz o nombre.Apellidos.zip que incluya en la ráiz:
+\begin{itemize}
+\item build.xml
+\item La carpeta src con los correspondientes fichero fuentes incluidos en el directorio del paquete (cine).
+\item La carpeta doc que incluye la correspondiente documentación de javadoc
+\end{itemize}
+\end{questions}
+\end{document}

@@ -1,0 +1,58 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO A}\\El ejercicio se realizará en eclipse. Usa un workspace distinto al que usas de forma habitual. Crea un proyecto de java nuevo denominado Examen donde desarrollar las carpetas, packages y programas}}}
+\end{center}
+\vspace{0.1in}
+La estructura del proyecto será la siguiente:
+\begin{itemize}
+\item Un proyecto denominado \emph{Examen}
+\item Dos carpetas en la raiz del proyecto denominadas \emph{database} y \emph{ficheros}. En la primeras debe situar la base de datos \emph{datosMetereologicos.db}
+\item Una carpeta denominda \emph{lib} donde colocar el driver de \emph{sqlite}. Se debe añadir a las bibliotecas del proyecto, de manera que la importación del mismo no requiera volver añadir este \emph{jar}
+\item Un package denominado \emph{clases} donde colocar las disitintas clases y otro package denominado \emph{test} donde colocar el programa que arranca la aplicación.
+\end{itemize}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+\begin{questions}
+\question Queremos hacer un programa para registrar los datos de metereológicos registrados en el último trimestre del año pasado en la estáción metereológica de Jaén, para eso se aporta una base de datos denominada \emph{datosMetereologicos.db}. Deberemos desarrollar las siguientes clases:
+\begin{description}
+\item[clase Metereologia] que es la clase base que mapea los atributos de la base de datos. No es necesario que uses \emph{LocalDate} para la fecha, pues en el \emph{DAO} no vas a hacer operaciones con fechas, pero recuerda que una aplicación real si sería conveniente pues para una posterior ampliación de métodos en \emph{DAO} facilitara el desarrollo, pero para el examen no lo uses, ganaras tiempo pues no deberas usar un formateador para leer esas fechas. 
+\item[clase Conexion] que se encarga de la conexión y desconexión a la base de datos de acuerdo a un patrón \emph{singleton}
+\item[clase MetereologiaDAO] que usa el patrón \emph{DAO} definiendo las siguientes operaciones sobre la base de datos:
+\begin{itemize}
+\item Un método que devuelva toda los datos en una colección. El tipo de colección es libre, usa el que creas conveniente, incluso puedes crear la colección de acuerdo a lo que vas a necesitar posteriormente en el método \emph{main} de la clase \emph{Aplicacion}
+\item Un método que devuelva un \emph{array} con tres valores:
+\begin{itemize}
+\item La cantidad total de precipitaciones. Usa la función \emph{sum} que aporta \emph{sqlite}
+\item El valor máximo de la temperaturas máximas. Usa la función \emph{max} que aporta \emph{sqlite}
+\item El valor mínimo de la temperaturas mínimas. Usa la función \emph{min} que aporta \emph{sqlite}
+\end{itemize}
+\item Un método que inserte un nuevo dato a la base de datos.
+\end{itemize}
+\item[clase Auxiliar] que tenga los siguientes métodos:
+\begin{itemize}
+\item Un método que pasado un \emph{Map$<Integer,Metereologia>$} vuelque los datos a un fichero denominado \emph{datosMetereologicos\_fecha\_actual.txt} a la carpeta \emph{ficheros}. Como fecha actual, se entiende la fecha que aporta el sistema en el momento de la creación del fichero.
+\item Métodos para comprobar el formato de datos de entrada para crear un nuevo registro en la base de datos.
+\end{itemize}
+\item[Aplicacion] que tendrá el método \emph{main} y que usando los método aportados por la clase  \emph{MetereologiaDAO} realice:
+\begin{itemize}
+\item Usando la clase \emph{Scanner} se solicitará un nuevo dato metereológico apoyándonos en los métodos de la clase \emph{Auxiliar} que comprueban el formato de datos de entrada.
+\item Se mostrará en consola, usando \emph{printf} los valores de cantidad total de precipitaciones, valor máximo de la temperatura y valor mínimo de la temperatura, utilizando el método aportado por la clase \emph{MetereologiaDAO}.
+\item Se creará una colección \emph{Map$<Integer,Metereologia>$} con todos los datos de base de datos y posteriormente se imprimirá en un fichero de acuerdo al método implementado en la clase \emph{Auxiliar}. La clave del \emph{Map} es un \emph{Integer} que corresponde a un \emph{id} que se creará de forma automática empezando por cero, siendo el valor de esta clave el primer registro de la base de datos mapeado a un objeto \emph{Metereologia}. Recuerda que en la clase \emph{MetereologiaDAO} tienes un método que devuelve una colección con todos los datos. 
+\end{itemize}
+\end{description}
+Criterios de evaluación:
+\begin{description}
+\item[0.5 ptos] Por la correcta implementación de la estructura del proyecto.
+\item[1 pto.] Por la clase \emph{Metereologia}
+\item[0.5 ptos.] Por la clase \emph{Conexion}
+\item[3 ptos.] Por la clase \emph{MetereologiaDAO}
+\item[2.5 ptos.] Por la clase \emph{Auxiliar}
+\item[2.5 ptos.] Por la clase \emph{Aplicacion}
+\end{description}
+\textbf{Formato del fichero de subida:} se subirá el \emph{workspace} completo del proyecto del examen.
+\end{questions}
+\end{document}

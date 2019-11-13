@@ -1,0 +1,76 @@
+\documentclass[addpoints]{exam}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\pagestyle{empty}
+\pointname{ punto}
+\begin{document}
+\begin{center}
+\begin{Huge}
+EXAMEN PRIMERA EVALUACIÓN
+\end{Huge}
+\vspace{0.06in}
+
+\begin{huge}
+PROGRAMACIÓN 1º DAM
+\end{huge}\\
+\vspace{0.09in}
+
+\begin{LARGE}
+Examen tipo B
+\end{LARGE}
+\vspace{0.1in}
+
+\end{center}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering
+Lee el enunciado del examen detenidamente y realiza los programas que se solicita y recuerda leer el apartado de subida de examen para conocer los archivos a entregar}}}
+\end{center}
+
+
+\vspace{0.1in}
+\section{ENUCIADO}
+Queremos realizar un programa informático, usando el paradigma de \emph{orientación a objetos} que represente a una persona con los siguientes atributos:
+\begin{itemize}
+\item Nombre.
+\item Edad.
+\item DNI.
+\item Sexo: hombre(H) o mujer(M).
+\item Peso.
+\item Altura.
+\end{itemize}
+Por defecto, el DNI será  \emph{11111111}, edad \emph{18 años}, nombre \emph{Juan García Román}, sexo \emph{H}, peso \emph{70 kg} y altura \emph{1,70 m}.\\ 
+Realiza un programa denominado \emph{Persona.java} que contemple los siguientes requerimientos:
+\section{CUESTIONES}
+\begin{questions}
+\question[\half] Los atributos antes indicados.
+\question[1] Se implementará varios constructores:
+\begin{itemize}
+\item Un constructor por defecto.
+\item Un constructor con el nombre, edad y sexo, el resto por defecto.
+\item Un constructor con todos los atributos como parámetro.
+\end{itemize}
+\question[2]
+Se implementará los siguientes métodos:
+\begin{description}
+\item[calcularIMC()] devolverá el \emph{IMC}: índice de masa corporal (peso en kg dividido por altura en metros al cuadradro). Este será de visibilidad privada.
+\item[estaEnPesoIdeal()] nos devolverá si el individuo está en peso ideal. Usará el método anterior. Un individuo normal está en peso normal si el \emph{IMC} se encuetra entre 18,5-24,99.
+\item[esMayorEdad()] nos devuelve si tienes 18 años o mas.
+\item[setDNI()] que genera un DNI aleatorio que será un número comprendido entre 0 y 999999.
+\end{description}
+\question[\half]
+Sobreescribe el método \emph{toString()} con los datos que crees convenientes.
+
+\question[1\half]
+Posteriormente crea una clase denominada \emph{TesPersona} que cree tres objetos llamando a cada uno de los constructores definidos. Usando el método \emph{toString} presenta por pantalla los datos de esos tres objetos.\\
+\question[1] Posteriormente con el último objeto comprueba si esa persona está en peso ideal, si es mayor de edad y cambia su DNI a un DNI aleatorio. Vuelve a llamar al método \emph{toString()} para mostrar por pantalla el nuevo objeto.
+\question[1\half] Usando el programa \emph{dia} implementa el \emph{diagrama UML} de la \emph{Persona}
+\end{questions}
+
+
+\section{DOCUMETOS A ENTREGAR}
+\begin{itemize}
+\item Los ficheros fuentes \emph{Persona.java} y \emph{TestPersona.java}
+\item El diagrama UML en formato \emph{png}
+\item Todo los ficheros se comprimen en un único fichero denominado nombreApellidos.tar.gz o nombreApellidos.zip y se sube a la plataforma.  
+\end{itemize}
+\end{document}

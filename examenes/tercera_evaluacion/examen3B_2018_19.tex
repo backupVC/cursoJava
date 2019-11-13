@@ -1,0 +1,54 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[spanish]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8x]{inputenc}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+\fbox{\fbox{\parbox{5.5in}{\centering {\LARGE EXAMEN TIPO B}\\El ejercicio se realizará en eclipse. Usa un workspace distinto al que usas de forma habitual. Crea un proyecto de java nuevo denominado Examen donde desarrollar las carpetas, packages y programas}}}
+\end{center}
+\vspace{0.1in}
+La estructura del proyecto será la siguiente:
+\begin{itemize}
+\item Un proyecto denominado \emph{Examen}
+\item Dos carpetas en la raiz del proyecto denominadas \emph{database} y \emph{ficheros}. En la primeras debe situar la base de datos \emph{datosDemograficos.db}
+\item Una carpeta denominda \emph{lib} donde colocar el driver de \emph{sqlite}. Se debe añadir a las bibliotecas del proyecto, de manera que la importación del mismo no requiera volver añadir este \emph{jar}
+\item Un package denominado \emph{clases} donde colocar las disitintas clases y otro package denominado \emph{test} donde colocar el programa que arranca la aplicación.
+\end{itemize}
+%\makebox[\textwidth]{Nombre:\enspace\hrulefill}
+\begin{questions}
+\question Queremos hacer un programa para registrar los datos de demográficos registrados en el año 2017 en la provincia de Jaén, para eso se aporta una base de datos denominada \emph{datosDemograficos.db}. Deberemos desarrollar las siguientes clases:
+\begin{description}
+\item[clase Demografia] que es la clase base que mapea los atributos de la base de datos. No vas a mapear el código del municipio, pues lo vamos a dejar para crear la clave de una colección \emph{Map}. Los atributos de dicha clase serán nombre del municipio, edad media, nacimientos y defunciones que tienen su correspondencia con el nombre de las columnas de la tabla.
+\item[clase Conexion] que se encarga de la conexión y desconexión a la base de datos de acuerdo a un patrón \emph{singleton}
+\item[clase DemografiaDAO] que usa el patrón \emph{DAO} definiendo las siguientes operaciones sobre la base de datos:
+\begin{itemize}
+\item Un método que devuelva toda los datos en una colección de tipo \\\emph{Map$<String,Demografia>$}, donde la clave es el código del municipio y el valor un objeto de tipo \emph{Demografia}.
+\item Un método que devuelva una colección de objetos \emph{Demografia} cuyo número de nacimientos esté comprendido entre dos valores enteros que se pasan como argumentos.
+\item Un método que borre un dato a la base de datos, dado el código del municipio.
+\end{itemize}
+\item[clase Auxiliar] que tenga los siguientes métodos:
+\begin{itemize}
+\item Un método que pasado un \emph{Map$<String,Demografia>$} vuelque los datos a un fichero denominado \emph{datosDemografia\_fecha\_actual.txt} a la carpeta \emph{ficheros}. Como fecha actual, se entiende la fecha que aporta el sistema en el momento de la creación del fichero.
+El \emph{Map} lo obtienes del método que aporta el \emph{DAO}
+\item Método para comprobar el formato del código del municipio. El código es el código postal que empieza por 23 y son cinco cifras.
+\end{itemize}
+\item[Aplicacion] que tendrá el método \emph{main} y que usando los método aportados por la clase  \emph{DemografiaDAO} realice:
+\begin{itemize}
+\item Usando la clase \emph{Scanner} se solicitará un código postal y se borrará el último registro que tiene como código postal 23903
+\item Se mostrará en consola, usando \emph{printf} una colección de objeto \emph{Demografia} cuyo número de nacimientos esté comprendido entre 40 y 50
+\item Se imprimirá en un fichero de acuerdo al método implementado en la clase \emph{Auxiliar} la colección \emph{Map$<String,Demografia>$} aportada por la clase \emph{\emph{DemografiaDAO}}
+\end{itemize}
+\end{description}
+Criterios de evaluación:
+\begin{description}
+\item[0.5 ptos] Por la correcta implementación de la estructura del proyecto.
+\item[1 pto.] Por la clase \emph{Demografia}
+\item[0.5 ptos.] Por la clase \emph{Conexion}
+\item[3 ptos.] Por la clase \emph{DemografiaDAO}
+\item[2.5 ptos.] Por la clase \emph{Auxiliar}
+\item[2.5 ptos.] Por la clase \emph{Aplicacion}
+\end{description}
+\textbf{Formato del fichero de subida:} se subirá el \emph{workspace} completo del proyecto del examen.
+\end{questions}
+\end{document}

@@ -1,0 +1,212 @@
+\documentclass[4paper]{article}
+\usepackage[spanish]{babel}
+%\usepackage[ansinew]{inputenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\renewcommand{\tablename}{Tabla}
+\author{Manuel Molino Milla \and Luis Molina Garzón}
+\title{\textbf{Programación}
+\\ESTRUCTURAS DE CONTROL}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+%\setlongtables
+%\section{API de Java}
+%\subsection{Ejercicio 1}
+%La API String de Java, contiene entre otros, los métodos abajo indicados en la tabla. Rellena la información correspondiente:
+%\par
+%\vspace{0,5cm}
+%\begin{tabular}{|c|c|c|c|c|}
+%\hline
+%\bf{nombre método} & \bf{valor retorno} & \bf{parámetros} & \bf{Breve descripción} & \bf{Ejemplo} \\
+%\hline
+%contains &  &  & &  \\
+%\hline
+%endsWith &  &  & &  \\
+%\hline
+%equalsIgnoreCase &  &  & &  \\
+%\hline
+%isEmpty &  &  & &  \\
+%\hline
+%startsWith &  &  & &  \\
+%\hline
+%charAt &  &  & &  \\
+%\hline
+%length &  &  & &  \\
+%\hline
+%replace &  &  & &  \\
+%\hline
+%toUpperCase &  &  & &  \\
+%\hline
+%toLowerCase &  &  & &  \\
+%\hline
+%substring &  &  & &  \\
+%\hline
+%\end{tabular}
+
+
+\section{Estructuras de control}
+\subsection{Ejercicio 1}
+En una clase denominada \emph{Numeros} implementa métodos con las siguientes especificaciones:
+\begin{itemize}
+\item Muestre en consola los números del 1 al 10.
+\item Muestre en consola la siguiente serie: 20 25 30 35 \dots 70 75 80
+\item Devuelva la siguiente serie: 100 98 96 94 \dots 56 54 52 50
+\item Devuelva la suma de los números enteros del 1 a N, siendo N un número entero y el parámetro que se pasa al método. El método debe devolver un \emph{int}
+\item Devuelva la suma de los cuadrados de los N primeros números naturales. El método debe devolver un \emph{int}
+\item Muestre en consola independientemente la suma de los pares e impares comprendidos entre 1 y N
+\end{itemize}
+Realiza el ejercicio usando una vez el bucle for, otra vez el bucle while y también debes usar la estructura do-while
+
+
+%\subsection{Ejercicio 2 -OPCIONAL-}
+%En español hay dos maneras para formar el plural de los sustantivos y adjetivos: -s y -es. Las reglas en las que se basan son:
+% \begin{itemize}
+%\item \textbf{Sustantivos y adjetivos terminados en vocal átona o en -e tónica}. Forman el plural con -s: \emph{casas, estudiantes, taxis, planos, tribus, comités.}
+%\item \textbf{Sustantivos y adjetivos terminados en -a o en -o tónicas}.Forman el plural  con -s: \emph{papás, sofás, bajás, burós, rococós, dominós.}
+%\item  \textbf{Sustantivos y adjetivos terminados en -i o en -u tónicas}. Admiten generalmente dos formas de plural, una con -es y otra con -s, aunque en la lengua culta suele preferirse la primera: \emph{bisturíes o bisturís, carmesíes o carmesís, tisúes o tisús, tabúes o tabús}.
+%\item \textbf{Sustantivos y adjetivos terminados en -y precedida de vocal}. Forman tradicionalmente su plural con -es: \emph{rey, pl. reyes; ley, pl. leyes; buey, pl. bueyes; ay, pl. ayes; convoy, pl. convoyes; bocoy, pl. bocoyes}
+%\item  \textbf{Sustantivos y adjetivos terminados en -s o en -x.} Permanecen invariables: \emph{crisis, pl. crisis; tórax, pl. tórax; fórceps, pl. fórceps}.
+%\item \textbf{Sustantivos y adjetivos terminados en -l, -r, -n, -d, -z, -j.} Forman el plural con -es: \emph{dócil, pl. dóciles; color, pl. colores; pan, pl. panes; césped, pl. céspedes; cáliz, pl. cálices; reloj, pl. relojes}. 
+%\end{itemize}
+%Crea una clase llamada \emph{Plural} que tenga un método que devuelva el plural de dicha palabra.\\
+%Comprueba el funciomaniento de dicho método en otra clase que aporte el método \emph{main}
+%\par
+%\vspace{0.2cm}
+%{\Large Ayuda}: consulta el API de la clase \emph{String}
+
+\section{APIs de Java}
+
+\subsection{Ejercicio 1}
+Realiza un programa en Java, que introduzca como argumentos el nombre y apellidos de alguién y posteriormente muestre el siguiente mensaje:
+\begin{quote}
+Hola nombre apellidos
+\end{quote}
+\subsection{Ejercicio 2}
+Busca información sobre la clase Scanner, usada para leer datos desde el teclado o desde un fichero y explica que realizan los siguientes metodos:
+\begin{itemize}
+\item Scanner(System.in)
+\item hasNext()
+\item hasNextInt()
+\item hasNextDouble()
+\item next()
+\item nextInt()
+\item nextDouble()
+\end{itemize}
+
+\subsection{Ejercicio 3}
+Realiza un programa en Java, que lea desde le entrada estandar tu nombre y apellidos y posteriomente presente por pantalla el siguiente mensaje: 
+\begin{quote}
+Hola nombre apellidos
+\end{quote}
+
+
+
+
+\subsection{Ejercicio 4}
+Realiza un programa en Java, que lea desde la entrada un número entero de tres cifras y posteriormente muestre sus cifras por separado. Haz todo en un metodo \emph{main} de una clase denominadas Cifras. Ejemplo:
+\begin{quote}
+Número 457\\
+Cifra1 4\\
+Cifra2 5\\
+Cifra3 7
+\end{quote}
+
+\subsection{Ejercicio 5}
+Programa que se le pase como argumentos tres números enteros H, M, S que contienen hora, minutos y segundos respectivamente. Comprueba si la hora que indican es una hora válida. Ejemplo de ejecución:
+\begin{quote}
+java Tiempo 22 10 15\\
+Hora válida\\
+java Tiempo 25 10 15\\
+Hora no válida\\
+\end{quote}
+
+\subsection{Ejercicio }
+Programa que solicite un número y un número de columnas, de manera que imprima desde el 1 al numero solicitado, en en número de columnas pedido. Ejemplo:
+\begin{verbatim}
+Introduce nº de columnas
+3
+Introduce un nº
+15
+    1    2    3
+    4    5    6
+    7    8    9
+   10   11   12
+   13   14   15
+\end{verbatim}
+Otro ejemplo:
+\begin{verbatim}
+Introduce nº de columnas
+7
+Introduce un nº
+100
+    1    2    3    4    5    6    7
+    8    9   10   11   12   13   14
+   15   16   17   18   19   20   21
+   22   23   24   25   26   27   28
+   29   30   31   32   33   34   35
+   36   37   38   39   40   41   42
+   43   44   45   46   47   48   49
+   50   51   52   53   54   55   56
+   57   58   59   60   61   62   63
+   64   65   66   67   68   69   70
+   71   72   73   74   75   76   77
+   78   79   80   81   82   83   84
+   85   86   87   88   89   90   91
+   92   93   94   95   96   97   98
+   99  100
+\end{verbatim}
+
+
+\subsection{Ejercicio 6}
+Los sistemas de ecuaciones lineales, en el caso de dos ecuaciones con dos incógnitas se pueden representar de forma genérica de la siguiente forma:
+\begin{large}
+\begin{center}
+$\left.
+a \cdot x + b \cdot y  = e \atop
+c \cdot x + d \cdot y = f
+\right\}$
+\end{center}
+\end{large}
+Un sistema de ecuaciones tiene solución si:
+\begin{center}
+$a \cdot d - b \cdot c  \not= 0$
+\end{center}
+La solución de un sistema de dos ecuaciones con dos incognitas, en el caso que lo tenga, viene dado por la siguiente regla, derivada de la regla de Cramer:
+\begin{large}
+\begin{center}
+$x = \frac{e \cdot d - b \cdot f}{a \cdot d - b \cdot c}$ \\
+\vspace*{0.2cm}
+$y = \frac{a \cdot f - e \cdot c}{a \cdot d - b \cdot c}$
+\end{center}
+\end{large}
+Se quiere realizar una clase denomina \emph{Ecuacion} que contenga dos métodos:
+\begin{itemize}
+\item Un método boolean que devuelva cierto o falso si el sistema es resoluble o no.
+\item Dos métodos que devuelvan el valor de \emph{x} e \emph{y}. Usa \emph{double} como tipos, al menos en los valores de \emph{x} e \emph{y}
+\item Los argumentos en los métodos serán los coeficientes que acompañan a las incognitas, además del término independiente \emph{(a, b, c, \dots)}
+\end{itemize}
+Crea una clase TestEcuación, con el método \emph{main} y que resuelva las siguientes ecuaciones:
+\begin{large}
+\begin{center}
+$\left.
+x + y  = 1 \atop
+2 \cdot x + 2 \cdot y = 2
+\right\}$
+\end{center}
+\end{large}
+\begin{large}
+\begin{center}
+$\left.
+2 \cdot x + y  = 7 \atop
+-x + 2 \cdot y = -1
+\right\}$
+\end{center}
+\end{large}
+Debe indicar por pantalla, si el sistema es resoluble o no. Y en el caso que sea resoluble debe mostrar la resolucion de dicho sistema de ecuaciones.
+
+\end{document}
